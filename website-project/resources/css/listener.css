@@ -6,6 +6,25 @@
   border-radius: 100%;
 }
 
+.playlist{
+  text-align: center;
+  font-size: 30px;
+  background-color: #e7e5e5;
+  display:inline;
+  height: 200px;
+  width: 200px;
+  border-radius: 20%;
+}
+
+.DJ{
+  text-align: center;
+  font-size: 30px;
+  background-color: #e7e5e5;
+  display:inline;
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+}
 
 .searchBar input {
   height: 40px;
