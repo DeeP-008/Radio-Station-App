@@ -1,3 +1,13 @@
 body{
-    background-color: gray;
+    background-color: #6523ff; /*Hex code for this color*/
+    color: #FCFAFA;
+}
+
+.prevNextButtons{
+    display: inline-block;
+    padding: 8px 16px;
+}
+.prevNextButtons:hover{
+    background-color: #FCFAFA;
+    color: black;
 }
