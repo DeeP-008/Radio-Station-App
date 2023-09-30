@@ -48,15 +48,10 @@ header{
 
 .musican-container{
     width: 100%;
-    overflow-x: scroll;
-    white-space: nowrap;
     max-width: 750px;
     position: relative;
     width: 750px;
-    left: 131px;
-    top: -30px; 
-    overflow-x: auto;
-    white-space: nowrap;
+    top: -30px;
 }
 
 .card-wrapper{
@@ -83,6 +78,29 @@ header{
     margin: 25px 10px 25px 0px;
     border: 3px solid #ccc;
     border-radius: 5px;
+    border-width: medium;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.dj-control-container{
+    width: 100%;
+    max-width: 750px;
+    position: relative;
+    width: 750px;
+    top: -30px;
+    margin:25px 10px -31px 0px;
+}
+
+.dj-control-container > .card-wrapper > div{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    margin: 25px 10px 25px 0px;
+    border: 3px solid #ccc;
+    border-radius: 50%;
     border-width: medium;
     display: flex;
     flex-direction: column;
