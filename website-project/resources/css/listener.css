@@ -1,3 +1,7 @@
+body{
+  background-color:white;
+}
+
 .button {
   background-color: #e7e5e5;
   text-align: center;
@@ -10,39 +14,84 @@
   position:absolute;
   top: 0;
   right: 2%;
+  height: 50px;
+  width: 300px;
+  border-radius: 0%;
+  transform: translateY(80%);
+
 }
 
-.playlist{
-  text-align: center;
-  font-size: 30px;
-  background-color: #e7e5e5;
-  display:inline;
+
+.playlist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  max-width: 50%;
+  position: relative;
+  left: 25%;
+  top: -30px; 
+  overflow-x: auto;
+  white-space: nowrap;
+  transform: translateY(200%);
+}
+.playlistButton {
+  width: 300%;
   height: 200px;
-  width: 200px;
+  padding: 46px;
+  margin: 25px 10px 25px 0px;
+  border: 3px solid #ccc;
   border-radius: 20%;
+  border-width: medium;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
-.DJ{
-  text-align: center;
-  font-size: 30px;
-  background-color: #e7e5e5;
-  display:inline;
+
+.DJs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  max-width: 50%;
+  position: relative;
+  left: 25%;
+  top: -30px; 
+  overflow-x: auto;
+  white-space: nowrap;
+  transform: translateY(250%);
+}
+.DJButton {
+  width: 300%;
   height: 200px;
-  width: 200px;
+  padding: 46px;
+  margin: 25px 10px 25px 0px;
+  border: 3px solid #ccc;
   border-radius: 100%;
+  border-width: medium;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 .searchBar {
   display: flex;
-  justify-content: center;
+
   align-items: center;
-  height: 50vh; /* You can adjust the height as needed */
+  height: 20vh;
 }
 .searchBar input {
   text-align: center;
-  width: 50%;
-  height: 10%;
-  transform: translateY(-480%);
+  width: 22%;
+  height: 20%;
+  transform: translateY(-1300%);
 }
 
 .userPreferedGenre {
@@ -52,8 +101,9 @@
   height: 50px;
   margin: 5vh auto;
   margin-top: 10vh;
-  border: 3px solid ;
-  transform: translateY(-910%);
+  border: 3px solid;
+  border-color: #5B584F;
+  transform: translateY(-1500%);
 }
 .userPreferedGenreBox {
   text-align: center;
@@ -63,7 +113,7 @@
   margin: 5vh auto;
   margin-top: 10vh;
   border: 2px solid;
-  transform: translateY(-230%);
+  transform: translateY(-360%);
 }
 
 .recommendedPlaylist {
@@ -73,8 +123,9 @@
   height: 50px;
   margin: 5vh auto;
   margin-top: 10vh;
-  border: 3px solid ;
-  transform: translateY(-1130%);
+  border: 3px solid;
+  right: 100%;
+  transform: translateY(-1650%);
 }
 .recommendedDJs {
   text-align: center;
@@ -84,7 +135,7 @@
   margin: 5vh auto;
   margin-top: 10vh;
   border: 3px solid ;
-  transform: translateY(-800%);
+  transform: translateY(-1200%);
 }
 
 
@@ -99,7 +150,7 @@
   background-color:grey;
   padding: 12px;
   left: 64%;
-  transform: translateY(1020%);
+  transform: translateY(760%);
 }
 .plusButton .plusHorizontal,
 .plusButton .plusVertical {
@@ -125,7 +176,7 @@
   background-color:grey;
   padding: 12px;
   left: 64%;
-  transform: translateY(1020%);
+  transform: translateY(760%);
 }
 .minusHorizontal{
   width: 100%;
@@ -135,5 +186,11 @@
 }
 
 .frontBackandPPButtons button:hover {
+  box-shadow: 1px 10px 10px rgba(0,0,0,0.25);
+}
+.playlist button:hover{
+  box-shadow: 1px 10px 10px rgba(0,0,0,0.25);
+}
+.DJs button:hover{
   box-shadow: 1px 10px 10px rgba(0,0,0,0.25);
 }
