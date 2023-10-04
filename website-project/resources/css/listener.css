@@ -18,7 +18,12 @@ body{
   width: 300px;
   border-radius: 0%;
   transform: translateY(80%);
+}
 
+.songsList{
+  position: relative;
+  left:80px;
+  top:-1450px;
 }
 
 
@@ -49,6 +54,12 @@ body{
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+.playlistAudio{
+  transform: translateY(-2500%);
+}
+#playlistAudio1{
+  width: 22%;
 }
 
 
