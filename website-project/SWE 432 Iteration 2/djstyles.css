@@ -1,0 +1,142 @@
+body {
+	display: flex;
+	margin: 8rem;
+	background-color: pink;
+	flex-direction: column;
+	align-items: center;
+	padding: 12rem;
+}
+.profile {
+	border: 2px solid black;
+	display: flex;
+	align-items: right;
+	padding: 2rem;
+	border-radius: 5px;
+}
+
+
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	gap: 8rem;
+	place-items: center;
+	padding: 8px;
+}
+
+.grid-section {
+	border: 2px solid black;
+	border-radius: 2rem;
+	height: 12rem;
+	display: flex;
+	flex-direction: column;
+	padding: 4px;
+}
+
+.flexbox-header {
+	border: 2px solid black;
+	border-radius: 5px;
+	justify-content: space-between;
+	display: flex;
+	padding: 1rem 2rem;
+	margin: 1rem;
+	width: 90%;
+	background-color: #a422b1;
+}
+
+.header {
+	Justify-content: space-between;
+	display: flex;
+	width: 65%;
+}
+
+.pfp {
+	display: flex;
+	padding: 2rem 1rem;
+}
+
+.dropdown {
+	border: 2px solid black;
+	border-radius: 5px;
+	position: relative;
+	display:inline-block;
+}
+
+.calendar-content {
+	display: none;
+	position: absolute;
+	border-style: solid;
+	border-radius: 5px;
+	min-width: 160px;
+	padding: 8px 12px;
+}
+
+.dropdown:hover
+.calendar-content {
+	display: block;
+}
+
+.table {
+	border: 2px solid orange;
+	border-radius: 5px;
+	border-collapse;
+}
+
+.songs {
+	height: 40rem;
+	place-items: left;
+	background-color: #b4a023;
+}
+
+.cal-head {
+	align-item: center;
+	border: 2px solid orange;
+}
+	
+.song-info {
+	width: 20rem;
+	display: grid;
+	height: 20rem;
+	border: 2px solid red;
+	padding: 1 rem;
+}
+
+.schedule {
+		border: 2px solid blue;
+		height: 40rem;
+		width: 20rem;
+		scroll-behavior: auto;
+}
+
+.flex-col {
+	align-items: center;
+	gap: 1px;
+	flex-direction: column;
+}
+
+.song-sel {
+	align-items:left;
+}
+
+.help-button{
+	cursor: pointer;
+	height: 7rem;
+	width: 7rem;
+}
+
+.date-org {
+	display: grid;
+}
+
+.hotkeys {
+	width: 30rem;
+	border: 2px solid black;
+	border-radius: 5px;
+	display: block;
+}
+
+.hotkey-button{
+	cursor: pointer;
+	width: 4rem;
+	height: 2rem;
+}
+	
