@@ -1,5 +1,8 @@
+/*Author: Dhyeya Padhya
+This CSS File contains the formatting code for producer.html code.*/
+
 body{
-    background-color: #3d3b42; /*Hex code for this color*/
+    background-color: #363946; /*Hex code for this color*/
     color: #FCFAFA;
 }
 
@@ -9,7 +12,7 @@ header{
     align-items: center;
 }
 
-.prevNextButtons a {
+.prevNextButtons a {    /*formats the previous and next buttons*/
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
@@ -18,9 +21,10 @@ header{
     color: black;
     cursor: pointer;
 }
-.prevNextButtons a:hover{
+.prevNextButtons a:hover{   /*formats the behaviour when cursor hovers over the buttons*/
     background-color: #ddd;
     color: black;
+    box-shadow: 1px 1px 10px rgba(239, 226, 232, 0.8);  /*creates a shadow on hover*/
 }
 .prevNextButtons a.previous{
     margin-left: 10px;
@@ -29,24 +33,24 @@ header{
     margin-right: 0;
 }
 
-.partitionBoxes{
+.partitionBoxes{    /*formats each title box that partitions each section */
     text-align: center;
     text-shadow: 3px 3px 4px black;
     color: #EAEAEA;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    border: 100 px;
-    border-color: #EEEBD3;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);   /*creates a minute, barely vsible shadow*/
+    border: 100px;
+    border-color: #B7B7B7;
     border-style: solid;
     border-width: 5px;
     border-radius: 5px;
     position: relative;
     width: 750px;
-    left: 150px;
+    left: 250px;
     top: -30px;
     overflow: hidden;
 }
 
-.musican-container{
+.musican-container{ /*formats the area that contains all the musician cards*/
     width: 100%;
     max-width: 750px;
     position: relative;
@@ -54,29 +58,31 @@ header{
     top: -30px;
 }
 
-.card-wrapper{
+.card-wrapper{  /*creates a flexbox and fixes the positioning*/
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 20px;
     padding: 0 20px;
     box-sizing: border-box;
-    max-width: 750px;
+    max-width: 100%;
     position: relative;
     width: 750px;
-    left: 131px;
+    left: 250px;
     top: -30px; 
     overflow-x: auto;
     white-space: nowrap;
     
 }
 
-.card-wrapper > div {
-    width: 100px;
+.card-wrapper > button {    /*formats each and every button in this div class*/
+    width: 100%;
     height: 100px;
     padding: 46px;
     margin: 25px 10px 25px 0px;
     border: 3px solid #ccc;
+    background-color: #CFCFCD;
+    border-color: #545C52;
     border-radius: 5px;
     border-width: medium;
     display: flex;
@@ -85,7 +91,14 @@ header{
     text-align: center;
 }
 
-.dj-control-container{
+.card-wrapper > button:hover{   /*formats behaviour of buttons in card-wrapper when cursor hovers*/
+    background-color: #ddd;
+    color: black;
+    box-shadow: 1px 1px 10px rgba(239, 226, 232, 0.8);
+}
+
+
+.dj-control-container{  /*formats the are for the DJ Control Center cards*/
     width: 100%;
     max-width: 750px;
     position: relative;
@@ -94,16 +107,69 @@ header{
     margin:25px 10px -31px 0px;
 }
 
-.dj-control-container > .card-wrapper > div{
+.dj-control-container > .card-wrapper > button{ /*Uses the card-wrapper class, but formats the buttons such that they are distinct 
+    across both containers, allowing for variety of shapes across the webpage*/
     width: 100px;
     height: 100px;
     padding: 10px;
     margin: 25px 10px 25px 0px;
     border: 3px solid #ccc;
+    border-color: #545C52;
     border-radius: 50%;
     border-width: medium;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+}
+
+.upcoming-shows-container > .card-wrapper > button{
+    width: 100px;
+    height: 95px;
+    padding: 10px;
+    margin: 25px 15px 25px 25px;
+    border: 3px solid #ccc;
+    border-color: #545C52;
+    border-radius: 0%;
+    transform: rotate(45deg);
+    transform-origin: center;
+    border-width: medium;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.sidebar{   /*format the sidebar*/
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 55px;
+    left: 10px;
+    overflow-x: hidden;
+    padding-top: 20px;
+    background-color:#363946 ;
+}
+
+.sidebar > .search {    /*format the search bar placed in the sidebar*/
+    float: left;
+    border-color: #545C52;
+    font-size: 17px;
+    
+}
+.sidebar > .search input{   /*format the input being given to the search bar*/
+    height: 20px;
+}
+
+.sidebar li{    /*add spacing between each bullet point */
+    margin-bottom: 7px;
+}
+
+.sidebar > .myPlaylist{ /*set position of user playlists display*/
+    margin-top: 230px;
+}
+
+hr.Solid{   /*create a solid line break*/
+    border-top: solid white;
 }

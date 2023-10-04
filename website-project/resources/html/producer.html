@@ -1,52 +1,63 @@
+<!--Author: Dhyeya Padhya.
+This is a HTML layout for the producer's side of the website. They are able to click on any of the buttons to access different screens.
+They can also search for music and add playlists.
+Features TBD:
+1. Connect API for active search feature
+2. Use JavaScript to make buttons react
+3. Allow for login and signup
+4. Build login and signup pages
+5. Make playlists as buttons and link them to different pages.
+and more...-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Producer's page</title>
+    <title>Producer's page</title>  <!--Title of the website as showcased on the tab-->
     <link rel="stylesheet" href="../css/producer.css">
 </head>
 
 <body>
-
-    <section class="prevNextButtons">
+    <section class="prevNextButtons">   <!--The buttons to the next and previous page-->
         <a href="#" class="previous-button">&#8249</a>
         <a href="#" class="next-button">&#8250</a>
     </section>
     
-
+    <!--Each part of the webpage is divvided into different sections. The first section makes the Musician Metrics box and its contents -->
     <section class="musicianMetrics">
-        <div class="partitionBoxes">
+        <div class="partitionBoxes">    <!--These are the main title boxes-->
             <h2>Musician Metrics</h2>
         </div>
 
-        <div class="musician-container">
-            <div class="card-wrapper">
-                <div>Musician 1</div>
-                <div>Musician 2</div>
-                <div>Musician 3</div>
-                <div>Musician 4</div>
-                <div>Musician 5</div>
-                <div>Musician 6</div>
-                <div>Musician 7</div>
-                <div>Musician 8</div>
-                <div>Musician 9</div>
-                <div>Musician 10</div>
+        <div class="musician-container">    <!--This is the area between the boxes that will hold all the cards showcasing different musicians-->
+            <div class="card-wrapper">  <!--This div creates those cards as buttons. Users will be able to scroll through various musicians-->
+                <button>Musician 1</button>
+                <button>Musician 2</button>
+                <button>Musician 3</button>
+                <button>Musician 4</button>
+                <button>Musician 5</button>
+                <button>Musician 6</button>
+                <button>Musician 7</button>
+                <button>Musician 8</button>
+                <button>Musician 9</button>
+                <button>Musician 10</button>
             </div>
         </div>
-    </section>
+    </section>  <!--End musician metrics section-->
 
-    <section class="DJControlCenter">
+    <section class="DJControlCenter">   <!--This section will make the DJ control Center for each producer-->
         <div class="partitionBoxes">
             <h2>DJ Control Center</h2>
         </div>
         <div class="dj-control-container">
-            <div class="card-wrapper">
-                <div>DJ1</div>
-                <div>DJ2</div>
-                <div>DJ3</div>
-                <div>DJ4</div>
-                <div>DJ5</div>
+            <div class="card-wrapper">  <!--Resuing card-wrapper class and its CSS properties-->
+                <button>DJ1</button>
+                <button>DJ2</button>
+                <button>DJ3</button>
+                <button>DJ4</button>
+                <button>DJ5</button>
+                <button>DJ6</button>
                 
             </div>
         </div>
@@ -55,11 +66,41 @@
     <section class="UpcomingShows">
         <div class="partitionBoxes">
             <h2>Upcoming shows</h2>
-        </div>
+        </div>  
+        <div class="upcoming-shows-container"> <!--This will hold all the layout for the cards holding information for upcoming shows-->
+            <div class="card-wrapper">
+                <button>Location 1</button>
+                <button>Location 2</button>
+                <button>Location 3</button>
+                <button>Location 4</button>
+                <button>Location 5</button>
+                <button>Location 6</button>
+                
+            </div>
     </section>
 
    
-    
+    <section class="sidebar"> <!--This section creates a sidebar on the left side of the screen-->
+        <div class="search">    <!--Search bar.-->
+            <input type="text" placeholder="Enter music to search..">
+            <ul>    <!--Hardcoded results. Need to connect API and allow for actual results-->
+                <li>Movement - Hozier</li>
+                <li>Moves Like Jagger - Maroon 5, Christina Aguilera</li>
+                <li>Movies - Conan Grey</li>
+                <li>I Like to Move It - will.i.am</li> 
+            </ul><hr class="Solid"> <!--Solid Line Break-->
+        </div>
+        <div class ="myPlaylist">   <!--User's Playlists-->
+           <h3> My added playlists</h3>
+            <ol>
+                <li>Workout Jam</li>
+                <li>Lo-Fi</li>
+                <li>Gangsta-Rap</li>
+                <li>Today's Hits</li>
+                <li>Coding and Crying</li>
+            </ol> <hr class = "Solid">
+        </div>
+    </section>
 
     
     
