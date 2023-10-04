@@ -1,14 +1,15 @@
 body{
-  background-color:white;
+  background-color:#F2D4AE;
 }
 
 .button {
-  background-color: #e7e5e5;
+  background-color: #F28B30;
   text-align: center;
   display:inline;
   height: 50px;
   width: 50px;
   border-radius: 100%;
+  border-color: #A6450D;
 }
 .button.buttonProfilePicture{
   position:absolute;
@@ -17,6 +18,7 @@ body{
   height: 50px;
   width: 300px;
   border-radius: 0%;
+  border-color: #A6450D;
   transform: translateY(80%);
 }
 
@@ -47,21 +49,23 @@ body{
   height: 200px;
   padding: 46px;
   margin: 25px 10px 25px 0px;
-  border: 3px solid #ccc;
+  border: 3px solid;
   border-radius: 20%;
   border-width: medium;
+  background-color: #F28B30;
+  border-color: #A6450D;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
 }
+
 .playlistAudio{
   transform: translateY(-2500%);
 }
 #playlistAudio1{
   width: 22%;
 }
-
 
 .DJs {
   display: flex;
@@ -83,7 +87,9 @@ body{
   height: 200px;
   padding: 46px;
   margin: 25px 10px 25px 0px;
-  border: 3px solid #ccc;
+  border: 3px solid;
+  background-color: #F28B30;
+  border-color: #A6450D;
   border-radius: 100%;
   border-width: medium;
   display: flex;
@@ -94,7 +100,6 @@ body{
 
 .searchBar {
   display: flex;
-
   align-items: center;
   height: 20vh;
 }
@@ -102,6 +107,7 @@ body{
   text-align: center;
   width: 22%;
   height: 20%;
+  background-color: #F28B30;
   transform: translateY(-1300%);
 }
 
@@ -113,7 +119,7 @@ body{
   margin: 5vh auto;
   margin-top: 10vh;
   border: 3px solid;
-  border-color: #5B584F;
+  border-color: #A6450D;
   transform: translateY(-1500%);
 }
 .userPreferedGenreBox {
@@ -124,6 +130,7 @@ body{
   margin: 5vh auto;
   margin-top: 10vh;
   border: 2px solid;
+  border-color: #A6450D;
   transform: translateY(-360%);
 }
 
@@ -135,6 +142,7 @@ body{
   margin: 5vh auto;
   margin-top: 10vh;
   border: 3px solid;
+  border-color: #A6450D;
   right: 100%;
   transform: translateY(-1650%);
 }
@@ -145,7 +153,8 @@ body{
   height: 50px;
   margin: 5vh auto;
   margin-top: 10vh;
-  border: 3px solid ;
+  border: 3px solid;
+  border-color: #A6450D;
   transform: translateY(-1200%);
 }
 
@@ -158,7 +167,7 @@ body{
   border: none;
   border-radius: 50%;
   outline: none;
-  background-color:grey;
+  background-color:#F28B30;
   padding: 12px;
   left: 64%;
   transform: translateY(760%);
@@ -184,7 +193,8 @@ body{
   border: none;
   border-radius: 50%;
   outline: none;
-  background-color:grey;
+  background-color:#F28B30;
+  border-color: #A6450D;
   padding: 12px;
   left: 64%;
   transform: translateY(760%);
@@ -193,6 +203,7 @@ body{
   width: 100%;
   height: 2px;
   background-color: rgb(255, 255, 255);
+  border-color: #A6450D;
   pointer-events: none;
 }
 
