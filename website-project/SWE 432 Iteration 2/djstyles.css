@@ -1,10 +1,10 @@
 body {
 	display: flex;
 	margin: 8rem;
-	background-color: pink;
+	background-color: #d2ea9f;
 	flex-direction: column;
 	align-items: center;
-	padding: 12rem;
+	padding: 1rem;
 }
 .profile {
 	border: 2px solid black;
@@ -13,7 +13,6 @@ body {
 	padding: 2rem;
 	border-radius: 5px;
 }
-
 
 .grid-container {
 	display: grid;
@@ -37,10 +36,10 @@ body {
 	border-radius: 5px;
 	justify-content: space-between;
 	display: flex;
-	padding: 1rem 2rem;
+	padding: 3rem 2rem;
 	margin: 1rem;
-	width: 90%;
-	background-color: #a422b1;
+	width: 80%;
+	background-color: #e9e0d3;
 }
 
 .header {
@@ -55,10 +54,13 @@ body {
 }
 
 .dropdown {
+	width: 10rem;
+	height: 1.5rem;
+	text-align: center;
 	border: 2px solid black;
 	border-radius: 5px;
 	position: relative;
-	display:inline-block;
+	background-color: #e9e0d3;
 }
 
 .calendar-content {
@@ -73,37 +75,44 @@ body {
 .dropdown:hover
 .calendar-content {
 	display: block;
+	background-color: #e9e0d3;
 }
 
 .table {
 	border: 2px solid orange;
 	border-radius: 5px;
 	border-collapse;
+	background-color: #e9e0d3;
 }
 
 .songs {
 	height: 40rem;
 	place-items: left;
-	background-color: #b4a023;
+	background-color: #e9e0d3;
 }
 
 .cal-head {
-	align-item: center;
+	text-align: center;
 	border: 2px solid orange;
+	background-color: #e9e0d3;
+	border-radius: 5px;
+	width: 41rem;
 }
 	
 .song-info {
 	width: 20rem;
-	display: grid;
+	display: flex;
 	height: 20rem;
 	border: 2px solid red;
 	padding: 1 rem;
+	background-color: #e9e0d3;
 }
 
 .schedule {
 		border: 2px solid blue;
 		height: 40rem;
 		width: 20rem;
+		background-color: #e9e0d3;
 		scroll-behavior: auto;
 }
 
@@ -113,18 +122,17 @@ body {
 	flex-direction: column;
 }
 
-.song-sel {
-	align-items:left;
-}
-
 .help-button{
 	cursor: pointer;
 	height: 7rem;
 	width: 7rem;
+	border: 2px solid black;
+	background-color: #e9e0d3;
 }
 
 .date-org {
 	display: grid;
+	background-color: #d2ea9f;
 }
 
 .hotkeys {
@@ -132,6 +140,7 @@ body {
 	border: 2px solid black;
 	border-radius: 5px;
 	display: block;
+	background-color: #e9e0d3;
 }
 
 .hotkey-button{
@@ -139,4 +148,23 @@ body {
 	width: 4rem;
 	height: 2rem;
 }
-	
+
+footer {
+    width: 20rem;
+    border: 2px solid blue;
+}
+
+.sched-box {
+    width: 18rem;
+    border: 2px solid blue;
+}
+
+.prof-opts {
+	cursor:pointer;
+	border-radius: 5px;
+	width:9rem;
+	height: 9rem;
+	border: 2px solid black;
+	align-items:center;
+	background-color: #e9e0d3;
+}

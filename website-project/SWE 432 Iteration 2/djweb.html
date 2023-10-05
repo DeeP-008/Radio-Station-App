@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
+	<head> <title>Audio Alchemy Radio</title> 
+		<link rel="stylesheet" href="djstyles.css">
+	</head>
 	<body>
 	<header class = "header">
 	<div class ="flexbox-header">
 		<h1>datetime </h1>	 <h1> <b> DJ HUB </b> </h1>	<h1>Live on 101.3</h1>
-		<link rel="stylesheet" href="djstyles.css">
 	</div>
+	<figure>
+	<button class ="prof-opts" type="button" onclick="alert('Placeholder Profile Info')">
 	<img class = "pfp" src="QuiGon_Jinn.webp" alt="profile_pic" width="100" height="100">
+	<figcaption style="text-align: center;"> <b>Profile</b> </figcaption>
+	</button>
+	</figure>
 	</header>
-	<h2 class = "profile"> profile </h2>
-	<div class="dropdown">
-		<span>Calendar</span>
-		<div class="calendar-content">
-		<p>Available Times</p>
-		</div>
-	</div>
 	<div class = "grid-container">
 	<div>
 		<section class="grid-section songs flex-col">
@@ -25,21 +25,21 @@
 		</form>
 		<h2>Recent</h2>
 		<label for="top 40 pop">Top 40 Pop</label>
-		<select name="top 40 pop" id="pop">
+		<select style ="width: 8rem;" name="top 40 pop" id="pop">
 			<option value="Taylor Swift">Taylor Swift</option>
 			<option value="Coldplay">Coldplay</option>
 			<option value="Post Malone">Post Malone</option>
 			<option value="Pitbull">Pitbull</option>
 		</select>
 		<label for="90's Rock">90's Rock</label>
-		<select name="90's Rock" id="90's Rock">
+		<select style ="width: 8rem;"name="90's Rock" id="90's Rock">
 			<option value="Red Hot Chili Peppers">Red Hot Chili Peppers</option>
 			<option value="Nirvana">Nirvana</option>
 			<option value="Foo Fighters">Foo Fighters</option>
 			<option value="Pearl Jam">Pearl Jam</option>
 		</select>
 		<label for="New Age Jazz">New Age Jazz</label>
-		<select name="NAJ" id="NAJ">
+		<select style ="width: 8rem;"name="NAJ" id="NAJ">
 			<option value="Chris Botti">Chris Botti</option>
 			<option value="John Berry">John Berry</option>
 		</select>
@@ -48,32 +48,58 @@
 	<div>
 	<section class="grid-section schedule flex-col">
 		<h1>Schedule</h1>
+		<ol type="1" class = "sched-box">
+            <li>Song 1</li>
+            <li>Song 2</li>
+            <li>Song 3</li>
+            <li>Song 4</li>
+			<li>Advertisement</li>
+        </ol>
+        <footer>EST. Completion Time: 0:00 P.M.</footer>
+    </section>
 	</section>
 	</div>
 	<div>
 		<section class="grid-section flex-col song-info">
 		<h1>Song Info</h1>
-		<img class = "cov" src="WLAE.jpg" alt="album_cov" width="100" height="100">
+		<img class = "cov" src="WLAE.jpg" alt="album_cov" width="125" height="125">
 		<ul>
-			<li>Song Title:</li>
-			<li>Release Album:</li>
-			<li>Artist:</li>
-			<li>Release Date:</li>
-			<li>Awards:</li>
+			<li><b>Song Title:</b> Walk Like an Egyptian</li>
+			<li><b>Artist:</b> The Bangles</li>
+			<li><b>Release Album:</b> Different Light</li>
+			<li><b>Release Date:</b> 01/02/1986</li>
+			<li><b>Awards:</b> Billboard Top 200(1986, 1987)</li>
 		</ul>
 		</section>
+		<div style="padding-left: 1.25rem;">
+		<audio controls>
+			<source src="L's Mix Tape.mp3" type="audio/mpeg">
+		</audio>
+		</div>
 	</div>
 	</div>
 	<div class = "hotkeys">
 			Hotkeys:
 			<button class = "hotkey-button" type="button" onclick="alert('Placeholder Help Info')"> 5 sec </button>
 			<button class = "hotkey-button" type="button" onclick="alert('Placeholder Help Info')"> Intro </button>
-			<button class = "hotkey-button" type="button" onclick="alert('Placeholder Help Info')"> fx 1 </button>
+			<button class = "hotkey-button" type="button" onclick="alert('Placeholder Help Info')"> FX 1 </button>
 			<button class = "hotkey-button" type="button" onclick="alert('Placeholder Help Info')"> RW 5 </button>
-			<button class = "hotkey-button" type="button" onclick="alert('Placeholder Help Info')"> fx 2 </button>
+			<button class = "hotkey-button" type="button" onclick="alert('Placeholder Help Info')"> FX 2 </button>
 			<button class = "hotkey-button" type="button" onclick="alert('add hotkeys')"> + </button>
 			
 		</div>
+	<br/>
+	<div class="dropdown">
+		<span>Calendar</span>
+		<div class="calendar-content">
+		<p>Your Times: 
+		<ol type = "1">
+			<li>Oct 4 6:00 P.M.</li>
+			<li>Oct 6 12:00 P.M. </li>
+		</ol>
+		</p>
+		</div>
+	</div>
 	<h3 class = "cal-head"> October 2023 </h3>
 	<table class ="table" align="right" cellspacing="20" cellpadding="20">
 	<thead>
@@ -138,6 +164,7 @@
 			</tr>
 			</tbody>
 		</table>
+		<br/>
 		<button class = "help-button" type="button" onclick="alert('Placeholder Help Info')">
 		<img src ="Icon-round-Question_mark.svg" alt="help button" width ="100" height="100">
 		</button>
