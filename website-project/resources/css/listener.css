@@ -10,9 +10,11 @@ body{
   width: 50px;
   border-radius: 100%;
   border-color: #A6450D;
+  /*position: fixed;*/
 }
 .button.buttonProfilePicture{
-  position:absolute;
+  /*position:absolute;*/
+  position:fixed;
   top: 0;
   right: 2%;
   height: 50px;
@@ -23,9 +25,13 @@ body{
 }
 
 .songsList{
-  position: relative;
+  /*position: fixed;
+  top:150px;
+  */
+  position:relative;
   left:80px;
   top:-1450px;
+  /*top:-1450px;*/
 }
 
 

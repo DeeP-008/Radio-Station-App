@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" href="../css/listener.css">
   </head>
+
   <body>
     <section class="frontBackandPPButtons" style="color:#732A10">
       <button class="button buttonBack">&#8249</button>
@@ -18,7 +19,7 @@
     </section>
 
     <section class="playlist" style="color:#732A10">
-      <button class="playlistButton playlist1">playlist 1</button>
+      <button class="playlistButton playlist1" onclick="alert('Going to playlist1')">playlist 1</button>
       <button class="playlistButton playlist2">playlist 2</button>
       <button class="playlistButton playlist3">playlist 3</button>
       <button class="playlistButton playlist4">playlist 4</button>
@@ -27,6 +28,8 @@
       <button class="playlistButton playlist7">playlist 7</button>
       <button class="playlistButton playlist8">playlist 8</button>
     </section>
+
+
 
     <div class="DJs" style="color:#732A10">
       <button class="DJButton DJ1">DJ 1</button>
@@ -38,10 +41,11 @@
       <button class="DJButton DJ7">DJ 7</button>
       <button class="DJButton DJ8">DJ 8</button>
     </div>
-
-    <div class="searchBar">
-      <input type="text" placeholder="Enter music to search">
-    </div>
+    <form name="searchBarForm" onsubmit="return validateSearch()" method="post">
+      <div class="searchBar" onsubmit="myFunction()">
+        <input type="text" name="search" placeholder="Enter music to search">
+      </div>
+    </form>
     
     <div class="userPreferedGenre" style="color:#732A10">User Prefered Genre</div>
     <div class="userPreferedGenreBox" style="color:#732A10"></div>
@@ -64,6 +68,6 @@
         <source src="music.mp3" type="audio/mpeg"">
       </audio>
     </div>
-
+    <script src="../js/listener.js"></script>
   </body>
 </html>
