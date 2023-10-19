@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
-	<head> <title>Audio Alchemy Radio</title> 
+	<head>
+		<meta charset="UTF-8">
+		<title>Audio Alchemy Radio</title> 
 		<link rel="stylesheet" href="djstyles.css">
 	</head>
 	<body>
 	<header class = "header">
 	<div class ="flexbox-header">
-		<h1>datetime </h1>	 <h1> <b> DJ HUB </b> </h1>	<h1>Live on 101.3</h1>
+		<h1> <div id = "clock">5:39</div>
+		<script src="djjs.js"></script>
+		</h1>	 <h1> <b> DJ HUB </b> </h1>	<h1>Live on 101.3</h1>
 	</div>
 	<figure>
-	<button class ="prof-opts" type="button" onclick="alert('Placeholder Profile Info')">
+	<button class ="prof-opts" type="button" id="pfb" onclick="alert('Placeholder Profile Info')">
 	<img class = "pfp" src="QuiGon_Jinn.webp" alt="profile_pic" width="100" height="100">
 	<figcaption style="text-align: center;"> <b>Profile</b> </figcaption>
 	</button>
@@ -19,9 +23,10 @@
 	<div>
 		<section class="grid-section songs flex-col">
 		<h1>Songlist</h1>
-		<form>
+		<form name="ser" onsubmit="return valRes()" method="post">
 			<label for="search">Search:</label><br>
-			<input type="text" id="search" name="search"><br>
+			<input type="text" id="search" name="search">
+			<input type="submit" value="Search"><br>
 		</form>
 		<h2>Recent</h2>
 		<label for="top 40 pop">Top 40 Pop</label>
@@ -31,6 +36,7 @@
 			<option value="Post Malone">Post Malone</option>
 			<option value="Pitbull">Pitbull</option>
 		</select>
+		<button type="button" onckick=changeSong()> Update </button>
 		<label for="90's Rock">90's Rock</label>
 		<select style ="width: 8rem;"name="90's Rock" id="90's Rock">
 			<option value="Red Hot Chili Peppers">Red Hot Chili Peppers</option>
@@ -49,11 +55,11 @@
 	<section class="grid-section schedule flex-col">
 		<h1>Schedule</h1>
 		<ol type="1" class = "sched-box">
-            <li>Song 1</li>
-            <li>Song 2</li>
-            <li>Song 3</li>
-            <li>Song 4</li>
-			<li>Advertisement</li>
+            <li> <button class = "song-button" id="sb1" type="button" onclick=songDef()> Song 1</button></li>
+            <li> <button class = "song-button" type="button" onclick=songDef()> Song 2 </button></li>
+            <li> <button class = "song-button" type="button" onclick=songDef()> Song 3 </button></li>
+            <li> <button class = "song-button" type="button" onclick=songDef()> Song 4 </button></li>
+			<li> <button class = "song-button" type="button" onclick=songDef()> Advertisement </button></li>
         </ol>
         <footer>EST. Completion Time: 0:00 P.M.</footer>
     </section>
@@ -62,8 +68,8 @@
 	<div>
 		<section class="grid-section flex-col song-info">
 		<h1>Song Info</h1>
-		<img class = "cov" src="WLAE.jpg" alt="album_cov" width="125" height="125">
-		<ul>
+		<img class = "cov" id = "song-cover" src="WLAE.jpg" alt="album_cov" width="125" height="125">
+		<ul id = "song-inf">
 			<li><b>Song Title:</b> Walk Like an Egyptian</li>
 			<li><b>Artist:</b> The Bangles</li>
 			<li><b>Release Album:</b> Different Light</li>
@@ -116,11 +122,11 @@
 		
 		<tbody>
 			<tr>
-				<td class = "date-org">1 <button type = "button" onclick="alert('placeholder sign up Times')">
+				<td class = "date-org">1 <button type = "button" id = "oct1" onclick="return signUpInfo()">
 				Times </button>
 				</td>
 				<td>2</td>
-				<td>3</td>
+				<td id = "oct3">3</td>
 				<td>4</td>
 				<td>5</td>
 				<td>6</td>
@@ -130,7 +136,7 @@
 				<td>8</td>
 				<td>9</td>
 				<td>10</td>
-				<td>11</td>
+				<td id="oct11">11</td>
 				<td>12</td>
 				<td>13</td>
 				<td>14</td>
@@ -165,6 +171,12 @@
 			</tbody>
 		</table>
 		<br/>
+		<script>
+			document.getElementById("pfb").addEventListener("click", clr);
+			function clr(){
+				document.getElementById("pfb").style.backgroundColor = "Red";
+			}	
+		</script>
 		<button class = "help-button" type="button" onclick="alert('Placeholder Help Info')">
 		<img src ="Icon-round-Question_mark.svg" alt="help button" width ="100" height="100">
 		</button>

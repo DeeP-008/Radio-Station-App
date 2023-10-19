@@ -81,7 +81,7 @@ body {
 .table {
 	border: 2px solid orange;
 	border-radius: 5px;
-	border-collapse;
+	border-collapse: collapse;
 	background-color: #e9e0d3;
 }
 
@@ -147,6 +147,11 @@ body {
 	cursor: pointer;
 	width: 4rem;
 	height: 2rem;
+}
+
+.song-button{
+	cursor: pointer;
+	width: 15rem;
 }
 
 footer {

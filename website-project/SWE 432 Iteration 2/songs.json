@@ -1,0 +1,40 @@
+{
+	Songs: [
+	{
+		name:
+		artist:
+		album:
+		releaseDate:
+		certs:
+	}
+	{
+		name: 'Walk Like an Egyptian',
+		artist: 'The Bangles',
+		album: 'Different Light',
+		releaseDate: '01/02/1986',
+		certs: 'U.S. Gold'
+	},
+	{
+		name: 'Otherside',
+		artist: 'Red Hot Chili Peppers',
+		album: 'Californication',
+		releaseDate: 'December 1999'
+		cets: 'U.S. 3x Platinum'
+	}
+	{
+		name: 'Viva La Vida',
+		artist: 'Coldplay',
+		album: 'Viva la Vida or Death and All His Friends',
+		releaseDate: '06/13/2008',
+		certs: 'U.S. 5x Platinum'
+	}
+	{
+		name: 'La Belle Dame sans Regrets',
+		artist: 'Chris Botti',
+		album: 'When I Fall in Love',
+		releaseDate: '09/28/2004'
+		certs: 'U.S. Gold'
+	}
+	
+		
+	
