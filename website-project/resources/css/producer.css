@@ -20,6 +20,7 @@ header{
     background-color: #EAEAEA;
     color: black;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 .prevNextButtons a:hover{   /*formats the behaviour when cursor hovers over the buttons*/
     background-color: #ddd;
@@ -46,8 +47,8 @@ header{
     position: relative;
     width: 750px;
     left: 250px;
-    top: -30px;
     overflow: hidden;
+    margin-left: 180px;
 }
 
 .musican-container{ /*formats the area that contains all the musician cards*/
@@ -69,9 +70,9 @@ header{
     position: relative;
     width: 750px;
     left: 250px;
-    top: -30px; 
     overflow-x: auto;
     white-space: nowrap;
+    margin-left: 180px;
     
 }
 
@@ -127,7 +128,7 @@ header{
     width: 100px;
     height: 95px;
     padding: 10px;
-    margin: 25px 15px 25px 25px;
+    margin: 35px 15px 25px 25px;
     border: 3px solid #ccc;
     border-color: #545C52;
     border-radius: 0%;
@@ -145,7 +146,7 @@ header{
     width: 200px;
     position: fixed;
     z-index: 1;
-    top: 55px;
+    top: 0px;
     left: 10px;
     overflow-x: hidden;
     padding-top: 20px;
@@ -173,3 +174,84 @@ header{
 hr.Solid{   /*create a solid line break*/
     border-top: solid white;
 }
+
+.dropbtn {
+    background-color: #EAEAEA;
+    color: black;
+    width: 250px;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left:1350px;
+    right: 350px;
+    top:-660px
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    box-shadow: 1px 1px 10px rgba(239, 226, 232, 0.8);
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    width: 300px;
+    height: 250px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    position: relative;
+    left: 1325px;
+    right: 350px;
+    top: -655px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    height: 62.5px;
+    text-align: center;
+    font-size: large;
+    /* display: flex;
+    align-items: center; */
+    line-height: 62.5px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
+
+  .media-player{
+    position: relative;
+    left: 1305px;
+    right: 350px;
+    top: -350px;
+    border: 5px;
+    width: 300px;
+    padding: 200px 0 0 0;
+    background-color: #4C4B63;
+    display: flex;
+    align-items: center;
+  }
+
+  .media-player-controls{
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: 190px;
+    top: 35px;
+  }
+
+  .music-control-button{
+    background: #EAEAEA;
+    cursor: pointer;
+    padding: 5px;
+  }
+
