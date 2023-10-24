@@ -66,7 +66,12 @@ function time() {
 	hour = hour < 10 ? "0" + hour : hour;
 	min = min < 10 ? "0" + min : min;
 	
-	let curTime = hour + ":" + min + amPm;
+	if (twelveHr) {
+		let curTime = hour + ":" + min + amPm;
+	}
+	else {
+		let curTime = hour + ":" + min;
+	}
 	
 	document.getElementById("clock").innerHTML = curTime;
 }
