@@ -51,20 +51,22 @@ function time() {
 	let time = new Date();
 	let hour = time.getHours();
 	let min = time.getMinutes();
-	let am_pm = "AM";
+	let amPm = "AM";
+    let twelveHr = true;
 	
-	if (hour >= 12) {
-        if (hour > 12) hour -= 12;
-        am_pm = "PM";
-    } else if (hour == 0) {
-        hr = 12;
-        am_pm = "AM";
+    if (twelveHr) {
+	    if (hour >= 12) {
+            if (hour > 12) hour -= 12;
+            amPm = "PM";
+        } else if (hour == 0) {
+            hour = 12;
+        }
     }
 	
 	hour = hour < 10 ? "0" + hour : hour;
 	min = min < 10 ? "0" + min : min;
 	
-	let curTime = hour + ":" + min + am_pm;
+	let curTime = hour + ":" + min + amPm;
 	
 	document.getElementById("clock").innerHTML = curTime;
 }
@@ -75,4 +77,3 @@ time();
 
 //clock is weird, doesn't seem to like certain other JS functions but works when isolated.
 //clock design adapted from https://www.geeksforgeeks.org/how-to-design-digital-clock-using-javascript/
-
