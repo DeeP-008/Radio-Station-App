@@ -159,6 +159,24 @@ document.addEventListener("DOMContentLoaded",function(){
         return false;
       }
     }
+
+    //creating an user object that contains some information about the user
+    const user =  new Object();
+    user.firstName = 'Jin';
+    user.lastName = 'Sakai';
+    user.nationality = 'Japanese';
+    user.numMusiciansRepresented = 10;
+    user.isLookingForMoreMusicians = false;
+
+    //accessing user's properties
+    console.log("Welcome Mr. " + user.lastName);
+
+    //changing object properties
+    if(user.isLookingForMoreMusicians == false){
+      user.isLookingForMoreMusicians = true;
+      console.log("Looking for more musicians? "+ user.isLookingForMoreMusicians);
+    }
+    console.log("We are glad you are looking for more musicians Mr. " + user.lastName);
     
   });
   
