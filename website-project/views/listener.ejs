@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../css/listener.css">
+  </head>
+  <title> <%= "BEST SONG APP" %></title>
+
+
+  <body>
+    <section class="frontBackandPPButtons" style="color:#732A10">
+      <button class="button buttonBack">&#8249</button>
+      <button class="button buttonForward">&#8250</button>
+      <button class="button buttonProfilePicture">ProfilePicture</button>
+      <button class="plusButton">
+          <div class="plusHorizontal"></div>
+          <div class="plusVertical"></div>
+      </button>
+      <button class="minusButton">
+          <div class="minusHorizontal"></div>
+      </button>
+    </section>
+
+    <section class="playlist" style="color:#732A10">
+      <% for (let i = 1; i <= 8; i++) { %>
+        <button class="playlistButton playlist<%= i %>" onclick="alert('Going to playlist<%= i %>')">playlist <%= i %></button>
+      <% } %>
+    </section>
+
+    <div class="DJs" style="color:#732A10">
+      <% for (let i = 1; i <= 8; i++) { %>
+        <button class="DJButton DJ<%= i %>">DJ <%= i %></button>
+      <% } %>
+    </div>
+
+    <form name="searchBarForm" onsubmit="return validateSearch()" method="post">
+      <div class="searchBar" onsubmit="myFunction()">
+        <input type="text" name="search" placeholder="Enter music to search">
+      </div>
+    </form>
+
+    <div class="userPreferedGenre" style="color:#732A10">User Prefered Genre</div>
+    <div class="userPreferedGenreBox" style="color:#732A10"></div>
+    <div class="recommendedPlaylist" style="color:#732A10">Recommended Playlist</div>
+    <div class="recommendedDJs" style="color:#732A10">Recommended DJs</div>
+
+    <ul class="songsList" style="color:#732A10">
+      <% for (let i = 1; i <= 8; i++) { %>
+        <li>Song <%= i %></li>
+      <% } %>
+    </ul>
+
+    <div class="playlistAudio">
+      <audio controls id="playlistAudio1">
+        <source src="music.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+    <script src="../js/listener.js"></script>
+  </body>
+</html>
