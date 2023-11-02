@@ -151,13 +151,7 @@ document.addEventListener("DOMContentLoaded",function(){
       });
     });
 
-    function validateSearchBar(){
-      let input = document.forms["search"]["search-music"].value;
-      if(input == ""){
-        alert("Cannot search an empty song field. Please input a song name in the search bar.");
-        return false;
-      }
-    }
+    
 
     //creating an user object that contains some information about the user
     const user =  new Object();

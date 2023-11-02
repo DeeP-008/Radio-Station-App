@@ -59,7 +59,7 @@
                         <a href="#" class="next-button">&#8250</a>
                     </section>
                     
-                    <form class="search" onsubmit="return validateSearchBar()">    <!--Search bar.-->
+                    <form class="search">    <!--Search bar.-->
                         <input type="text" name="search-music" placeholder="Enter music to search.." required>
                         <ul>
                             <% searchResults.forEach(function(searchHistory){ %>
@@ -87,12 +87,12 @@
                                 <a href="#contact">Contact</a>
                             </div>
                         </div>    
-
+                        
                         <div class="media-player">
                             <audio id="audio-player" controls>
                                 <source src="/website-project/audio/50 Cent - In Da Club.mp3" type="audio/mp3">
                             </audio>
-                        
+                            
                             <!--Control buttons for previous song, play/pause/next song-->
                             <div class="media-player-controls">
                                 <button id="prevSong" class="music-control-button">
