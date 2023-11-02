@@ -1,16 +1,23 @@
+/**Author: Dhyeya Padhya
+ * This app.js will run the radio station webpage from the producer's perspective. You can run this code by typing in node app.js or nodemon app.js in 
+ * your terminal in the directory this file is in.
+ */
+
+//require path and express modules for express.js
 const express = require('express');
 const app = express();
 const path = require('path');
-const port = 8080;
+const port = 8080;  //specify localhost port
 
-
+//Serve static HTML, CSS and javascript files from the 'public' directory. Allows resuing pre-written code
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname,'public/website-project/html')));
 
-app.set('view engine', 'ejs'); // Set EJS as the template engine
-app.set('views', path.join(__dirname, 'views')); // Set the "views" directory
+//set view engine ejs and configure the "views" directory
+app.set('view engine', 'ejs'); 
+app.set('views', path.join(__dirname, 'views')); 
 
-// Define the musicians array outside the route handlers
+//Define arrays of musician's, DJs, upcoming shows location and search results to display using ejs 
 const musicians = [
     { musicianName: 'Musician 1', url: 'musician1.html' },
     { musicianName: 'Musician 2', url: 'musician2.html' },
@@ -58,33 +65,30 @@ const user={
   ]
 };                       
 
-
+//Define a route to render the 'index' or the main page view display data
 app.get('/', (req, res) => {
-    // Pass the musicians array to the EJS template
     res.render('index', { musicians, DJs, upcomingShows, searchResults, user });
 });
 
+//Define routes to the musicianX.html files that are accessed when a user clicks on a musician button
 app.get('/musician-metrics/:musicianName', (req, res) => {
-  // Implement logic to render the musician metrics page for the provided musicianName
   const musicianName = req.params.musicianName;
-  // Use this data to render your EJS template or perform any other actions
   res.render('musician-metrics', { musicianName });
 });
 
+//Define routes to the djX.html files that are accessed when a user clicks on a dj button
 app.get('/dj-control-center/:djName', (req, res) => {
-  // Implement logic to render the DJ control center page for the provided djName
   const djName = req.params.djName;
-  // Use this data to render your EJS template or perform any other actions
   res.render('dj-control-center', { djName });
 });
 
+//Define routes to the upcomingSHowsX.html files that are accessed when a user clicks on an upcoming show button
 app.get('/upcoming-shows-info/:locationName', (req, res) => {
-  // Implement logic to render the upcoming shows info page for the provided locationName
   const locationName = req.params.locationName;
-  // Use this data to render your EJS template or perform any other actions
   res.render('upcoming-shows-info', { locationName });
 });
 
+//start the server and listen at the specified port
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });

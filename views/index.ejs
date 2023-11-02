@@ -1,4 +1,3 @@
-<!-- Example index.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +16,7 @@
         </div>
         
         <div class="musician-container">
-            <!-- Inside your index.ejs -->
+            <!--Looping through the musician's array defined in app.js and setting a button for each musician-->
             <div class="card-wrapper">
                 <% musicians.forEach(function(musician) { %>
                     <button onclick="alert('Going to <%= musician.musicianName %>s metrics.')" target="<%= musician.url %>" directory="musician-metrics"><%= musician.musicianName %></button>
@@ -32,6 +31,7 @@
                 <h2>DJ Control Center</h2>
             </div>
             <div class="dj-control-container">
+                <!--Looping through the DJ's array defined in app.js and setting a button for each DJ-->
                 <div class="card-wrapper">
                     <% DJs.forEach(function(dj){ %>
                         <button onclick="alert('Going to <%= dj.djName %>s Control Center.')" target="<%=dj.url%>" directory="dj-control-center"><%=dj.djName%></button>
@@ -45,6 +45,7 @@
                     <h2>Upcoming Shows</h2>
                 </div>
                 <div class="upcoming-shows-container">
+                    <!--Looping through the upcomingShows array defined in app.js and setting a button for each upcoming show-->
                     <div class="card-wrapper">
                         <% upcomingShows.forEach(function(show) { %>
                             <button onclick="alert('Going to <%= show.locationName %> show info screen.')" target="<%= show.url %>" directory="upcoming-shows-info"><%= show.locationName %></button>
@@ -62,6 +63,7 @@
                     <form class="search">    <!--Search bar.-->
                         <input type="text" name="search-music" placeholder="Enter music to search.." required>
                         <ul>
+                            <!--Looping through the Search results array defined in app.js and displaying them-->
                             <% searchResults.forEach(function(searchHistory){ %>
                                 <li><%= searchHistory %></li>
                                 <% }); %>
@@ -70,6 +72,7 @@
                         <div class ="myPlaylist">   <!--User's Playlists-->
                             <h3> My added playlists</h3>
                             <ol>
+                                <!--Looping through the user's array from app.js and accessing the playlists array defined in it and displaying them-->
                                 <% user.playlists.forEach(function(playlist){ %>
                                     <li> <%= playlist %></li>
                                     <% }); %>
