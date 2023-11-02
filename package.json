@@ -1,0 +1,29 @@
+{
+  "name": "swe432",
+  "version": "1.0.0",
+  "description": "Radio Station Website for SWE 432",
+  "main": "producer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LloydAAmaranto/SWE432.git"
+  },
+  "author": "Dhyeya \"D\" Padhya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LloydAAmaranto/SWE432/issues"
+  },
+  "homepage": "https://github.com/LloydAAmaranto/SWE432#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+  
+}
