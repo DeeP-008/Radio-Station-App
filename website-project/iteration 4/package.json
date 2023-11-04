@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "node-json-db": "^2.3.0",
+    "node.js": "^0.0.1-security"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "swe-432-iteration-2",
+  "version": "1.0.0",
+  "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
