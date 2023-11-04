@@ -62,4 +62,4 @@ To run the project locally, follow these steps:
 You can then access the website in your browser at `http://localhost:8080`.
 
 Shoutout to my awesome teammates on this project:
-[Lloyd Amarento](https://github.com/LloydAAmaranto) and [Alex Park](https://github.com/TheQwertz64)https://github.com/TheQwertz64)
+[Lloyd Amarento](https://github.com/LloydAAmaranto) and [Alex Park](https://github.com/TheQwertz64)
