@@ -1,7 +1,0 @@
-dist/* linguist-vendored=false
-ano-dir/** linguist-vendored
-*.js linguist-language=JAVASCRIPT
-*.html linguist-language=HTML
-*.css linguist-language=CSS
-*.rb linguist-language=Java
-*.ejs linguist-language=EJS
