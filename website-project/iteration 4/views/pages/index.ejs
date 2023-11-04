@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+	<head>
+		<%- include('../partials/head'); %>
+		<link rel="stylesheet" href="../../djstyles.css">
+	</head>
+	<body>
+	<header class = "header">
+	<div class ="flexbox-header">
+		<h1> <div id = "clock">5:39</div>
+		<script src="../../djjs.js"></script>
+		</h1>	 <h1> <b> DJ HUB </b> </h1>	<h1>Live on 101.3</h1>
+	</div>
+	<figure>
+	<button class ="prof-opts" type="button" id="pfb" onclick="alert('Placeholder Profile Info')">
+	<img class = "pfp" src="../../images/QuiGon_Jinn.webp" alt="profile_pic" width="100" height="100">
+	<figcaption style="text-align: center;"> <b>Profile</b> </figcaption>
+	</button>
+	</figure>
+	</header>
+	<div class = "grid-container">
+	<div>
+		<section class="grid-section songs flex-col">
+		<h1>Songlist</h1>
+		<form name="ser" onsubmit="return valRes()" method="post">
+			<label for="search">Search:</label><br>
+			<input type="search" id="search" name="search">
+			<input type="submit" value="Search"><br>
+		</form>
+		<h2>Recent</h2>
+		<label for="top 40 pop">Top 40 Pop</label>
+		<select style ="width: 8rem;" name="top 40 pop" id="pop">
+			<option value="Taylor Swift">Taylor Swift</option>
+			<option value="Coldplay">Coldplay</option>
+			<option value="Post Malone">Post Malone</option>
+			<option value="Pitbull">Pitbull</option>
+		</select>
+		<button type="button" onckick=changeSong()> Update </button>
+		<label for="90's Rock">90's Rock</label>
+		<select style ="width: 8rem;"name="90's Rock" id="90's Rock">
+			<option value="Red Hot Chili Peppers">Red Hot Chili Peppers</option>
+			<option value="Nirvana">Nirvana</option>
+			<option value="Foo Fighters">Foo Fighters</option>
+			<option value="Pearl Jam">Pearl Jam</option>
+		</select>
+		<label for="New Age Jazz">New Age Jazz</label>
+		<select style ="width: 8rem;"name="NAJ" id="NAJ">
+			<option value="Chris Botti">Chris Botti</option>
+			<option value="John Berry">John Berry</option>
+		</select>
+		</section>
+	</div>
+	<div>
+	<section class="grid-section schedule flex-col">
+		<h1>Schedule</h1>
+		<ol type="1" class = "sched-box">
+            <li> <button class = "song-button" id="sb1" type="button" onclick=songDef()> Bad Blood</button></li>
+            <li> <button class = "song-button" type="button" onclick=songDef()> <%= songs[3].name %> </button></li>
+            <li> <button class = "song-button" type="button" onclick=songDef()> <%= songs[4].name %> </button></li>
+            <li> <button class = "song-button" type="button" onclick=songDef()> <%= songs[5].name %> </button></li>
+			<li> <button class = "song-button" type="button" onclick=songDef()> Advertisement </button></li>
+        </ol>
+        <footer>EST. Completion Time: 0:00 P.M.</footer>
+    </section>
+	</section>
+	</div>
+	<div>
+		<section class="grid-section flex-col song-info">
+		<h1>Song Info</h1>
+		<img class = "cov" id = "song-cover" src="../../images/PlaceholderLC.png" alt="album_cov" width="125" height="125">
+		<ul id = "song-inf">
+			<li><b>Song Title:</b> <%= songs[1].name %></li>
+			<li><b>Artist:</b> <%= songs[1].artist %></li>
+			<li><b>Release Album:</b> <%= songs[1].album %></li>
+			<li><b>Release Date:</b> <%= songs[1].releaseDate%></li>
+			<li><b>Certs:</b> <%= songs[1].certs%></li>
+		</ul>
+		</section>
+		<div style="padding-left: 1.25rem;">
+		<audio controls>
+			<source id = "mp3s" src="../../songs/MELTY BLOOD.mp3" type="audio/mpeg">
+		</audio>
+		</div>
+	</div>
+	</div>
+	<div class = "hotkeys">
+			Hotkeys:
+			<button class = "hotkey-button" type="button" onclick="alert('Placeholder Help Info')"> 5 sec </button>
+			<button class = "hotkey-button" type="button" onclick="alert('Placeholder Help Info')"> Intro </button>
+			<button class = "hotkey-button" type="button" onclick="alert('Placeholder Help Info')"> FX 1 </button>
+			<button class = "hotkey-button" type="button" onclick="alert('Placeholder Help Info')"> RW 5 </button>
+			<button class = "hotkey-button" type="button" onclick="alert('Placeholder Help Info')"> FX 2 </button>
+			<button class = "hotkey-button" type="button" onclick="alert('add hotkeys')"> + </button>
+			
+		</div>
+	<br/>
+	<div class="dropdown">
+		<span>Calendar</span>
+		<div class="calendar-content">
+		<p>Your Times: 
+		<ol type = "1">
+			<li>Oct 4 6:00 P.M.</li>
+			<li>Oct 6 12:00 P.M. </li>
+		</ol>
+		</p>
+		</div>
+	</div>
+	<h3 class = "cal-head"> October 2023 </h3>
+	<table class ="table" align="right" cellspacing="20" cellpadding="20">
+	<thead>
+		<tr>
+			<th>Sun</th>
+			<th>Mon</th>
+			<th>Tue</th>
+			<th>Wed</th>
+			<th>Thu</th>
+			<th>Fri</th>
+			<th>Sat</th>
+		</tr>
+	</thead>
+		
+		<tbody>
+			<tr>
+				<td class = "date-org">1 <button type = "button" id = "oct1" onclick="return signUpInfo()">
+				Times </button>
+				</td>
+				<td>2</td>
+				<td id = "oct3">3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>9</td>
+				<td>10</td>
+				<td id="oct11">11</td>
+				<td>12</td>
+				<td>13</td>
+				<td>14</td>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td>16</td>
+				<td>17</td>
+				<td>18</td>
+				<td>19</td>
+				<td>20</td>
+				<td>21</td>
+			</tr>
+			<tr>
+				<td>22</td>
+				<td>23</td>
+				<td>24</td>
+				<td>25</td>
+				<td>26</td>
+				<td>27</td>
+				<td>28</td>
+			</tr>
+			<tr>
+				<td>29</td>
+				<td>30</td>
+				<td>31</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			</tbody>
+		</table>
+		<br/>
+		<script>
+			document.getElementById("pfb").addEventListener("click", clr);
+			function clr(){
+				document.getElementById("pfb").style.backgroundColor = "Red";
+			}	
+			function songDef(){
+				var playlist = '<%= songs %>';
+				console.log(playlist[2].name);
+				var  alb_cov = "../../images/PlaceholderLC.png";
+				var mp3 = "../../songs/MELTY BLOOD";
+				let name = document.getElementByID("sb1").textContent;
+				for (let i = 0; i < playlist.length; i++) {
+					if (name == playslist[i].name){
+					alb_cov = playlist[i].image;
+					mp3 = playlist[i].mp3;
+			}
+	}
+	document.getElementById('song-cover').src=alb_cov;
+	document.getElementById('mp3s').src=mp3;
+}
+		</script>
+		<nav>
+			<a href="/help">
+				<button class = "help-button" type="button">
+				<img src ="../../images/Icon-round-Question_mark.svg" alt="help button" width ="100" height="100">
+				</button>
+			</a>
+	</nav>
+	</body>
+</br>
+	<footer style="text-align:center">
+		<%- include('../partials/footer'); %>
+	</footer>
+</html>
