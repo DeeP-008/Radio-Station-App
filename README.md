@@ -1,6 +1,6 @@
 # Radio-Station-App
 This is a copy of the work I did for the SWE 432: Web App Development course at George Mason University, where I helped create a working radio station.
-All my code can be viewed in the [Producers-Branch]([url](https://github.com/DeeP-008/Radio-Station-App/tree/Producers-Branch)).
+All my code can be viewed in the ([Producers-Branch](https://github.com/DeeP-008/Radio-Station-App/tree/Producers-Branch)).
 This project is built using Node.js, Express, and EJS templates. My part of the project involves implementing a music producer's view of the app where they could manage their musicians, assign show timings and 
 songs for their DJs, and look at any upcoming shows where the musicians and DJs they represent would be playing. Here's a breakdown of my contributions to the project:
 
