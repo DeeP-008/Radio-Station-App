@@ -10,7 +10,7 @@ body{
   width: 50px;
   border-radius: 100%;
   border-color: #A6450D;
-  /*position: fixed;*/
+  position: fixed;
 }
 .button.buttonProfilePicture{
   /*position:absolute;*/
@@ -24,13 +24,10 @@ body{
   transform: translateY(80%);
 }
 
-.songsList{
-  /*position: fixed;
-  top:150px;
-  */
-  position:relative;
+.songsList{  
   left:80px;
-  top:-1450px;
+  top:140px;
+  position:fixed;
   /*top:-1450px;*/
 }
 
@@ -67,10 +64,12 @@ body{
 }
 
 .playlistAudio{
-  transform: translateY(-2500%);
+  left: 2%;
+  top: 500px;
+  position:fixed;
 }
 #playlistAudio1{
-  width: 22%;
+  /*width: 22%;*/
 }
 
 .DJs {
@@ -112,9 +111,10 @@ body{
 .searchBar input {
   text-align: center;
   width: 22%;
-  height: 20%;
+  height: 5%;
   background-color: #F28B30;
-  transform: translateY(-1300%);
+  transform: translateY(-1050%);
+  position:fixed;
 }
 
 .userPreferedGenre {
@@ -138,6 +138,7 @@ body{
   border: 2px solid;
   border-color: #A6450D;
   transform: translateY(-360%);
+  position: fix;
 }
 
 .recommendedPlaylist {
