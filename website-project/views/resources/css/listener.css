@@ -222,3 +222,59 @@ body{
 .DJs button:hover{
   box-shadow: 1px 10px 10px rgba(0,0,0,0.25);
 }
+
+
+
+.dropbtn {
+  position:fixed;
+  background-color: #F28B30;
+  top: 0;
+  right: 2%;
+  height: 50px;
+  width: 300px;
+  border-radius: 0%;
+  border-color: #A6450D;
+  transform: translateY(80%);
+  /*left:1350px;
+  right: 350px;
+  top:-660px*/
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  box-shadow: 1px 1px 10px rgba(239, 226, 232, 0.8);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: #F28B30;
+  min-width: 160px;
+  width: 300px;
+  height: 250px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  position:fixed;
+  right: 33px;
+  top: 90px;
+  /*left: 1325px;
+  right: 350px;
+  top: -655px;*/
+}
+
+.dropdown-content a {
+  color: black;
+  height: 62.5px;
+  text-align: center;
+  font-size: large;
+  /* display: flex;
+  align-items: center; */
+  line-height: 62.5px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
