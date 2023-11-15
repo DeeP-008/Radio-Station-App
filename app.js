@@ -7,6 +7,8 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const mongoose = require('./database');
+const Song = require('./models/song');
 const port = 8080;  //specify localhost port
 
 //Serve static HTML, CSS and javascript files from the 'public' directory. Allows resuing pre-written code
@@ -64,6 +66,22 @@ const user={
     'Coding and Crying'
   ]
 };                       
+
+// Example: Create a new song
+const newSong = new Song({
+  title: 'Example Song',
+  artist: 'Example Artist',
+  duration: 240, // Duration in seconds
+  genre: 'Example Genre',
+});
+
+newSong.save((err, savedSong) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log('Song saved:', savedSong);
+  }
+});
 
 //Define a route to render the 'index' or the main page view display data
 app.get('/', (req, res) => {
