@@ -60,12 +60,13 @@
                         <a href="#" class="next-button">&#8250</a>
                     </section>
                     
-                    <form class="search">    <!--Search bar.-->
-                        <input type="text" name="search-music" placeholder="Enter music to search.." required>
-                        <ul>
+                    <form class="search" method="post" action="/Recently-Searched">    <!--Search bar.-->
+                        <input type="text" name="query" placeholder="Enter music to search.." required>
+                        <button type="submit">Search</button>
+                        <ul id="search-history">
                             <!--Looping through the Search results array defined in app.js and displaying them-->
                             <% searchResults.forEach(function(searchHistory){ %>
-                                <li><%= searchHistory %></li>
+                                <li><%= searchHistory.input %></li>
                                 <% }); %>
                             </ul><hr class="Solid"> <!--Solid Line Break-->
                         </form>
