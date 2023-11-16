@@ -1,35 +1,46 @@
 
-function valRes(){
+
+
+/*function songSearch(search){
 	let ser = document.forms["ser"]["search"].value;
 	if (ser == "") {
 		alert("You didn't enter anything to search");
 		return false;
 	}
-}
-
-function songSearch(search){
 	for(var i = 0; i < songs.length; i++){
-		if (search == songs[i].name){
+		if (ser == songs[i].name){
 			console.log("song found");
 		}
 	}
+
 }
 
-/*function songDef(){
-	var playlist = songs;
-	console.log(playlist[2].name);
-	var  alb_cov = "../../images/PlaceholderLC.png";
-	var mp3 = "../../songs/MELTY BLOOD";
-	let name = document.getElementByID("sb1").textContent;
-	for (let i = 0; i < playlist.length; i++) {
-		if (name == playslist[i].name){
-			alb_cov = playlist[i].image;
-			mp3 = playlist[i].mp3;
+
+
+let showList = [];
+function addSongToPlaylist(song){
+	showList.push(song);
+}
+
+
+
+function songDef(){
+	console.log((document.getElementById('playmusic').dataset.songs));
+	console.log(typeof playlist);
+	alert('whelp');
+	let alb_cov = "../../images/PlaceholderLC.png";
+	let mp3 = "../../songs/MELTY BLOOD";
+	//let name = document.getElementByID("sb1").innerText;
+	let name = "Bad Blood";
+	for (let i = 0; i < 1; i++) {
+		if (name == document.getElementById('playmusic').dataset.songs[1].name){
+			//alb_cov = document.getElementById('playmusic').dataset.songs.image;
+			//mp3 = document.getElementById('playmusic').dataset.songs.mp3;
 		}
 	}
 	document.getElementById('song-cover').src=alb_cov;
 	document.getElementById('mp3s').src=mp3;
-}*/
+}
 
 
 function signUpInfo(){
@@ -42,6 +53,10 @@ function signUpInfo(){
 	alert(toString);
 	
 }
+
+/*
+function signUp(){}
+*/
 
 window.onload = function changeSong() {
 	let popS = document.getElementById("pop");
@@ -63,7 +78,7 @@ window.onload = function changeSong() {
 	return false;
 } 
 
-changeSong();
+//changeSong();
 
 setInterval(time, 200);
 
@@ -77,7 +92,7 @@ function time() {
         if (hour > 12) hour -= 12;
         am_pm = "PM";
     } else if (hour == 0) {
-        hr = 12;
+        hour = 12;
         am_pm = "AM";
     }
 	
@@ -90,6 +105,37 @@ function time() {
 }
 
 time();
+
+function calcPlayTime(){
+	var duration = 0;
+	//for (var j = 0; j < playlist.length; j++){
+	//	duration += playlist[j].
+	//}
+	let hr = time.getHours() + trunc(duration / 3600);
+	let mins = time.getMinutes() + trunc((duration % 3600) / 60);
+	var sec = time.getSeconds() + duration % 60;
+	let ap = "AM";
+	if(sec >= 60){
+		sec -= 60;
+		min++;
+	}
+	if(mins >= 60){
+		mins -= 60;
+		hour++;
+	}
+	if (hour >= 24) {
+		hour -= 24;
+	}
+	else if (hour >= 12) {
+        if (hour > 12) hour -= 12;
+        ap = "PM";
+    } else if (hour == 0) {
+        hour = 12;
+        ap = "AM";
+    }
+
+
+}
 
 
 
