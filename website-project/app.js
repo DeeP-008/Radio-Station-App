@@ -1,6 +1,10 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const mongodb = require('mongodb');
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const mongoose = require('mongoose');
+const searchHistory = require('./models/searchHistory');
 const port = 3000;
 
 // Set EJS as the templating engine
@@ -24,4 +28,32 @@ app.use(function(req, res) {
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
+});
+
+
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.post('/Recently-Searched', async(req,res) =>{
+  try{
+    const{query} = req.body;
+
+    //check if it already exists
+    const exists = await searchHistory.findOne({ input: query });
+    if(exists){
+      exists.timestamp = new Date();
+      await exists.save();
+    }
+    else{
+      const newEntry = new searchHistory({
+        input: query,
+        timestamp: new Date(),
+      });
+      await newEntry.save();
+    }
+    res.status(201).json({message: "Search History Updated."});
+  } catch(error){
+    console.error(error);
+    res.status(500).json({error: "Error! Couldn't connect to server."});
+  }
 });

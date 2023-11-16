@@ -1,12 +1,16 @@
 const express = require('express');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose');
+const songDB = require('./models/songs');
+const playlistDB = require('./models/playlist');
+const listenerPreferenceDB = require('./models/listenerPreference');
+const fs = require('fs');
+
 
 
 
 // MongoDB Atlas connection URI
-const mongoURI =
-  'mongodb://127.0.0.1:27017/RadioStation';
+const mongoURI = 'mongodb://127.0.0.1:27017/RadioStation';
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(mongoURI, {
@@ -60,22 +64,52 @@ function closeConnections() {
   process.exit(0);
 }
 
-const songSchema = new mongoose.Schema ({
-  name: { type: String, unique: true },
-  artist: String,
-  album: String,
-  releaseDate: String,
-  certs: String,
-  mp3: String,
-  image: String,
-  duration: Number
+
+const Post = mongoose.model("Post", {
+    title: String,
+    body: String
 });
 
-const music = mongoose.model('RadioTest', songSchema);
-var song = new music({name: "klsdjflkjf", artist: "test2", album: "test3",
-  releaseDate: "test3", certs: "test4", mp3: "test5", image: "test6", duration: 1});
+app.set("view engine", "ejs");
 
-song.save();
+app.get("/", async (req, res) => {
+    const posts = await Post.find({});
+    res.render("index", {posts});
+});
+
+app.listen(3000, () => console.log("Listening"));
+
+
+// Use JSON file containing information about songs to populate an array songs, which will then be inserted into the database
+const song = JSON.parse(fs.readFileSync('data/songData.json','utf8'));
+//use Mongoose's insertMany method to populate the songs array in the database
+songDB.insertMany(song)
+.then(function(songs){
+  console.log('Songs saved: ',song);
+})
+.catch(function(err){
+  console.log(err);
+});
+
+const playlist = JSON.parse(fs.readFileSync('data/songData.json','utf8'));
+//use Mongoose's insertMany method to populate the songs array in the database
+playlistDB.insertMany(playlist)
+.then(function(songs){
+  console.log('Songs saved: ',playlist);
+})
+.catch(function(err){
+  console.log(err);
+});
+
+const listenerPreference = JSON.parse(fs.readFileSync('data/songData.json','utf8'));
+//use Mongoose's insertMany method to populate the songs array in the database
+listenerPreferenceDB.insertMany(listenerPreference)
+.then(function(songs){
+  console.log('Songs saved: ',listenerPreference);
+})
+.catch(function(err){
+  console.log(err);
+});
 
 
 // Gracefully close connections and terminate the process after 5 seconds

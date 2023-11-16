@@ -19,8 +19,8 @@
         </div>
       
       <button class="plusButton">
-          <div class="plusHorizontal"></div>
-          <div class="plusVertical"></div>
+        <div class="plusHorizontal"></div>
+        <div class="plusVertical"></div>
       </button>
       <button class="minusButton">
           <div class="minusHorizontal"></div>
@@ -53,6 +53,7 @@
     <form name="searchBarForm" onsubmit="return validateSearch()" method="post">
       <div class="searchBar" onsubmit="myFunction()">
         <input type="text" name="search" placeholder="Enter music to search">
+        <button type="submit">Search and Save</button>
       </div>
     </form>
     
@@ -61,7 +62,7 @@
     <div class="recommendedPlaylist" style="color:#732A10">Recommended Playlist</div>
     <div class="recommendedDJs" style="color:#732A10">Recommended DJs</div>
 
-    <ul class="songsList" style="color:#732A10">
+    <ul class="songsList" id="searchResult" style="color:#732A10">
       <li>Song 1</li> <br>
       <li>Song 2</li> <br>
       <li>Song 3</li> <br>
@@ -78,5 +79,7 @@
       </audio>
     </div>
     <script src="../js/listener.js"></script>
+    <script src="../../../database.js"></script>
+    <script src="../../../app.js"></script>
   </body>
 </html>

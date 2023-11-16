@@ -11,6 +11,17 @@
       <button class="button buttonBack">&#8249</button>
       <button class="button buttonForward">&#8250</button>
       <button class="button buttonProfilePicture">ProfilePicture</button>
+
+
+      <button onclick="return dropdownBox()" class="dropbtn">ProfilePicture</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#home">Home</a>
+        <a href="#login">Login</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+
       <button class="plusButton">
           <div class="plusHorizontal"></div>
           <div class="plusVertical"></div>
@@ -35,6 +46,7 @@
     <form name="searchBarForm" onsubmit="return validateSearch()" method="post">
       <div class="searchBar" onsubmit="myFunction()">
         <input type="text" name="search" placeholder="Enter music to search">
+        <button type="submit" style="margin-top: -1050px; margin-left:250px; position:fixed;" >Search and Save</button>
       </div>
     </form>
 
@@ -49,11 +61,13 @@
       <% } %>
     </ul>
 
-    <div class="playlistAudio">
+    <div class="playlistAudio"">
       <audio controls id="playlistAudio1">
-        <source src="music.mp3" type="audio/mpeg">
+        <source src="../Audio/The Duck Song.mp3" type="audio/mpeg"">
       </audio>
     </div>
-    <script src="../js/listener.js"></script>
+    <script src="../views/resources/js/listener.js"></script>
+    <script src="../database/database.js"></script>
+    <script src="../app.js"></script>
   </body>
 </html>

@@ -1,0 +1,11 @@
+const mongoose = require('mongoose');
+
+//the users preferences
+const listenerPreference = new mongoose.Schema ({
+  name: { type: String, unique: true },
+  preference: [String]
+});
+
+const preference = mongoose.model("listernerPreference", listenerPreference);
+
+module.exports = preference;
