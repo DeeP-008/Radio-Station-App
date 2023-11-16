@@ -7,9 +7,9 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const mongoose = require('./database');
-const Song = require('./models/song');
 const port = 8080;  //specify localhost port
+const searchHistory = require('./models/recentlySearchedSchema');
+const db = require("./database");
 
 //Serve static HTML, CSS and javascript files from the 'public' directory. Allows resuing pre-written code
 app.use(express.static(path.join(__dirname, 'public')));
@@ -67,21 +67,7 @@ const user={
   ]
 };                       
 
-// Example: Create a new song
-const newSong = new Song({
-  title: 'Example Song',
-  artist: 'Example Artist',
-  duration: 240, // Duration in seconds
-  genre: 'Example Genre',
-});
 
-newSong.save((err, savedSong) => {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log('Song saved:', savedSong);
-  }
-});
 
 //Define a route to render the 'index' or the main page view display data
 app.get('/', (req, res) => {
@@ -106,6 +92,44 @@ app.get('/upcoming-shows-info/:locationName', (req, res) => {
   res.render('upcoming-shows-info', { locationName });
 });
 
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.post('/Recently-Searched', async(req,res) =>{
+  try{
+    const{query} = req.body;
+
+    //check if it already exists
+    const exists = await searchHistory.findOne({ input: query });
+    if(exists){
+      exists.timestamp = new Date();
+      exists.numRecents += 1;
+      await exists.save();
+    }
+    else{
+      const newEntry = new searchHistory({
+        input: query,
+        numRecents: 1,
+        timestamp: new Date(),
+      });
+      await newEntry.save();
+    }
+    res.status(201).json({message: "Search History Updated."});
+  } catch(error){
+    console.error(error);
+    res.status(500).json({error: "Error! Couldn't connect to server."});
+  }
+});
+
+app.get('/Recently-Searched', async (req,res) =>{
+  try{
+    const Searched = new searchHistory.find().sort({timestamp: -1}).limit(5);
+    res.status(200).json(Searched);
+  }catch(error){
+    console.error(error);
+    res.status(500).json({error: "Error! Couldn't get search history"});
+  }
+});
 //start the server and listen at the specified port
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
