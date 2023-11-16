@@ -84,7 +84,7 @@ userInfo.favGenre = "Pop";
         closeDropdown();
       }
     }
-
+    const dropdownButton = document.querySelector('.dropbtn');
 
     dropdownButton.addEventListener('mouseenter', openDropdown);
     dropdownButton.addEventListener('click',(event) => {

@@ -9,7 +9,7 @@ const fs = require('fs');
 
 
 
-// MongoDB Atlas connection URI
+// MongoDB connection URI
 const mongoURI = 'mongodb://127.0.0.1:27017/RadioStation';
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -55,7 +55,7 @@ mongooseConnection.once('open', function () {
 
 const app = express();
 app.use(express.json());
-
+/*
 // Close connections and exit the process after 5 seconds
 function closeConnections() {
   client.close();
@@ -63,19 +63,6 @@ function closeConnections() {
   console.log('Connections closed. Exiting...');
   process.exit(0);
 }
-
-
-const Post = mongoose.model("Post", {
-    title: String,
-    body: String
-});
-
-app.set("view engine", "ejs");
-
-app.get("/", async (req, res) => {
-    const posts = await Post.find({});
-    res.render("index", {posts});
-});
 
 app.listen(3000, () => console.log("Listening"));
 
@@ -91,7 +78,7 @@ songDB.insertMany(song)
   console.log(err);
 });
 
-const playlist = JSON.parse(fs.readFileSync('data/songData.json','utf8'));
+const playlist = JSON.parse(fs.readFileSync('data/playlistData.json','utf8'));
 //use Mongoose's insertMany method to populate the songs array in the database
 playlistDB.insertMany(playlist)
 .then(function(songs){
@@ -101,7 +88,7 @@ playlistDB.insertMany(playlist)
   console.log(err);
 });
 
-const listenerPreference = JSON.parse(fs.readFileSync('data/songData.json','utf8'));
+const listenerPreference = JSON.parse(fs.readFileSync('data/listenerPreferenceData.json','utf8'));
 //use Mongoose's insertMany method to populate the songs array in the database
 listenerPreferenceDB.insertMany(listenerPreference)
 .then(function(songs){
@@ -110,7 +97,7 @@ listenerPreferenceDB.insertMany(listenerPreference)
 .catch(function(err){
   console.log(err);
 });
-
+*/
 
 // Gracefully close connections and terminate the process after 5 seconds
 setTimeout(closeConnections, 5000); // Adjust the timeout as needed

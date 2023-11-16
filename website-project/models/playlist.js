@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const playlist = new mongoose.Schema({
   name: String,
   songName: [String]
-});
+}, {collection: 'playlist-songs'});
 
 
 const userPlaylist = mongoose.model("Playlist", playlist);
