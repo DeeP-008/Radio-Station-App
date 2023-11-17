@@ -55,13 +55,16 @@
     <div class="recommendedPlaylist" style="color:#732A10">Recommended Playlist</div>
     <div class="recommendedDJs" style="color:#732A10">Recommended DJs</div>
 
-    <ul class="songsList" style="color:#732A10">
-      <% for (let i = 1; i <= 8; i++) { %>
-        <li>Song <%= i %></li>
-      <% } %>
-    </ul>
+    <div style="margin-top: -1450px;">
+      <h1>Search History</h1>
+      <ul>
+        <% searchHistoryArray.forEach(entry => { %>
+          <li><%= entry %></li>
+        <% }); %>
+      </ul>
+    </div>
 
-    <div class="playlistAudio"">
+    <div class="playlistAudio">
       <audio controls id="playlistAudio1">
         <source src="../Audio/The Duck Song.mp3" type="audio/mpeg"">
       </audio>

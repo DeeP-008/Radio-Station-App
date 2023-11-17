@@ -13,10 +13,27 @@ app.use(express.static(path.join(__dirname, 'views/resources/html')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views')); 
 
-// Define a route to render your EJS template
-app.get('/', (req, res) => {
-  res.render('listener');
+const searchHistoryArray = [
+];
+
+
+// Define a route to render your EJS template with search history data
+app.get('/', async (req, res) => {
+  try {
+    // Fetch search history data from the server
+    const searchHistoryData = await searchHistory.find().sort({ timestamp: -1 });
+
+    // Map the retrieved data to an array of strings
+    const searchHistoryArray = searchHistoryData.map(entry => entry.input);
+
+    // Render the EJS template with search history data
+    res.render('listener', { searchHistoryArray });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error rendering the template');
+  }
 });
+
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -42,6 +59,8 @@ app.post('/search-history', async(req,res) =>{
     console.error(error);
     res.status(500).json({error: "Error! Couldn't connect to server."});
   }
+
+
 });
 
 app.get('/search-history', async (req,res) =>{
@@ -53,6 +72,7 @@ app.get('/search-history', async (req,res) =>{
     res.status(500).json({error: "Error! Couldn't get search history"});
   }
 });
+
 
 //start the server and listen at the specified port
 app.listen(port, () => {
