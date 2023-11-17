@@ -55,27 +55,28 @@
                 </section>
                 
                 <section class="sidebar"> <!--This section creates a sidebar on the left side of the screen-->
-                    <section class="prevNextButtons">   <!--The buttons to the next and previous page-->
-                        <a href="#" class="previous-button">&#8249</a>
-                        <a href="#" class="next-button">&#8250</a>
-                    </section>
+                    <h2>AudioAlchemy Radio</h2>
                     
                     <form class="search" method="post" action="/Recently-Searched">    <!--Search bar.-->
                         <input type="text" name="query" placeholder="Enter music to search.." required>
                         <button type="submit">Search</button>
+                        <h3>Your Search History</h3>
                         <ul id="search-history">
                             <!--Looping through the Search results array defined in app.js and displaying them-->
                             <% searchResults.forEach(function(searchHistory){ %>
-                                <li><%= searchHistory.input %></li>
+                                <li><%= searchHistory%></li>
                                 <% }); %>
                             </ul><hr class="Solid"> <!--Solid Line Break-->
                         </form>
                         <div class ="myPlaylist">   <!--User's Playlists-->
+                            <form class="search" method="post" action="/Playlists">    <!--Search bar.-->
+                                <input type="text" name="query" placeholder="Enter playlist name to add.." required>
+                                <button type="submit">Search</button>
                             <h3> My added playlists</h3>
                             <ol>
                                 <!--Looping through the user's array from app.js and accessing the playlists array defined in it and displaying them-->
-                                <% user.playlists.forEach(function(playlist){ %>
-                                    <li> <%= playlist %></li>
+                                <% playlists.forEach(function(playlist){ %>
+                                    <button id="playlistButton"> <%= playlist %></button>
                                     <% }); %>
                                 </ol><hr class = "Solid">
                             </div>
