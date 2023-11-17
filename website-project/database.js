@@ -100,7 +100,7 @@ listenerPreferenceDB.insertMany(listenerPreference)
 */
 
 // Gracefully close connections and terminate the process after 5 seconds
-setTimeout(closeConnections, 5000); // Adjust the timeout as needed
+//setTimeout(closeConnections, 5000); // Adjust the timeout as needed
 
 // Expose the app for potential future use
 module.exports = app;

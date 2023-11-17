@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 
 //songs 
 const songs = new mongoose.Schema({
-  title: String,
+  name: String,
   artist: String,
   duration: Number
-});
+}, {collection: 'userSongs'});
 
 
-const userSongs = mongoose.model("usersSongs", songs);
+const userSongs = mongoose.model("userSongs", songs);
 
 module.exports = userSongs;

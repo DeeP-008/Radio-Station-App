@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 
 const searchHistory = new mongoose.Schema({
-  input: {type:String, iundex: true},
+  input: {type:String, index: true},
   timestamp: {type:Date, default:Date.now}
 }, {collection: 'searchHistory'})
 
