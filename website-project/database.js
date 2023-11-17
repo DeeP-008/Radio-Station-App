@@ -37,7 +37,7 @@ connectMongoDB();
 const app = express();
 app.use(express.json());
 
-
+/*
 // Close connections and exit the process after 5 seconds
 function closeConnections() {
   client.close();
@@ -79,6 +79,8 @@ listenerPreferenceDB.insertMany(listenerPreference)
 .catch(function(err){
   console.log(err);
 });
+*/
+
 
 
 // Gracefully close connections and terminate the process after 5 seconds

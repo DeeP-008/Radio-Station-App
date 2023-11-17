@@ -18,7 +18,7 @@
         <a href="#home">Home</a>
         <a href="#login">Login</a>
         <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#Logout">Logout</a>
       </div>
 
 
@@ -46,8 +46,11 @@
     <form name="searchBarForm" method="post" action="/search-history">
       <div class="searchBar" onsubmit="myFunction()">
         <input type="text" name="query" placeholder="Enter music to search">
-        <button type="submit" style="margin-top: -1050px; margin-left:250px; position:fixed;" >Search and Save</button>
+        <button type="submit" style="margin-top: -1050px; margin-left:250px; position:fixed;">Search and Save</button>
       </div>
+    </form>
+    <form id="logoutForm" method="post" action="/clear-history">
+      <button type="submit" style="margin-top: -630px; margin-left:0px; position:fixed;">Logout</button>
     </form>
 
     <div class="userPreferedGenre" style="color:#732A10">User Prefered Genre</div>
@@ -62,6 +65,7 @@
           <li><%= entry %></li>
         <% }); %>
       </ul>
+
     </div>
 
     <div class="playlistAudio">
@@ -69,8 +73,6 @@
         <source src="../Audio/The Duck Song.mp3" type="audio/mpeg"">
       </audio>
     </div>
-
-
 
 
 
@@ -107,13 +109,6 @@
           return true;
         }
       }
-
-
-      const para = document.createElement("li");
-      const node = document.createTextNode("NEW RELEASE: Song 9");
-      para.appendChild(node);
-      const element = document.querySelector(".songsList");
-      element.appendChild(para);
 
 
 
@@ -195,6 +190,32 @@
         clearTimeout(dropdownTimeout);
       });
     });
+
+
+
+    async function logout() {
+      console.log('Logout function called');
+
+      try {
+        // Clear the search history array on the client side
+        searchHistoryArray.length = 0;
+
+        // Make an AJAX request to clear history on the server side
+        const response = await fetch('/clear-history', { method: 'POST' });
+
+        if (!response.ok) {
+          throw new Error('Failed to clear history on the server');
+        }
+
+        const data = await response.json();
+        console.log(data);
+
+        // Optionally redirect the user to the login page or perform other actions
+        window.location.href = '/login';  // Redirect to the login page
+      } catch (error) {
+        console.error('Error clearing history:', error);
+      }
+    }
     </script>
 
   </body>

@@ -5,6 +5,8 @@ const port = 8080;  //specify localhost port
 const searchHistory = require('./models/searchHistory');
 const db = require("./database");
 
+
+
 // Serve static files from the 'views/resources' directory
 app.use(express.static(path.join(__dirname, 'views/resources')));
 app.use(express.static(path.join(__dirname, 'views/resources/html')));
@@ -59,17 +61,29 @@ app.post('/search-history', async(req,res) =>{
     console.error(error);
     res.status(500).json({error: "Error! Couldn't connect to server."});
   }
-
-
 });
-
 app.get('/search-history', async (req,res) =>{
   try{
-    const Searched = new searchHistory.find();
+    const Searched = await searchHistory.find();
     res.status(200).json(Searched);
   }catch(error){
     console.error(error);
     res.status(500).json({error: "Error! Couldn't get search history"});
+  }
+});
+
+
+// Server-side route
+app.post('/clear-history', async (req, res) => {
+  console.log('Received request to clear history');
+  try {
+    // Clearing search history (replace this with your actual logic)
+    await searchHistory.deleteMany({});
+
+    //res.json({ message: 'Search history cleared successfully' });
+  } catch (error) {
+    console.error('Error clearing search history:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
