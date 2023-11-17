@@ -1,4 +1,9 @@
+//install : npm install express-session connect-mongo
+//npm install connect-mongo@4.6.0
+//npm install mongoose@5.13.7
 const express = require('express');
+const session = require('express-session');
+const MongoStore = require('connect-mongo'); // Import connect-mongo
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose');
 const songDB = require('./models/songSchema');
@@ -6,38 +11,43 @@ const playlistDB = require('./models/playlistSchema');
 const listenerPreferenceDB = require('./models/listenerPreferenceSchema');
 const fs = require('fs');
 
-
-
-
 // MongoDB connection URI
 const mongoURI = 'mongodb://localhost:27017/RadioStation';
-
-  // Get Mongoose connection
-  const mongooseConnection = mongoose.connection;
+// Get Mongoose connection
+const mongooseConnection = mongoose.connection;
 
 // Connect to MongoDB using MongoClient
- async function connectMongoDB() {
-  
-     mongoose.connect(mongoURI, {dbName: 'RadioStation'}); // Mongoose connection to MongoDB
-    
-     // Listen for Mongoose connection events
-      
-      mongooseConnection.on('open', function () {
-      console.log('Mongoose connected to MongoDB Successfully!');
-      });
-      mongooseConnection.on("close", function(){
-      console.log("Mongoose connection closed");
-      });
-      mongooseConnection.on('error', console.error.bind(console, 'Mongoose Connection Error:'));
-  
+async function connectMongoDB() {
+    mongoose.connect(mongoURI, {dbName: 'RadioStation'}); // Mongoose connection to MongoDB
+
+    mongooseConnection.on('open', function () {
+    console.log('Mongoose connected to MongoDB Successfully!');
+    });
+    mongooseConnection.on("close", function(){
+    console.log("Mongoose connection closed");
+    });
+    mongooseConnection.on('error', console.error.bind(console, 'Mongoose Connection Error:'));
+
 }
 connectMongoDB();
-
 
 const app = express();
 app.use(express.json());
 
-/*
+// Configure express-session
+app.use(
+  session({
+    secret: 'key123',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 10 * 60 * 1000, // 10 minutes (in milliseconds)
+    },
+  })
+);
+
+
+
 // Close connections and exit the process after 5 seconds
 function closeConnections() {
   client.close();
@@ -79,7 +89,7 @@ listenerPreferenceDB.insertMany(listenerPreference)
 .catch(function(err){
   console.log(err);
 });
-*/
+
 
 
 

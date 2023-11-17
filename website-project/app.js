@@ -6,7 +6,6 @@ const searchHistory = require('./models/searchHistory');
 const db = require("./database");
 
 
-
 // Serve static files from the 'views/resources' directory
 app.use(express.static(path.join(__dirname, 'views/resources')));
 app.use(express.static(path.join(__dirname, 'views/resources/html')));
