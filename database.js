@@ -1,12 +1,22 @@
+/**
+ * Author: Dhyeya Padhya
+ * This file connects to MongoDB database. The commented part at the end populates the database from the backend. Could potentially
+ * move it to a new file to clean up the code. Also need to find a way to hide the username and password.
+ */
+
 const express = require('express');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose');
-const Song = require('./models/songSchema');
-const musicianData = require('./models/musicianSchema');
-const djData = require('./models/djSchema');
-const fs = require('fs');
 
-// MongoDB Atlas connection URI
+/****************commented because they are used in populating database****************/
+// const Song = require('./models/songSchema');
+// const musicianData = require('./models/musicianSchema');
+// const djData = require('./models/djSchema');
+// const fs = require('fs');
+/***************************************************************************************/
+
+// MongoDB Atlas connection URI. 
+//TODO: Figure out how to hide username and password.
 const mongoURI =
   'mongodb+srv://dhyeyapadhya:ehXK4O1NXuZyFVtq@cluster0.nudewac.mongodb.net/?retryWrites=true&w=majority';
 
@@ -21,28 +31,27 @@ const client = new MongoClient(mongoURI, {
   // Get Mongoose connection
   const mongooseConnection = mongoose.connection;
 
-// Connect to MongoDB using MongoClient
+// Connect to MongoDB
  async function connectMongoDB() {
-  
-     mongoose.connect(mongoURI, {dbName: 'Radio-Station-DB'}); // Mongoose connection to MongoDB
-    
+     // Mongoose connection to MongoDB database called Radio-Station-DB
+     mongoose.connect(mongoURI, {dbName: 'Radio-Station-DB'});
      // Listen for Mongoose connection events
-      
       mongooseConnection.on('open', function () {
       console.log('Mongoose connected to MongoDB Successfully!');
       });
       mongooseConnection.on("close", function(){
       console.log("Mongoose connection closed");
       });
-      mongooseConnection.on('error', console.error.bind(console, 'Mongoose Connection Error:'));
-  
+      mongooseConnection.on('error', console.error.bind(console, 'Mongoose Connection Error.'
+      ));
 }
-connectMongoDB();
+connectMongoDB();   //call function to connect to database
 
-
+//create Express app
 const app = express();
 app.use(express.json());
 
+/****************commented because they are used in populating database********************************************************************************/
 // // Close connections and exit the process after 5 seconds
 // function closeConnections() {
 //   client.close();
@@ -83,7 +92,7 @@ app.use(express.json());
 // .catch(function(err){
 //   console.log(err);
 // });
-
+/****************commented because they are used in populating database********************************************************************************/
 
 // Expose the app for potential future use
 module.exports = app;
