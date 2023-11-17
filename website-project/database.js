@@ -1,61 +1,43 @@
 const express = require('express');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose');
-const songDB = require('./models/songs');
-const playlistDB = require('./models/playlist');
-const listenerPreferenceDB = require('./models/listenerPreference');
+const songDB = require('./models/songSchema');
+const playlistDB = require('./models/playlistSchema');
+const listenerPreferenceDB = require('./models/listenerPreferenceSchema');
 const fs = require('fs');
 
 
 
 
 // MongoDB connection URI
-const mongoURI = 'mongodb://127.0.0.1:27017/RadioStation';
+const mongoURI = 'mongodb://localhost:27017/RadioStation';
 
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(mongoURI, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
-});
+  // Get Mongoose connection
+  const mongooseConnection = mongoose.connection;
 
 // Connect to MongoDB using MongoClient
-async function connectMongoDB() {
-  try {
-    await mongoose.connect(mongoURI)
+ async function connectMongoDB() {
+  
+     mongoose.connect(mongoURI, {dbName: 'RadioStation'}); // Mongoose connection to MongoDB
     
-    mongoose.connection
-    .on("open", () => console.log("Mongoose Connected"))
-    .on("close", () => console.log("Disconnected from Mongoose"))
-    .on("error", (error) => console.log(error))
-    await client.connect();
-    await client.db('admin').command({ ping: 1 });
-    console.log('Connected to MongoDB successfully!');
-  } catch (error) {
-    console.error('Connection Error:', error);
-    process.exit(1); // Exit the process if there's an error connecting to MongoDB
-  }
+     // Listen for Mongoose connection events
+      
+      mongooseConnection.on('open', function () {
+      console.log('Mongoose connected to MongoDB Successfully!');
+      });
+      mongooseConnection.on("close", function(){
+      console.log("Mongoose connection closed");
+      });
+      mongooseConnection.on('error', console.error.bind(console, 'Mongoose Connection Error:'));
+  
 }
-
-// Mongoose connection to MongoDB
-mongoose.connect(mongoURI);
-
 connectMongoDB();
 
-// Get Mongoose connection
-const mongooseConnection = mongoose.connection;
-
-// Listen for Mongoose connection events
-mongooseConnection.on('error', console.error.bind(console, 'Mongoose Connection Error:'));
-mongooseConnection.once('open', function () {
-  console.log('Mongoose connected to MongoDB Successfully!');
-});
 
 const app = express();
 app.use(express.json());
-/*
+
+
 // Close connections and exit the process after 5 seconds
 function closeConnections() {
   client.close();
@@ -97,7 +79,7 @@ listenerPreferenceDB.insertMany(listenerPreference)
 .catch(function(err){
   console.log(err);
 });
-*/
+
 
 // Gracefully close connections and terminate the process after 5 seconds
 //setTimeout(closeConnections, 5000); // Adjust the timeout as needed

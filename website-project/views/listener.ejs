@@ -43,9 +43,9 @@
       <% } %>
     </div>
 
-    <form name="searchBarForm" onsubmit="return validateSearch()">
+    <form name="searchBarForm" method="post" action="/search-history">
       <div class="searchBar" onsubmit="myFunction()">
-        <input type="text" name="search" placeholder="Enter music to search">
+        <input type="text" name="query" placeholder="Enter music to search">
         <button type="submit" style="margin-top: -1050px; margin-left:250px; position:fixed;" >Search and Save</button>
       </div>
     </form>
