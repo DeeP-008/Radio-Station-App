@@ -12,8 +12,8 @@ header{
     align-items: center;
 }
 
-.prevNextButtons a {    /*formats the previous and next buttons*/
-    text-decoration: none;
+/*.prevNextButtons a {    /*formats the previous and next buttons*/
+  /*  text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
     border-radius: 50%;
@@ -23,16 +23,16 @@ header{
     margin-bottom: 20px;
 }
 .prevNextButtons a:hover{   /*formats the behaviour when cursor hovers over the buttons*/
-    background-color: #ddd;
+    /*background-color: #ddd;
     color: black;
     box-shadow: 1px 1px 10px rgba(239, 226, 232, 0.8);  /*creates a shadow on hover*/
-}
+/*}
 .prevNextButtons a.previous{
     margin-left: 10px;
 }
 .prevNextButtons a.next{
     margin-right: 0;
-}
+}*/
 
 .partitionBoxes{    /*formats each title box that partitions each section */
     text-align: center;
@@ -255,3 +255,9 @@ hr.Solid{   /*create a solid line break*/
     padding: 5px;
   }
 
+.sidebar > h2{
+    text-align: center;
+    text-shadow: 3px 3px 4px black;
+    color: #EAEAEA;
+    margin-top: 5px;
+}
