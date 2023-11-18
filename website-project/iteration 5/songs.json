@@ -1,0 +1,140 @@
+{
+	"songs": [
+	{
+		"name": "Placeholder",
+		"artist": null,
+		"album": null,
+		"releaseDate": null,
+		"certs": null,
+		"mp3": null,
+		"image": null,
+		"duration": 0
+	},
+	{
+		"name": "Walk Like an Egyptian",
+		"artist": "The Bangles",
+		"album": "Different Light",
+		"releaseDate": "01/02/1986",
+		"certs": "U.S. Gold",
+		"mp3":  "../songs/L's_Mix_Tape.mp3",
+		"image": "../images/WLAE.jpg",
+		"duration": 204
+	},
+	{
+		"name": "Bad Blood",
+		"artist": "Taylor Swift",
+		"album": "1989",
+		"releaseDate": "05/17/2015",
+		"certs": "U.S. 6x Platinum",
+		"mp3": "../songs/L's_Mix_Tape.mp3",
+		"image": "../images/bad_blood.png",
+		"duration": 211
+	},
+	{
+		"name": "Otherside",
+		"artist": "Red Hot Chili Peppers",
+		"album": "Californication",
+		"releaseDate": "December 1999",
+		"certs": "U.S. 3x Platinum",
+		"mp3": "../songs/GateOne.mp3",
+		"image": "../images/californication.jpg",
+		"duration": 242
+	},
+	{
+		"name": "Viva La Vida",
+		"artist": "Coldplay",
+		"album": "Viva la Vida or Death and All His Friends",
+		"releaseDate": "06/13/2008",
+		"certs": "U.S. 5x Platinum",
+		"mp3": "../songs/GateOne.mp3",
+		"image": "../images/VivaLaVida.jpg",
+		"duration": ""
+	},
+	{
+		"name": "La Belle Dame sans Regrets",
+		"artist": "Chris Botti",
+		"album": "When I Fall in Love",
+		"releaseDate": "09/28/2004",
+		"certs": "U.S. Gold",
+		"mp3": "../songs/L's_Mix_Tape.mp3",
+		"image": "../images/wifil.jpg",
+		"duration": 331
+	},
+	{
+		"name": "Timber",
+		"artist": "Pitbull",
+		"album": "Single",
+		"releaseDate": "10/07/2013",
+		"certs": "U.S. Diamond",
+		"mp3": "../songs/Burn.mp3",
+		"image": "../images/timber.jpg",
+		"duration": 204
+	},
+	{
+		"name": "Rockstar",
+		"artist": "Post Malone",
+		"album": "Beerbongs & Bentleys",
+		"releaseDate": "09/16/2017",
+		"certs": "U.S. Diamond",
+		"mp3": "../songs/Burn.mp3",
+		"image": "../images/Rockstar.jpg",
+		"duration": 192
+	},
+
+	{
+		"name": "Lagtrain",
+		"artist": "inabakumori",
+		"album": "Single",
+		"releaseDate": "07/16/2020",
+		"certs": "N/A",
+		"mp3": "../songs/Lagtrain.mp3",
+		"image": "../images/lagtrain.jpg",
+		"duration": 252
+	}],
+
+	"advertisements": [
+		{
+			"name": "Skippy Peanut Butter",
+			"mp3": "../advertisements/Skippy.mp3",
+			"duration": 15
+		},
+		{
+			"name": "Pizza Hut",
+			"mp3": "../advertisements/PizzaHut.mp3",
+			"duration": 15
+		}
+	],
+
+	"sign_ups": [
+		{
+			"date": "10/01/2023",
+			"genre": "Hip-Hop",
+			"timeslot": "10:00 a.m. to 3:00 p.m.",
+			"filled": false,
+			"playlist": ""
+		},
+		{
+			"date": "10/02/2023",
+			"genre": "Rock",
+			"timeslot": "11:00 a.m. to 6:00 p.m.",
+			"filled": false,
+			"playlist": ""
+		},
+		{
+			"date": "10/03/2023",
+			"genre": "Jazz",
+			"timeslot": "1:00 p.m. to 5:00 p.m.",
+			"filled": false,
+			"playlist": ""
+		},
+		{
+			"date": "10/04/2023",
+			"genre": "Pop",
+			"timeslot": "7:30 a.m. to 1:30 p.m.",
+			"filled": false,
+			"playlist": ""
+		}
+	]
+}
+		
+	

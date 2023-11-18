@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../djstyles.css">
+</head>
+<body>
+    <header class = "header">
+        <div class ="flexbox-header">
+            <h1> Audio Alchemy Login</h1>
+        </div>
+        <figure>
+        <button class ="prof-opts" type="button" id="pfb" onclick="alert('Placeholder Profile Info')">
+        <img class = "pfp" src="../../images/QuiGon_Jinn.webp" alt="profile_pic" width="100" height="100">
+        <figcaption style="text-align: center;"> <b><%= curUser %></b> </figcaption>
+        <figcaption action="/logout" method="POST" sytle="align-items:center"> <button type="button"> Logout</button> </figcaption>
+        </button>
+        </figure>
+        
+        </header>
+    <div class= "grid-container flex-col">
+    <section class = " login help-info">
+        <form action="/logon" method="POST">
+            <label for="uname">Username:</label><br>
+            <input type="text" id="uname" name="uname"><br>
+            <label for="password">Password:</label><br>
+            <input type="text" id="pword" name="pword"><br>
+            <br>
+            <input type="submit" value="submit">
+        </form>
+
+    </section>
+    </div>
+
+</body>
+</br>
+<footer style="text-align:center">
+    <%- include('../partials/footer'); %>
+</footer>
+</html>

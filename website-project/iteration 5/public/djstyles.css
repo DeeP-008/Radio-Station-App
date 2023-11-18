@@ -1,0 +1,188 @@
+body {
+	display: flex;
+	margin: 8rem;
+	background-color: #d2ea9f;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem;
+}
+.profile {
+	border: 2px solid black;
+	display: flex;
+	align-items: right;
+	padding: 2rem;
+	border-radius: 5px;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	gap: 8rem;
+	place-items: center;
+	padding: 8px;
+}
+
+.login {
+	border: 2px solid black;
+	border-radius: 2rem;
+	place-items: center;
+}
+
+.grid-section {
+	border: 2px solid black;
+	border-radius: 2rem;
+	height: 12rem;
+	display: flex;
+	flex-direction: column;
+	padding: 4px;
+}
+
+.flexbox-header {
+	border: 2px solid black;
+	border-radius: 5px;
+	justify-content: space-between;
+	display: flex;
+	padding: 3rem 2rem;
+	margin: 1rem;
+	width: 80%;
+	background-color: #e9e0d3;
+}
+
+.header {
+	Justify-content: space-between;
+	display: flex;
+	width: 65%;
+}
+
+.pfp {
+	display: flex;
+	padding: 2rem 1rem;
+}
+
+.dropdown {
+	width: 10rem;
+	height: 1.5rem;
+	text-align: center;
+	border: 2px solid black;
+	border-radius: 5px;
+	position: relative;
+	background-color: #e9e0d3;
+}
+
+.calendar-content {
+	display: none;
+	position: absolute;
+	border-style: solid;
+	border-radius: 5px;
+	min-width: 160px;
+	padding: 8px 12px;
+}
+
+.dropdown:hover
+.calendar-content {
+	display: block;
+	background-color: #e9e0d3;
+}
+
+.table {
+	border: 2px solid orange;
+	border-radius: 5px;
+	border-collapse: collapse;
+	background-color: #e9e0d3;
+}
+
+.songs {
+	height: 40rem;
+	place-items: left;
+	background-color: #e9e0d3;
+}
+
+.cal-head {
+	text-align: center;
+	border: 2px solid orange;
+	background-color: #e9e0d3;
+	border-radius: 5px;
+	width: 41rem;
+}
+	
+.song-info {
+	width: 20rem;
+	display: flex;
+	height: 20rem;
+	border: 2px solid red;
+	padding: 1 rem;
+	background-color: #e9e0d3;
+}
+
+.help-info {
+	width: 40rem;
+	display: flex;
+	height: 15rem;
+	background-color: #e9e0d3;
+}
+
+.schedule {
+		border: 2px solid blue;
+		height: 40rem;
+		width: 20rem;
+		background-color: #e9e0d3;
+		scroll-behavior: auto;
+}
+
+.flex-col {
+	align-items: center;
+	gap: 1px;
+	flex-direction: column;
+}
+
+.help-button{
+	cursor: pointer;
+	height: 7rem;
+	width: 7rem;
+	border: 2px solid black;
+	background-color: #e9e0d3;
+}
+
+.date-org {
+	display: grid;
+	background-color: #d2ea9f;
+}
+
+.hotkeys {
+	width: 30rem;
+	border: 2px solid black;
+	border-radius: 5px;
+	display: block;
+	background-color: #e9e0d3;
+}
+
+.hotkey-button{
+	cursor: pointer;
+	width: 4rem;
+	height: 2rem;
+}
+
+.song-button{
+	cursor: pointer;
+	width: 15rem;
+}
+
+footer {
+    width: 20rem;
+    border: 2px solid blue;
+}
+
+.sched-box {
+    width: 18rem;
+    border: 2px solid blue;
+}
+
+.prof-opts {
+	cursor:pointer;
+	border-radius: 5px;
+	width:9rem;
+	height: 9rem;
+	border: 2px solid black;
+	align-items:center;
+	background-color: #e9e0d3;
+}
