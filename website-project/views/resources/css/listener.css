@@ -1,9 +1,9 @@
 body{
-  background-color:#F2D4AE;
+  background-color:#BFBFBF;
 }
 
 .button {
-  background-color: #F28B30;
+  background-color: #4C785B;
   text-align: center;
   display:inline;
   height: 50px;
@@ -50,12 +50,12 @@ body{
 .playlistButton {
   width: 300%;
   height: 200px;
-  padding: 46px;
+  padding: 10%;
   margin: 25px 10px 25px 0px;
   border: 3px solid;
   border-radius: 20%;
   border-width: medium;
-  background-color: #F28B30;
+  background-color: #4C785B;
   border-color: #A6450D;
   display: flex;
   flex-direction: column;
@@ -88,20 +88,21 @@ body{
   transform: translateY(250%);
 }
 .DJButton {
-  width: 300%;
-  height: 200px;
-  padding: 46px;
+  width: 200px; /* Set a fixed width */
+  height: 200px; /* Set a fixed height */
+  padding: 12%; /* Adjust padding as needed */
   margin: 25px 10px 25px 0px;
   border: 3px solid;
-  background-color: #F28B30;
+  background-color: #4C785B;
   border-color: #A6450D;
-  border-radius: 100%;
-  border-width: medium;
+  border-radius: 50%; /* Use 50% to create a circle */
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
   text-align: center;
 }
+
 
 .searchBar {
   display: flex;
@@ -112,7 +113,7 @@ body{
   text-align: center;
   width: 22%;
   height: 5%;
-  background-color: #F28B30;
+  background-color: #4C785B;
   transform: translateY(-1050%);
   position:fixed;
 }
@@ -175,7 +176,7 @@ body{
   border: none;
   border-radius: 50%;
   outline: none;
-  background-color:#F28B30;
+  background-color:#4C785B;
   padding: 12px;
   left: 64%;
   transform: translateY(760%);
@@ -201,7 +202,7 @@ body{
   border: none;
   border-radius: 50%;
   outline: none;
-  background-color:#F28B30;
+  background-color:#4C785B;
   border-color: #A6450D;
   padding: 12px;
   left: 64%;
@@ -229,7 +230,7 @@ body{
 
 .dropbtn {
   position:fixed;
-  background-color: #F28B30;
+  background-color: #4C785B;
   top: 0;
   right: 2%;
   height: 50px;
@@ -253,7 +254,7 @@ body{
 
 .dropdown-content {
   display: none;
-  background-color: #F28B30;
+  background-color: #4C785B;
   min-width: 160px;
   width: 300px;
   height: 250px;

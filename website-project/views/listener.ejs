@@ -32,14 +32,17 @@
     </section>
 
     <section class="playlist" style="color:#732A10">
+      <% const playlistName = ["Pop", "Rap", "Lofi", "Rock", "Electronic", "Country", "Classical", "Indie"]; %>
       <% for (let i = 1; i <= 8; i++) { %>
-        <button class="playlistButton playlist<%= i %>" onclick="alert('Going to playlist<%= i %>')">playlist <%= i %></button>
+        <button class="playlistButton playlist<%= i %>" onclick="alert('Going to playlist<%= i %>')"><%= playlistName[i-1] %></button>
       <% } %>
     </section>
 
+
     <div class="DJs" style="color:#732A10">
+      <% const artistName = ["Taylor Swift", "Eminem", "Drake", "Ed Sheeran", "Justin Bieber", "Adele", "Billie Eilish", "Kanye West"]; %>
       <% for (let i = 1; i <= 8; i++) { %>
-        <button class="DJButton DJ<%= i %>">DJ <%= i %></button>
+          <button class="DJButton DJ<%= i %>"><%= artistName[i-1] %></button>
       <% } %>
     </div>
 
@@ -77,6 +80,7 @@
 
 
     <script>
+
       //A page for each playlist
       var playlistButton = document.querySelectorAll(".playlistButton");
       playlistButton.forEach(function(button){
@@ -86,6 +90,7 @@
           window.location.href = "../html/listenerFiles/" + playlistURL;
         });
       });
+
 
       //A page for each DJs
       var DJButton = document.querySelectorAll(".DJButton");
