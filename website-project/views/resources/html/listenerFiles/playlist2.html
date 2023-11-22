@@ -1,25 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playlist 1</title>
-    <link rel="stylesheet" href="/website-project/css/listener.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playlist 1</title>
+  <link rel="stylesheet" href="/website-project/css/listener.css">
 </head>
+
 <body style="background-color:#F2D4AE;">
-    <p><strong>Playlist 2: TANUK TANUK TUN</strong> <br><br>
-</body>
-<img src="../../images/TANUK.jpg" alt="TANUK" width="1800" height="250">
-<style>
-    p{
-        text-align: center;
-        font-size: xx-large;
+  <p><strong>RAP PLAYLIST</strong> <br><br></p>
+
+  <div class="playlistAudio" style="margin: 0 auto; text-align: center;">
+    <div>
+    <img src="../../albumCover/rap/Astroworld_by_Travis_Scott.jpg" alt="Album Art" style="width: 100px; height: 100px; margin-top: 10px;">
+      <audio controls id="playlistAudio1">
+        <source src="../../Audio/rapPlaylist/Travis Scott - SICKO MODE (Audio).mp3" type="audio/mpeg">
+      </audio><br><br>
+    </div>
+
+    <div>
+    <img src="../../albumCover/rap/Drake_-_Laugh_Now_Cry_Later.png" alt="Album Art" style="width: 100px; height: 100px; margin-top: 10px;">
+      <audio controls id="playlistAudio2">
+        <source src="../../Audio/rapPlaylist/Laugh Now Cry Later.mp3" type="audio/mpeg">
+      </audio><br><br>
+    </div>
+
+    <div>
+    <img src="../../albumCover/rap/homecoming.jpg" alt="Album Art" style="width: 100px; height: 100px; margin-top: 0px;">
+      <audio controls id="playlistAudio3">
+        <source src="../../Audio/rapPlaylist/Homecoming.mp3" type="audio/mpeg">
+      </audio><br><br>
+      
+    </div>
+  </div>
+
+  <style>
+    p {
+      text-align: center;
+      font-size: xx-large;
     }
-</style>
-<div class="playlistAudio" margin:center; >
-    <audio controls id="playlistAudio1" style="margin: 0 auto; display: block;" >
-      <source src="../../Audio/Tunak Tunak Tun Video _ Daler Mehndi _ Full Song _ Daler Mehndi Music.mp3" type="audio/mpeg"" >
-    </audio>
-</div>
+      /* Style the container */
+    .audio-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Style the image */
+    .album-cover {
+        width: 100px;
+        height: 100px;
+        margin-top: 0px;
+    }
+
+    /* Style the audio controls */
+    audio {
+        margin-left: 10px; /* Add some space between the image and the audio controls */
+    }
+
+    /* Style the seek bar (progress bar) */
+    audio::-webkit-media-controls-panel {
+        width: 200px; /* Adjust the width as needed */
+    }
+  </style>
+</body>
 
 </html>

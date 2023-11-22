@@ -38,7 +38,7 @@
       <% } %>
     </section>
 
-
+    
     <div class="DJs" style="color:#732A10">
       <% const artistName = ["Taylor Swift", "Eminem", "Drake", "Ed Sheeran", "Justin Bieber", "Adele", "Billie Eilish", "Kanye West"]; %>
       <% for (let i = 1; i <= 8; i++) { %>
@@ -53,13 +53,22 @@
       </div>
     </form>
     <form id="logoutForm" method="post" action="/clear-history">
-      <button type="submit" style="margin-top: -630px; margin-left:0px; position:fixed;">Logout</button>
+      <button type="submit" style="margin-top: -630px; margin-left:0px; position:fixed;">Clear</button>
     </form>
 
     <div class="userPreferedGenre" style="color:#732A10">User Prefered Genre</div>
+    <!--
+    <div id="search-container">
+      <input type="text" id="search-input" placeholder="Type a playlist or artist name">
+      <button onclick="performSearch()">Search</button>
+    </div>
+    -->
     <div class="userPreferedGenreBox" style="color:#732A10"></div>
+    
     <div class="recommendedPlaylist" style="color:#732A10">Recommended Playlist</div>
     <div class="recommendedDJs" style="color:#732A10">Recommended DJs</div>
+
+    
 
     <div style="margin-top: -1450px; position: fixed;">
       <h1>Search History</h1>
@@ -80,6 +89,54 @@
 
 
     <script>
+      
+      /*const playlistName = ["Taylor Swift", "Eminem", "Drake", "Ed Sheeran", "Justin Bieber", "Adele", "Billie Eilish", "Kanye West"];
+
+      function performSearch() {
+          const searchInput = document.getElementById("search-input").value.toLowerCase();
+          const resultsContainer = document.querySelector(".userPreferedGenreBox");
+
+          // Clear previous results
+          resultsContainer.innerHTML = "";
+
+          // Filter playlist names matching the search input
+          const matchingPlaylists = playlistName.filter(name => name.toLowerCase().includes(searchInput));
+
+          // Display results
+          if (matchingPlaylists.length > 0) {
+              const resultList = document.createElement("ul");
+              matchingPlaylists.forEach(name => {
+                  const listItem = document.createElement("li");
+                  listItem.textContent = `Playlist: ${name}`;
+                  resultList.appendChild(listItem);
+              });
+              resultsContainer.appendChild(resultList);
+
+              // Create a playlist button dynamically
+              const playlistButton = document.createElement("button");
+              playlistButton.textContent = "Go to Playlist";
+              playlistButton.onclick = function() {
+                  // Add your logic to navigate to the playlist page
+                  console.log(`Navigate to playlist: ${matchingPlaylists[0]}`);
+              };
+
+              resultsContainer.appendChild(playlistButton);
+          } else {
+              resultsContainer.textContent = "No matching playlists found.";
+
+              // Create an artist button dynamically
+              const artistButton = document.createElement("button");
+              artistButton.textContent = "Go to Artist";
+              artistButton.onclick = function() {
+                  // Add your logic to navigate to the artist page
+                  console.log("Navigate to artist page");
+              };
+
+              resultsContainer.appendChild(artistButton);
+          }
+      }*/
+
+
 
       //A page for each playlist
       var playlistButton = document.querySelectorAll(".playlistButton");
