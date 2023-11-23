@@ -31,19 +31,43 @@
       </button>
     </section>
 
+    <div class="userPreferedGenre" style="color:#732A10">User Prefered Genre</div>
+    <div id="search-container">
+      <input type="text" id="search-input" placeholder="Type a playlist or artist name">
+      <button onclick="performSearch()">Search</button>
+    </div>
+    <section class="playlistAndArtist" style="color:#732A10">
+      <% const playlistName2 = ["Pop", "Rap", "Lofi", "Rock", "Electronic", "Country", "Classical", "Indie"] ; %>
+      <% const artistName2 = ["Taylor Swift", "Eminem", "Drake", "Ed Sheeran", "Justin Bieber", "Adele", "Billie Eilish", "Kanye West"]; %>
+
+      <!--
+        - go through each array
+        - if what they entered is the same, then display that button
+        - add what they type in in an array
+        -maybe use a database?
+          
+      
+      <% for (let i = 1; i <= 8; i++) { %>
+        <button class="playlistButton playlist<%= i %>" onclick="alert('Going to playlist<%= i %>')"><%= playlistName2[i-1] %></button>
+      <% } %>
+      -->
+    </section>
+
+
+
     <section class="playlist" style="color:#732A10">
       <% const playlistName = ["Pop", "Rap", "Lofi", "Rock", "Electronic", "Country", "Classical", "Indie"]; %>
-      <% for (let i = 1; i <= 8; i++) { %>
-        <button class="playlistButton playlist<%= i %>" onclick="alert('Going to playlist<%= i %>')"><%= playlistName[i-1] %></button>
-      <% } %>
+      <% playlistName.forEach((item, index) => { %>
+        <button class="playlistButton <%= item %>" onclick="alert('Going to <%= item %>')"><%= item %></button>
+      <% }); %>
     </section>
 
     
     <div class="DJs" style="color:#732A10">
-      <% const artistName = ["Taylor Swift", "Eminem", "Drake", "Ed Sheeran", "Justin Bieber", "Adele", "Billie Eilish", "Kanye West"]; %>
-      <% for (let i = 1; i <= 8; i++) { %>
-          <button class="DJButton DJ<%= i %>"><%= artistName[i-1] %></button>
-      <% } %>
+      <% const artistName = ["TaylorSwift", "Eminem", "Drake", "EdSheeran", "JustinBieber", "Adele", "BillieEilish", "KanyeWest"]; %>
+      <% artistName.forEach((item, index) => { %>
+        <button class="DJButton <%= item %>" onclick="alert('Going to <%= item %>')"><%= item %></button>
+      <% }); %>
     </div>
 
     <form name="searchBarForm" method="post" action="/search-history">
@@ -56,8 +80,8 @@
       <button type="submit" style="margin-top: -630px; margin-left:0px; position:fixed;">Clear</button>
     </form>
 
-    <div class="userPreferedGenre" style="color:#732A10">User Prefered Genre</div>
     <!--
+    <div class="userPreferedGenre" style="color:#732A10">User Prefered Genre</div>
     <div id="search-container">
       <input type="text" id="search-input" placeholder="Type a playlist or artist name">
       <button onclick="performSearch()">Search</button>
@@ -89,7 +113,22 @@
 
 
     <script>
-      
+      function performSearch() {
+      var userInput = document.getElementById('search-input').value.toLowerCase(); // Convert to lowercase for case-insensitive comparison
+      var playlistButtons = document.querySelectorAll('.playlistButton');
+
+      // Hide all playlist buttons initially
+      playlistButtons.forEach(button => {
+        button.style.display = 'none';
+      });
+
+      // Show the button corresponding to the user input
+      var matchingButton = document.querySelector('.playlistButton:contains("' + userInput + '")');
+      if (matchingButton) {
+        matchingButton.style.display = 'inline-block';
+      }
+    }
+
       /*const playlistName = ["Taylor Swift", "Eminem", "Drake", "Ed Sheeran", "Justin Bieber", "Adele", "Billie Eilish", "Kanye West"];
 
       function performSearch() {
@@ -143,7 +182,7 @@
       playlistButton.forEach(function(button){
         button.addEventListener("click",function(){
           var playlistNumber = button.classList[1].replace("playlist", "");
-          var playlistURL = "playlist" + playlistNumber + ".html";
+          var playlistURL = playlistNumber + ".html";
           window.location.href = "../html/listenerFiles/" + playlistURL;
         });
       });
@@ -154,7 +193,7 @@
       DJButton.forEach(function(button){
         button.addEventListener("click",function(){
           var djNumber = button.classList[1].replace("DJ", "");
-          var djURL = "dj" + djNumber + ".html";
+          var djURL = djNumber + ".html";
           window.location.href = "../html/djFiles/" + djURL;
         });
       });
@@ -171,20 +210,6 @@
           return true;
         }
       }
-
-
-
-      const userInfo = {
-        firstName:"Adam",
-        lastName:"Smith",
-        username:"POWERRANGER45",
-        age:25,
-        yearsSinceInitalSignUp:2
-      }
-
-      console.log(userInfo.username);
-      userInfo.yearsSinceInitalSignUp = 3;
-      userInfo.favGenre = "Pop";
 
 
 

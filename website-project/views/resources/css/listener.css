@@ -62,6 +62,21 @@ body{
   justify-content: center;
   text-align: center;
 }
+.playlistAndArtist{
+  width: 50px;
+  height: 50px;
+  padding: 10%;
+  margin: 25px 10px 25px 0px;
+  border: 3px solid;
+  border-radius: 20%;
+  border-width: medium;
+  background-color: #4C785B;
+  border-color: #A6450D;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
 
 .playlistAudio{
   left: 2%;
