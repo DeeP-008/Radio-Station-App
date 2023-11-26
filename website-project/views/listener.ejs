@@ -16,12 +16,34 @@
         <a href="#about">About</a>
         <a href="#Logout">Logout</a>
       </div>
+
+      
     </section>
+
+    <div style="margin-top: 10px; position: fixed;">
+      <h1>Search History</h1>
+      <br><br><br><br>
+      <ul>
+        <% searchHistoryArray.forEach(entry => { %>
+          <li><%= entry %></li>
+        <% }); %>
+      </ul>
+    </div>
+
+    <form name="searchBarForm" method="post" action="/search-history" >
+      <div class="searchBar" onsubmit="myFunction()">
+        <input type="text" name="query" placeholder="Enter music to search">
+        <button type="submit" style="margin-top: 80px; margin-left:250px; position:fixed;">Search and Save</button>
+      </div>
+    </form>
+    <form id="logoutForm" method="post" action="/clear-history">
+      <button type="submit" style="margin-top: -65px; margin-left:0px; position:fixed;">Clear</button>
+    </form>
 
     
     <div class="userPreferedGenre" style="color:#732A10;">User Preferred Genre</div>
     <section class="search-container" >
-      <input type="text" id="search-input" placeholder="Type a playlist or artist name" oninput="showButtons()">
+      <input type="text" id="search-input" placeholder="Type a playlist or artist" oninput="showButtons()">
       <button id="addRemoveButton" onclick="addOrRemoveItem()">+/-</button>
     </section>
     
@@ -32,17 +54,6 @@
       <% }); %>
     </div>
 
-
-        
-
-
-    <section class="playlist" style="color:#732A10">
-      <% const playlistName = ["Pop", "Rap", "Lofi", "Rock", "Electronic", "Country", "Classical", "Indie"]; %>
-      <% playlistName.forEach((item, index) => { %>
-        <button class="playlistButton <%= item %>" onclick="alert('Going to <%= item %>')"><%= item %></button>
-      <% }); %>
-    </section>
-
     
     <div class="DJs" style="color:#732A10">
       <% const artistName = ["TaylorSwift", "Eminem", "Drake", "EdSheeran", "JustinBieber", "Adele", "BillieEilish", "KanyeWest"]; %>
@@ -50,32 +61,19 @@
         <button class="DJButton <%= item %>" onclick="alert('Going to <%= item %>')"><%= item %></button>
       <% }); %>
     </div>
-
-    <form name="searchBarForm" method="post" action="/search-history" >
-      <div class="searchBar" onsubmit="myFunction()">
-        <input type="text" name="query" placeholder="Enter music to search" style="margin-top: -1250px;">
-        <button type="submit" style="margin-top: -2300px; margin-left:250px; position:fixed;">Search and Save</button>
-      </div>
-    </form>
-    <form id="logoutForm" method="post" action="/clear-history">
-      <button type="submit" style="margin-top: -1260px; margin-left:0px; position:fixed;">Clear</button>
-    </form>
-
     
+    <section class="playlist" style="color:#732A10;">
+      <% const playlistName = ["Pop", "Rap", "Lofi", "Rock", "Electronic", "Country", "Classical", "Indie"]; %>
+      <% playlistName.forEach((item, index) => { %>
+        <button class="playlistButton <%= item %>" onclick="alert('Going to <%= item %>')"><%= item %></button>
+      <% }); %>
+    </section>
+
+
+
     <div class="recommendedPlaylist" style="color:#732A10">Recommended Playlist</div>
     <div class="recommendedDJs" style="color:#732A10">Recommended DJs</div>
 
-    
-
-    <div style="margin-top: -1600px; position: fixed;">
-      <h1>Search History</h1>
-      <ul>
-        <% searchHistoryArray.forEach(entry => { %>
-          <li><%= entry %></li>
-        <% }); %>
-      </ul>
-
-    </div>
 
     <div class="playlistAudio">
       <audio controls id="playlistAudio1">

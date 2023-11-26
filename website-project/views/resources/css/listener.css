@@ -56,34 +56,38 @@ body{
   flex-direction: row;
   flex-wrap: nowrap;
   gap: 20px;
-  padding: 0 20px;
-  box-sizing: border-box;
+  overflow-x: auto;
+  white-space: nowrap;
+  position:absolute;
   max-width: 50%;
   position: relative;
   left: 25%;
   top: -30px; 
-  overflow-x: auto;
-  white-space: nowrap;
-  margin-top: -450px;
 }
 .playlistAndArtistButton {
-  width: 200px; /* Set a fixed width */
-  height: 200px; /* Set a fixed height */
-  padding: 5%; /* Adjust padding as needed */
+  width: 300px;
+  height: 200px;
+  padding: 10%;
+  margin: 25px 10px 25px 0px;
   border: 3px solid;
+  border-radius: 20%;
+  border-width: medium;
   background-color: #4C785B;
   border-color: #A6450D;
-  border-radius: 50%; /* Use 50% to create a circle */
   display: flex;
-  align-items: center;
   flex-direction: column;
   justify-content: center;
   text-align: center;
 }
 
 .search-container {
-  margin-left: 1000px;
-  margin-top: 500px;
+  margin-left: 700px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position:relative;
+  transform: translateY(-90%);
 }
 
 .playlistAudio{
@@ -108,7 +112,7 @@ body{
   top: -30px; 
   overflow-x: auto;
   white-space: nowrap;
-  transform: translateY(250%);
+  transform: translateY(80%);
 }
 .DJButton {
   width: 200px; /* Set a fixed width */
@@ -137,7 +141,6 @@ body{
   width: 22%;
   height: 5%;
   background-color: #4C785B;
-  transform: translateY(-1050%);
   position:fixed;
 }
 
@@ -150,7 +153,7 @@ body{
   border: 3px solid;
   border-color: #A6450D;
   right: 100%;
-  margin-top:0px;
+  margin-top:-180px;
 }
 
 .recommendedPlaylist {
