@@ -8,10 +8,6 @@
 
   <body>
     <section class="frontBackandPPButtons" style="color:#732A10">
-      <button class="button buttonBack">&#8249</button>
-      <button class="button buttonForward" style="margin-left: 60px;">&#8250</button>
-      <button class="button buttonProfilePicture">ProfilePicture</button>
-
 
       <button onclick="return dropdownBox()" class="dropbtn">ProfilePicture</button>
       <div id="myDropdown" class="dropdown-content">
@@ -20,39 +16,24 @@
         <a href="#about">About</a>
         <a href="#Logout">Logout</a>
       </div>
-
-
-      <button class="plusButton">
-          <div class="plusHorizontal"></div>
-          <div class="plusVertical"></div>
-      </button>
-      <button class="minusButton">
-          <div class="minusHorizontal"></div>
-      </button>
     </section>
 
-    <div class="userPreferedGenre" style="color:#732A10">User Prefered Genre</div>
-    <div id="search-container">
-      <input type="text" id="search-input" placeholder="Type a playlist or artist name">
-      <button onclick="performSearch()">Search</button>
+    
+    <div class="userPreferedGenre" style="color:#732A10;">User Preferred Genre</div>
+    <section class="search-container" >
+      <input type="text" id="search-input" placeholder="Type a playlist or artist name" oninput="showButtons()">
+      <button id="addRemoveButton" onclick="addOrRemoveItem()">+/-</button>
+    </section>
+    
+    <div class="playlistAndArtist" id="playlistAndArtist">
+      <% const options = ["Pop", "Rap", "Lofi", "Rock", "Electronic", "Country", "Classical", "Indie", "Taylor Swift", "Eminem", "Drake", "Ed Sheeran", "Justin Bieber", "Adele", "Billie Eilish", "Kanye West"]; %>
+      <% options.forEach((item) => { %>
+        <button class="playlistAndArtistButton <%= item %>" onclick="alert('Going to <%= item %>')" style="display: none;"><%= item %></button>
+      <% }); %>
     </div>
-    <section class="playlistAndArtist" style="color:#732A10">
-      <% const playlistName2 = ["Pop", "Rap", "Lofi", "Rock", "Electronic", "Country", "Classical", "Indie"] ; %>
-      <% const artistName2 = ["Taylor Swift", "Eminem", "Drake", "Ed Sheeran", "Justin Bieber", "Adele", "Billie Eilish", "Kanye West"]; %>
 
-      <!--
-        - go through each array
-        - if what they entered is the same, then display that button
-        - add what they type in in an array
-        -maybe use a database?
-          
-      
-      <% for (let i = 1; i <= 8; i++) { %>
-        <button class="playlistButton playlist<%= i %>" onclick="alert('Going to playlist<%= i %>')"><%= playlistName2[i-1] %></button>
-      <% } %>
-      -->
-    </section>
 
+        
 
 
     <section class="playlist" style="color:#732A10">
@@ -70,31 +51,23 @@
       <% }); %>
     </div>
 
-    <form name="searchBarForm" method="post" action="/search-history">
+    <form name="searchBarForm" method="post" action="/search-history" >
       <div class="searchBar" onsubmit="myFunction()">
-        <input type="text" name="query" placeholder="Enter music to search">
-        <button type="submit" style="margin-top: -1050px; margin-left:250px; position:fixed;">Search and Save</button>
+        <input type="text" name="query" placeholder="Enter music to search" style="margin-top: -1250px;">
+        <button type="submit" style="margin-top: -2300px; margin-left:250px; position:fixed;">Search and Save</button>
       </div>
     </form>
     <form id="logoutForm" method="post" action="/clear-history">
-      <button type="submit" style="margin-top: -630px; margin-left:0px; position:fixed;">Clear</button>
+      <button type="submit" style="margin-top: -1260px; margin-left:0px; position:fixed;">Clear</button>
     </form>
 
-    <!--
-    <div class="userPreferedGenre" style="color:#732A10">User Prefered Genre</div>
-    <div id="search-container">
-      <input type="text" id="search-input" placeholder="Type a playlist or artist name">
-      <button onclick="performSearch()">Search</button>
-    </div>
-    -->
-    <div class="userPreferedGenreBox" style="color:#732A10"></div>
     
     <div class="recommendedPlaylist" style="color:#732A10">Recommended Playlist</div>
     <div class="recommendedDJs" style="color:#732A10">Recommended DJs</div>
 
     
 
-    <div style="margin-top: -1450px; position: fixed;">
+    <div style="margin-top: -1600px; position: fixed;">
       <h1>Search History</h1>
       <ul>
         <% searchHistoryArray.forEach(entry => { %>
@@ -109,74 +82,100 @@
         <source src="../Audio/The Duck Song.mp3" type="audio/mpeg"">
       </audio>
     </div>
-
-
-
+    
     <script>
-      function performSearch() {
-      var userInput = document.getElementById('search-input').value.toLowerCase(); // Convert to lowercase for case-insensitive comparison
-      var playlistButtons = document.querySelectorAll('.playlistButton');
-
-      // Hide all playlist buttons initially
-      playlistButtons.forEach(button => {
-        button.style.display = 'none';
-      });
-
-      // Show the button corresponding to the user input
-      var matchingButton = document.querySelector('.playlistButton:contains("' + userInput + '")');
-      if (matchingButton) {
-        matchingButton.style.display = 'inline-block';
-      }
-    }
-
-      /*const playlistName = ["Taylor Swift", "Eminem", "Drake", "Ed Sheeran", "Justin Bieber", "Adele", "Billie Eilish", "Kanye West"];
-
-      function performSearch() {
-          const searchInput = document.getElementById("search-input").value.toLowerCase();
-          const resultsContainer = document.querySelector(".userPreferedGenreBox");
-
-          // Clear previous results
-          resultsContainer.innerHTML = "";
-
-          // Filter playlist names matching the search input
-          const matchingPlaylists = playlistName.filter(name => name.toLowerCase().includes(searchInput));
-
-          // Display results
-          if (matchingPlaylists.length > 0) {
-              const resultList = document.createElement("ul");
-              matchingPlaylists.forEach(name => {
-                  const listItem = document.createElement("li");
-                  listItem.textContent = `Playlist: ${name}`;
-                  resultList.appendChild(listItem);
-              });
-              resultsContainer.appendChild(resultList);
-
-              // Create a playlist button dynamically
-              const playlistButton = document.createElement("button");
-              playlistButton.textContent = "Go to Playlist";
-              playlistButton.onclick = function() {
-                  // Add your logic to navigate to the playlist page
-                  console.log(`Navigate to playlist: ${matchingPlaylists[0]}`);
-              };
-
-              resultsContainer.appendChild(playlistButton);
+      var options = ["Pop", "Rap", "Lofi", "Rock", "Electronic", "Country", "Classical", "Indie", "Taylor Swift", "Eminem", "Drake", "Ed Sheeran", "Justin Bieber", "Adele", "Billie Eilish", "Kanye West"];
+      var enteredValues = [];
+    
+      function showButtons() {
+        var userInput = document.getElementById('search-input').value.toLowerCase();
+    
+        // Check if the input is one of the options
+        if (options.includes(userInput)) {
+          // Display the input as a button
+          var optionButton = document.querySelector('.playlistAndArtistButton.' + userInput);
+          if (optionButton) {
+            optionButton.style.display = 'inline-block';
           } else {
-              resultsContainer.textContent = "No matching playlists found.";
-
-              // Create an artist button dynamically
-              const artistButton = document.createElement("button");
-              artistButton.textContent = "Go to Artist";
-              artistButton.onclick = function() {
-                  // Add your logic to navigate to the artist page
-                  console.log("Navigate to artist page");
-              };
-
-              resultsContainer.appendChild(artistButton);
+            // Create a button for the input
+            var button = document.createElement('button');
+            button.textContent = userInput;
+            button.className = 'playlistAndArtistButton ' + userInput;
+            button.onclick = function () {
+              alert('Going to ' + userInput);
+            };
+            document.getElementById('playlistAndArtist').appendChild(button);
           }
-      }*/
+        } else {
+          // Hide the input button if it's not an option
+          var inputButton = document.querySelector('.playlistAndArtistButton.' + userInput);
+          if (inputButton) {
+            inputButton.style.display = 'none';
+          }
+        }
+      }
+    
+      function addOrRemoveItem() {
+        var userInput = document.getElementById('search-input').value.toLowerCase();
+        var index = enteredValues.indexOf(userInput);
+        var addRemoveButton = document.getElementById('addRemoveButton');
+        if(addRemoveButton.onclick){
+          if (index === -1) {
+            // Add the item to the array and display it as a button
+            enteredValues.push(userInput);
 
+            var button = document.createElement('button');
+            button.textContent = userInput;
+            button.className = 'playlistAndArtistButton ' + userInput;
 
+            // Check if the button already has a click handler
+            if (!button.onclick) {
+              button.onclick = function () {
+                alert('Going to ' + userInput);
+                performSearch();
+              };
+              document.getElementById('playlistAndArtist').appendChild(button);
+            }
+          } else {
+            // Remove the item from the array and hide the corresponding button
+            enteredValues.splice(index, 1);
+            var buttonToRemove = document.querySelector('.playlistAndArtistButton.' + userInput);
+            if (buttonToRemove) {
+              buttonToRemove.style.display = 'none';
+            }
+          }
+        };
+      }
 
+      function performSearch() {
+        var userInput = document.getElementById('search-input').value.toLowerCase();
+
+        var playlistButtons = document.querySelectorAll('.playlistButton');
+        var djButtons = document.querySelectorAll('.DJButton');
+
+        // Check if the user input matches any playlist
+        for (var i = 0; i < playlistButtons.length; i++) {
+          var playlistNumber = playlistButtons[i].classList[1].replace('playlist', '');
+          if (userInput === playlistNumber.toLowerCase()) {
+            var playlistURL = playlistNumber + '.html';
+            window.location.href = '../html/listenerFiles/' + playlistURL;
+            return; // Exit the function if a match is found
+          }
+        }
+
+        // Check if the user input matches any DJ
+        for (var j = 0; j < djButtons.length; j++) {
+          var djNumber = djButtons[j].classList[1].replace('DJ', '');
+          if (userInput === djNumber.toLowerCase()) {
+            var djURL = djNumber + '.html';
+            window.location.href = '../html/djFiles/' + djURL;
+            return; // Exit the function if a match is found
+          }
+        }
+
+        // Display an alert if no match is found
+        alert('Search result not found for ' + userInput);
+      }
       //A page for each playlist
       var playlistButton = document.querySelectorAll(".playlistButton");
       playlistButton.forEach(function(button){
@@ -198,24 +197,7 @@
         });
       });
 
-
-      function validateSearch(){
-        let x = document.forms["searchBarForm"]["search"].value;
-        if(x == ""){
-          alert("Please Enter A Song");
-          return false;
-        }
-        else{
-          console.log(x);
-          return true;
-        }
-      }
-
-
-
-
-
-    // the functions below control the behaviour of the dropdown menu when the cursor moves towards it. 
+      // the functions below control the behaviour of the dropdown menu when the cursor moves towards it. 
     //The menu will only be visible when the cursor hovers over the dropdown button post which it will showcase the options. 
     //As soon as the cursor leaves the vicinity of the dropdown button button or the menu options, the dropdown would close.
     
@@ -304,6 +286,5 @@
       }
     }
     </script>
-
   </body>
 </html>
