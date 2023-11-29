@@ -1,20 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJ 3 Control Center</title>
-    <link rel="stylesheet" href="/website-project/css/listener.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DRAKE</title>
+  <link rel="stylesheet" href="/website-project/css/listener.css">
 </head>
 
-<style>
-    p{
-        text-align: center;
-        font-size: xx-large;
+<body style="background-color:#F2D4AE;">
+  <p><strong>DRAKE</strong> </p>
+  <img src="../../images/artistPictures/drake.jpg" alt="Album Art" style="width: 200px; height: 200px; margin-top: 10px; margin-left: 730px;">
+  <br><br><br><br>
+  <div class="playlistAudio" style="margin: 0 auto; text-align: center;">
+    <div>
+    <img src="../../albumCover/GodsPlanCover.jpg" alt="Album Art" style="width: 100px; height: 100px; margin-top: 10px;">
+      <audio controls id="playlistAudio1">
+        <source src="../../Audio/God's Plan.mp3" type="audio/mpeg">
+      </audio><br><br>
+    </div>
+  </div>
+
+  <style>
+    p {
+      text-align: center;
+      font-size: xx-large;
     }
-</style>
-<body>
-    <p><strong>DJ 3 Control Center</strong> <br><br>
-    Administrator controls coming soon!</p>
+      /* Style the container */
+    .audio-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Style the image */
+    .album-cover {
+        width: 100px;
+        height: 100px;
+        margin-top: 0px;
+    }
+
+    /* Style the audio controls */
+    audio {
+        margin-left: 10px; /* Add some space between the image and the audio controls */
+    }
+
+    /* Style the seek bar (progress bar) */
+    audio::-webkit-media-controls-panel {
+        width: 200px; /* Adjust the width as needed */
+    }
+  </style>
 </body>
+
 </html>
