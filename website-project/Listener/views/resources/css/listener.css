@@ -1,5 +1,5 @@
 body{
-  background-color:#BFBFBF;
+  background-color:#A8C7BB;
 }
 
 .button {
@@ -9,7 +9,7 @@ body{
   height: 50px;
   width: 50px;
   border-radius: 100%;
-  border-color: #A6450D;
+  border-color: #e9e0d3;
   position: fixed;
 }
 
@@ -44,7 +44,7 @@ body{
   border: 3px solid;
   border-radius: 20%;
   border-width: medium;
-  background-color: #4C785B;
+  background-color: #e9e0d3;
   border-color: #A6450D;
   display: flex;
   flex-direction: column;
@@ -72,7 +72,7 @@ body{
   border: 3px solid;
   border-radius: 20%;
   border-width: medium;
-  background-color: #4C785B;
+  background-color: #e9e0d3;
   border-color: #A6450D;
   display: flex;
   flex-direction: column;
@@ -120,7 +120,7 @@ body{
   padding: 12%; /* Adjust padding as needed */
   margin: 25px 10px 25px 0px;
   border: 3px solid;
-  background-color: #4C785B;
+  background-color: #e9e0d3;
   border-color: #A6450D;
   border-radius: 50%; /* Use 50% to create a circle */
   display: flex;
@@ -140,7 +140,7 @@ body{
   text-align: center;
   width: 22%;
   height: 5%;
-  background-color: #4C785B;
+  background-color: #e9e0d3;
   position:fixed;
 }
 
@@ -196,7 +196,7 @@ body{
 
 .dropbtn {
   position:fixed;
-  background-color: #4C785B;
+  background-color: #e9e0d3;
   right: 2%;
   height: 50px;
   width: 300px;
@@ -217,7 +217,7 @@ body{
 
 .dropdown-content {
   display: none;
-  background-color: #4C785B;
+  background-color: #e9e0d3;
   min-width: 160px;
   width: 300px;
   height: 250px;
