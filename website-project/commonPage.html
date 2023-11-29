@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Page</title>
+    <style>
+        body {
+            background-color: #A8C7BB;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh; 
+            margin: 0; 
+        }
+        p {
+            font-size: 24px; 
+            margin-bottom: 20px; 
+        }
+
+        button {
+            margin: 10px;
+            font-size: 18px;
+            padding: 15px 20px;
+        }
+    </style>
+</head>
+<body>
+    <p>AudioAlchemy Radio</p>
+    <button onclick="navigateToEJS(1)">DJ</button>
+    <button onclick="navigateToEJS(2)">Producer</button>
+    <button onclick="navigateToEJS(3)">Listener</button>
+
+    <script>
+        function navigateToEJS(buttonNumber) {
+            window.location.href = '/Listener/app.js?buttonNumber=' + buttonNumber;
+        }
+    </script>
+</body>
+</html>
