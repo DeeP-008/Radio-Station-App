@@ -1,0 +1,60 @@
+[{
+    "musicianName": "Led Zeppelin",
+    "showsPlayedAt": 200,
+    "numSongsToBePlayedAtNextShow": 12,
+    "totalStreams": 200000000
+},
+{
+    "musicianName": "Justin Bieber",
+    "showsPlayedAt": 150,
+    "numSongsToBePlayedAtNextShow": 20,
+    "totalStreams": 128569400
+},
+{
+    "musicianName": "Taylor Swift",
+    "showsPlayedAt": 500,
+    "numSongsToBePlayedAtNextShow": 25,
+    "totalStreams": 350000000
+},
+{
+    "musicianName": "Demi Lovato",
+    "showsPlayedAt": 20,
+    "numSongsToBePlayedAtNextShow": 0,
+    "totalStreams": 15000000
+},
+{
+    "musicianName": "Drake",
+    "showsPlayedAt": 250,
+    "numSongsToBePlayedAtNextShow": 18,
+    "totalStreams": 150000000
+},
+{
+    "musicianName": "Beyonce",
+    "showsPlayedAt": 245,
+    "numSongsToBePlayedAtNextShow": 12,
+    "totalStreams": 300000000
+},
+{
+    "musicianName": "Aerosmith",
+    "showsPlayedAt": 200,
+    "numSongsToBePlayedAtNextShow": 15,
+    "totalStreams": 120000000
+},
+{
+    "musicianName": "Elvis Presley",
+    "showsPlayedAt": 125,
+    "numSongsToBePlayedAtNextShow": 10,
+    "totalStreams": 59000000
+},
+{
+    "musicianName": "Selena Gomez",
+    "showsPlayedAt": 50,
+    "numSongsToBePlayedAtNextShow": 10,
+    "totalStreams": 45000000
+},
+{
+    "musicianName": "Hozier",
+    "showsPlayedAt": 35,
+    "numSongsToBePlayedAtNextShow": 20,
+    "totalStreams": 25000000
+}]

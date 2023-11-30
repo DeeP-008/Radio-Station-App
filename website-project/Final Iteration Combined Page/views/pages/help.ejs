@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <link rel="stylesheet" href="../../djstyles.css">
+</head>
+<body>
+    <header class = "header">
+        <div class ="flexbox-header">
+            <h1> <button class ="home">
+                <a href="/">
+                <img src ="../../images/home.png" alt="home button" width ="50" height="50">
+            </button></a>Audio Alchemy Help Center</h1>
+        </div>
+        <figure>
+        <nav>
+        <a href="/sign_in">
+        <button class ="prof-opts" type="button" id="pfb" onclick="alert('Placeholder Profile Info')">
+        <img class = "pfp" src="../../images/QuiGon_Jinn.webp" alt="profile_pic" width="100" height="100">
+        <figcaption style="text-align: center;"> <b><%= curUser %></b> </figcaption>
+        </button>
+        </a>
+        </nav>
+        </figure>
+        </header>
+    <div class= "grid-container flex-col">
+    <section class = " grid-section help-info">
+    <h1> Commonly Asked Questions DJ</h1>
+    <ul>
+    <li> How do I save my playlists </li>
+    <li> How do I register for a timeslot</li>
+    <li> How can I contact a producer</li>
+    <li> How can I assign hotkeys</li>
+    </ul>   
+    </section>
+    </div>
+    <div class = "grid-container flex-col">
+    <section class = "grid-section help-info">
+    <h2>Support Information</h2>
+    <ul>
+    <li>Toll Free Number: 123-456-7890 </li>
+    <li>Support Email: support@AudioAlchemy.com</li>
+    <li>Billing and Payment: billing@AudioAlchemy.com</li>
+    <li>Get your music on Audio Alchemy: licensing@AudioAlchemy.com</li>
+    </ul>
+    </section>
+    </div>
+</body>
+</br>
+<footer style="text-align:center">
+    <%- include('../partials/footer'); %>
+</footer>
+</html>

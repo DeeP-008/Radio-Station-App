@@ -1,0 +1,246 @@
+body{
+  background-color:#A8C7BB;
+}
+
+.button {
+  background-color: #4C785B;
+  text-align: center;
+  display:inline;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  border-color: #e9e0d3;
+  position: fixed;
+}
+
+.songsList{  
+  left:80px;
+  top:140px;
+  position:fixed;
+  /*top:-1450px;*/
+}
+
+
+.playlist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  max-width: 50%;
+  position: relative;
+  left: 25%;
+  top: -30px; 
+  overflow-x: auto;
+  white-space: nowrap;
+  transform: translateY(200%);
+}
+.playlistButton {
+  width: 300%;
+  height: 200px;
+  padding: 10%;
+  margin: 25px 10px 25px 0px;
+  border: 3px solid;
+  border-radius: 20%;
+  border-width: medium;
+  background-color: #e9e0d3;
+  border-color: #A6450D;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.playlistAndArtist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+  white-space: nowrap;
+  position:absolute;
+  max-width: 50%;
+  position: relative;
+  left: 25%;
+  top: -30px; 
+}
+.playlistAndArtistButton {
+  width: 300px;
+  height: 200px;
+  padding: 10%;
+  margin: 25px 10px 25px 0px;
+  border: 3px solid;
+  border-radius: 20%;
+  border-width: medium;
+  background-color: #e9e0d3;
+  border-color: #A6450D;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.search-container {
+  margin-left: 700px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position:relative;
+  transform: translateY(-90%);
+}
+
+.playlistAudio{
+  left: 2%;
+  top: 500px;
+  position:fixed;
+}
+#playlistAudio1{
+  /*width: 22%;*/
+}
+
+.DJs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  max-width: 50%;
+  position: relative;
+  left: 25%;
+  top: -30px; 
+  overflow-x: auto;
+  white-space: nowrap;
+  transform: translateY(80%);
+}
+.DJButton {
+  width: 200px; /* Set a fixed width */
+  height: 200px; /* Set a fixed height */
+  padding: 12%; /* Adjust padding as needed */
+  margin: 25px 10px 25px 0px;
+  border: 3px solid;
+  background-color: #e9e0d3;
+  border-color: #A6450D;
+  border-radius: 50%; /* Use 50% to create a circle */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  height: 20vh;
+}
+.searchBar input {
+  text-align: center;
+  width: 22%;
+  height: 5%;
+  background-color: #e9e0d3;
+  position:fixed;
+}
+
+.userPreferedGenre {
+  text-align: center;
+  font-size: 30px;
+  width: 52%;
+  height: 50px;
+  margin: 5vh auto;
+  border: 3px solid;
+  border-color: #A6450D;
+  right: 100%;
+  margin-top:-180px;
+}
+
+.recommendedPlaylist {
+  text-align: center;
+  font-size: 30px;
+  width: 52%;
+  height: 50px;
+  margin: 5px auto;
+  margin-top: 10vh;
+  border: 3px solid;
+  border-color: #A6450D;
+  right: 100%;
+}
+.recommendedDJs {
+  text-align: center;
+  font-size: 30px;
+  width: 52%;
+  height: 50px;
+  margin: 5vh auto;
+  margin-top: 10vh;
+  border: 3px solid;
+  border-color: #A6450D;
+  transform: translateY(-1200%);
+}
+
+
+
+
+.frontBackandPPButtons button:hover {
+  box-shadow: 1px 10px 10px rgba(0,0,0,0.25);
+}
+.playlist button:hover{
+  box-shadow: 1px 10px 10px rgba(0,0,0,0.25);
+}
+.DJs button:hover{
+  box-shadow: 1px 10px 10px rgba(0,0,0,0.25);
+}
+
+
+
+.dropbtn {
+  position:fixed;
+  background-color: #e9e0d3;
+  right: 2%;
+  height: 50px;
+  width: 300px;
+  border-radius: 0%;
+  border-color: #A6450D;
+  transform: translateY(80%);
+  top:0px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  box-shadow: 1px 1px 10px rgba(239, 226, 232, 0.8);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: #e9e0d3;
+  min-width: 160px;
+  width: 300px;
+  height: 250px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  position:fixed;
+  right: 33px;
+  top: 90px;
+  /*left: 1325px;
+  right: 350px;
+  top: -655px;*/
+}
+
+.dropdown-content a {
+  color: black;
+  height: 62.5px;
+  text-align: center;
+  font-size: large;
+  /* display: flex;
+  align-items: center; */
+  line-height: 62.5px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}

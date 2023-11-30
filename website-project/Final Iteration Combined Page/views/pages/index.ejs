@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioAlchemy Radio</title>
+    <style>
+        #siteTitle{
+            margin-left: 50px;
+        }
+        body {
+            background-color: #A8C7BB;
+            color: #DB222A;
+            background-size: 100% 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh; 
+            margin: 0; 
+        }
+        p {
+            font-size:50px; 
+            margin-bottom: 20px; 
+        }
+
+        button {
+            margin: 10px;
+            font-size: 18px;
+            padding: 15px 20px;
+            background-color: #e9e0d3;
+        }
+    </style>
+</head>
+<body>
+    <p>AudioAlchemy Radio</p>
+    <a href="/djpage"> <button>DJ</button> </a>
+    <a href="/producer"> <button onclick="navigateToEJS(2)">Producer</button> </a>
+    <a href="/listener"><button>Listener</button> </a>
+
+</body>
+</html>

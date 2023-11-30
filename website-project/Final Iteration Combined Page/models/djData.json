@@ -1,0 +1,36 @@
+[{
+    "djName": "Zedd",
+    "showsPlayedAt": 25,
+    "willPlayAnotherShow": true,
+    "numSongsToBePlayedAtNextShow": 20
+},
+{
+    "djName": "Marshmello",
+    "showsPlayedAt": 50,
+    "willPlayAnotherShow": true,
+    "numSongsToBePlayedAtNextShow": 15
+},
+{
+    "djName": "DJ Snake",
+    "showsPlayedAt": 50,
+    "willPlayAnotherShow": false,
+    "numSongsToBePlayedAtNextShow": 0
+},
+{
+    "djName": "Calvin Harris",
+    "showsPlayedAt": 100,
+    "willPlayAnotherShow": true,
+    "numSongsToBePlayedAtNextShow": 18
+},
+{
+    "djName": "Martin Garrix",
+    "showsPlayedAt": 48,
+    "willPlayAnotherShow": true,
+    "numSongsToBePlayedAtNextShow": 15
+},
+{
+    "djName": "Tiësto",
+    "showsPlayedAt": 25,
+    "willPlayAnotherShow": false,
+    "numSongsToBePlayedAtNextShow": 0
+}]
