@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+	<head>
+		<%- include('../partials/head'); %>
+		<link rel="stylesheet" href="../../djstyles.css">
+	</head>
+	<body>
+	<header class = "header">
+	<div class ="flexbox-header">
+		<button class ="home">
+		<img src ="../../images/home.png" alt="home button" width ="50" height="50">
+		</button>
+		<h1> <div id = "clock">5:39</div>
+		<script src="../../djjs.js"></script>
+		</h1>	 <h1> <b> DJ HUB </b> </h1>	<h1 id="off">OFFLINE</h1>
+	</div>
+	<figure>
+	<nav>
+	<a href="/sign_in">
+		<button class ="prof-opts" action="/songS" method="POST" type="button" id="pfb" onclick="alert('Placeholder Profile Info')">
+		<img class = "pfp" src="../../images/QuiGon_Jinn.webp" alt="profile_pic" width="100" height="100">
+		<figcaption style="text-align: center;"> <b><%= curUser %></b> </figcaption>
+		</button>
+	</a>
+	</nav>
+	</figure>
+	</header>
+	<div class = "grid-container">
+	<div>
+		<section class="grid-section songs flex-col">
+		<h1>Songlist</h1>
+		<form action="/look" method="POST">
+			<label for="search">Search:</label><br>
+			<input type="search" id="search" name="search">
+			<input type="submit" value="submit"><br>
+		</form>
+		<h2>Recent</h2>
+		<button type="button" class = "collapsible">Top 40 Pop</button>
+		<div class ="content"> <ol> 
+			<li> <button class="add-btn" id ="bb" onclick="addName('bb')" type="button">Bad Blood</button></li>
+			<li> <button class="add-btn" id ="vlv" onclick="addName('vlv')" type="button">Viva La Vida</button></li>
+			<li> <button class="add-btn" id ="rs" onclick="addName('rs')" type="button">Rockstar</button></li>
+			<li> <button class="add-btn" id ="tb" onclick="addName('tb')" type="button">Timber</button></li>
+			<li> <button class="add-btn" id ="wlae" onclick="addName('wlae')" type="button">Walk Like an Egyptian</button></li>
+		</ol></div>
+		<button type="button" class = "collapsible">90's Rock</button>
+		<div class ="content"> <ol> 
+			<li> <button class="add-btn" id ="tc" onclick="addName('tc')" type="button">This Is A Call</button></li>
+			<li> <button class="add-btn" id ="hsb" onclick="addName('hsb')" type="button">Heart-Shaped Box</button></li>
+			<li> <button class="add-btn" id ="ef" onclick="addName('ef')" type="button">Even Flow</button></li>
+			<li> <button class="add-btn" id ="os" onclick="addName('os')" type="button">Otherside</button></li>
+		</ol></div>
+		<button type="button" class = "collapsible">New Age Jazz</button>
+		<div class ="content"> <ol> 
+			<li> <button class="add-btn" id ="lb" onclick="addName('lb')" type="button">La Belle Dame sans Regrets</button></li>
+			<li> <button class="add-btn" id ="nc" onclick="addName('nc')" type="button">No Confusion</button></li>
+		</ol></div>
+		<button type="button" class = "collapsible">Advertisements</button>
+		<div class ="content"> <ul> 
+			<li> <button class="add-btn" type="button">Skippy Peanut Butter </button></li>
+			<li> <button class="add-btn" type="button"> Pizza Hut </button></li>
+		</ul></div>
+		</section>
+	</div>
+	<div>
+	<section class="grid-section schedule flex-col">
+		<h1>Schedule </h1> 
+		<button class="live-btn" onclick="onAir()"> GO LIVE </button>
+		<div id="playmusic" data-test=<%= songs %></div>
+		<ol type="1" class = "sched-box myscroll">
+            <li style="padding-bottom: 10px; padding-top: 10px;"><span id="sb1"><%=playlistSongs[0].name%></span><button class = "song-button"  type="button" onclick="remName('sb1')">Remove</button></li>
+            <li style="padding-bottom: 10px; padding-top: 10px;"><span id="sb2"><%=playlistSongs[1].name%></span><button class = "song-button"  type="button" onclick="remName('sb2')">Remove</button></li>
+            <li style="padding-bottom: 10px; padding-top: 10px;"><span id="sb3"><%=playlistSongs[2].name%></span><button class = "song-button"  type="button" onclick="remName('sb3')">Remove</button></li>
+            <li style="padding-bottom: 10px; padding-top: 10px;"><span id="sb4"><%=playlistSongs[3].name%></span><button class = "song-button"  type="button" onclick="remName('sb4')">Remove</button></li>
+			<li style="padding-bottom: 10px; padding-top: 10px;"><span id="sb5"><%=playlistSongs[4].name%></span><button class = "song-button"  type="button" onclick="remName('sb5')">Remove</button></li>
+        </ol>
+        <footer id="compTime">EST. Completion Time: 0:00 P.M.</footer>
+    </section>
+	</section>
+	</div>
+	<div>
+		<section class="grid-section flex-col song-info">
+		<h1>Song Info</h1>
+		<button class="live-btn" onclick="addName('cur')">Add Song</button> <br>
+		<img class = "cov" id = "song-cover" src=<%= showSong.image %> alt="album_cov" width="125" height="125">
+		<ul id = "song-inf">
+			<li><b>Song Title:</b> <span id="cur"><%=showSong.name%></span></li>
+			<li><b>Artist:</b> <%= showSong.artist %></li>
+			<li><b>Release Album:</b> <%= showSong.album %></li>
+			<li><b>Release Date:</b> <%= showSong.releaseDate %></li>
+			<li><b>Certs:</b> <%= showSong.certs %></li>
+		</ul>
+		</section>
+		<div style="padding-left: 1.25rem;">
+		<audio controls>
+			<source id = "mp3s" src=<%=srcLocal %> type="audio/mpeg">
+		</audio>
+		</div>
+	</div>
+	</div>
+	<div class = "hotkeys">
+			Hotkeys:
+			<button class = "hotkey-button" type="button" onclick="alert('Placeholder Help Info')"> 5 sec </button>
+			<button class = "hotkey-button" type="button" onclick="alert('Placeholder Help Info')"> Intro </button>
+			<button class = "hotkey-button" type="button" onclick="alert('Placeholder Help Info')"> FX 1 </button>
+			<button class = "hotkey-button" type="button" onclick="alert('Placeholder Help Info')"> RW 5 </button>
+			<button class = "hotkey-button" type="button" onclick="alert('Placeholder Help Info')"> FX 2 </button>
+			<button class = "hotkey-button" type="button" onclick="alert('add hotkeys')"> + </button>
+			
+		</div>
+	<br/>
+	<div class="dropdown">
+		<span>Calendar</span>
+		<div class="calendar-content">
+		<p>Your Times: 
+		<ol type = "1">
+			<li>Oct 4 6:00 P.M.</li>
+			<li>Oct 6 12:00 P.M. </li>
+		</ol>
+		</p>
+		</div>
+	</div>
+	<h3 class = "cal-head"> October 2023 </h3>
+	<table class ="table" cellspacing="20" cellpadding="20">
+	<thead>
+		<tr>
+			<th>Sun</th>
+			<th>Mon</th>
+			<th>Tue</th>
+			<th>Wed</th>
+			<th>Thu</th>
+			<th>Fri</th>
+			<th>Sat</th>
+		</tr>
+	</thead>
+		
+		<tbody>
+			<tr>
+				<td class = "date-org"><button class = "sign-up-button" type = "button" onclick="document.getElementById('signForm').style.display='block';setday(oct1)" style="width:auto;">
+					<span id = "oct1" >01</span></button> </td>
+				<td class = "date-org"><button class = "sign-up-button" type = "button" onclick="document.getElementById('signForm').style.display='block';setday(oct2)" style="width:auto;">
+					<span id = "oct2" >02</span></button></td>
+				<td class = "date-org"><button class = "sign-up-button" type = "button" onclick="document.getElementById('signForm').style.display='block';setday(oct3)" style="width:auto;">
+					<span id = "oct3" >03</span></button></td>
+				<td class = "date-org"><button class = "sign-up-button" type = "button" onclick="document.getElementById('signForm').style.display='block';setday(oct4)" style="width:auto;">
+					<span id = "oct4" >04</span></button></td>
+				<td>05</td>
+				<td>06</td>
+				<td>07</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>9</td>
+				<td>10</td>
+				<td id="oct11">11</td>
+				<td>12</td>
+				<td>13</td>
+				<td>14</td>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td>16</td>
+				<td>17</td>
+				<td>18</td>
+				<td>19</td>
+				<td>20</td>
+				<td>21</td>
+			</tr>
+			<tr>
+				<td>22</td>
+				<td>23</td>
+				<td>24</td>
+				<td>25</td>
+				<td>26</td>
+				<td>27</td>
+				<td>28</td>
+			</tr>
+			<tr>
+				<td>29</td>
+				<td>30</td>
+				<td>31</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			</tbody>
+		</table>
+		<br/>
+		<div id="signForm" class="modal">
+			<span onclick="document.getElementById('signForm').style.display='none'" class="close" title="Close Modal">&times;</span>
+			<form class="modal-content" onsumbit="signData()">
+			  <div class="container">
+				<h1>Sign Up</h1>
+				<p>Please fill in this form to sign up for a time.</p>
+				<hr>
+				<label for="times"><b>Choose your timeslot</b></label>
+				<select id= "timeslotForm" name="times">
+					<option id="t1"value="0"><%=sign_ups[0].timeslot[0]%></option>
+					<option id="t2"value="1"><%=sign_ups[0].timeslot[1]%></option>
+					<option id="t3"value="2"><%=sign_ups[0].timeslot[2]%></option>
+				</select>
+				<br>
+				<label for="email"><b>Email</b></label>
+				<input class ="inputbox" id="email" type="text" placeholder="Enter Email" name="email" required>
+				<br>
+				<label for="han"><b>Handle</b></label>
+				<input class="inputbox" id="handle" type="text" placeholder="Enter Your DJ Handle" name="han" required>
+				<br>
+				<label>
+				  <input type="checkbox" name="remember" style="margin-bottom:15px"> By Checking this box, you are
+				  agreeing to air at the designated time and abide by our <a href="#" style="color:dodgerblue">DJ Content Guidelines</a>.
+				</label>
+				<br>
+				<p>When your sign up is accepted, you will recieve a confirmation email from a producer, and a message
+					containing instructions and the designated playlist.
+				</p>
+		  
+				<div class="clearfix">
+				  <button type="button" onclick="document.getElementById('signForm').style.display='none'" class="cancelbtn">Cancel</button>
+				  <button type="submit" class="signupbtn">Sign Up</button>
+				</div>
+			  </div>
+			</form>
+		</div>
+		<script>
+			document.getElementById("pfb").addEventListener("click", clr);
+			function clr(){
+				document.getElementById("pfb").style.backgroundColor = "Red";
+			}
+
+			var coll = document.getElementsByClassName("collapsible");
+			var t;
+
+			for (t = 0; t < coll.length; t++) {
+  				coll[t].addEventListener("click", function() {
+    				this.classList.toggle("active");
+    				var content = this.nextElementSibling;
+    				if (content.style.display === "block") {
+      					content.style.display = "none";
+    				} else {
+      					content.style.display = "block";
+    				}
+  				});
+			}
+		</script>
+		<nav>
+			<a href="/help">
+				<button class = "help-button" type="button">
+				<img src ="../../images/Icon-round-Question_mark.svg" alt="help button" width ="100" height="100">
+				</button>
+			</a>
+		</nav>
+	</body>
+</br>
+	<footer style="text-align:center">
+		<%- include('../partials/footer'); %>
+	</footer>
+</html>
