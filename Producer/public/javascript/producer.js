@@ -1,3 +1,4 @@
+const producer = {};
 document.addEventListener("DOMContentLoaded",function(){  
 //the javascript file and its corresponding functions will fire only after the entire HTML content has been parsed and the adjoined CSS scripts has been executed.
 
@@ -22,13 +23,13 @@ document.addEventListener("DOMContentLoaded",function(){
   }
   //array of few sample songs with their paths
   const songs = [
-    "/website-project/audio/50 Cent - In Da Club.mp3",
-    "/website-project/audio/AC-DC - Back In Black.mp3",
-    "/website-project/audio/Anatol Ugorski - Beethoven Bagatelle in A Minor, WoO 59 -Für Elise-.mp3",
-    "/website-project/audio/Hozier - All Things End.mp3",
-    "/website-project/audio/Hozier - Eat Your Young.mp3",
-    "/website-project/audio/Hozier - Movement.mp3",
-    "/website-project/audio/Selena Gomez - Come & Get It.mp3"];
+    "/SWE432/Producer/public/audio/50 Cent - In Da Club.mp3",
+    "/SWE432/Producer/public/audio/AC-DC - Back In Black.mp3",
+    "/SWE432/Producer/public/audio/Anatol Ugorski - Beethoven Bagatelle in A Minor, WoO 59 -Für Elise-.mp3",
+    "/SWE432/Producer/public/audio/Hozier - All Things End.mp3",
+    "/SWE432/Producer/public/audio/Hozier - Eat Your Young.mp3",
+    "/SWE432/Producer/public/audio/Hozier - Movement.mp3",
+    "/SWE432/Producer/public/audio/Selena Gomez - Come & Get It.mp3"];
     
     let currentSong = 0;
     
@@ -151,8 +152,11 @@ document.addEventListener("DOMContentLoaded",function(){
       });
     });
 
-    
-
+  producer.redirectToPlaylist = function (playlistName) {
+      // Redirect to the playlist page
+      window.location.href = '/playlist/' + encodeURIComponent(playlistName);
+  }
+  
     //creating an user object that contains some information about the user
     const user =  new Object();
     user.firstName = 'Jin';

@@ -42,7 +42,7 @@ app.use(
 
 //Serve static HTML, CSS and javascript files from the 'public' directory. Allows resuing pre-written code
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname,'public/website-project/html')));
+app.use(express.static(path.join(__dirname,'Producer/public/html')));
 
 //set view engine ejs and configure the "views" directory
 app.set('view engine', 'ejs'); 
@@ -187,6 +187,18 @@ app.get('/Playlists', async (req,res) =>{
     res.status(500).json({error: "Error! Couldn't get data on added playlists."});
   }
 });
+
+// Define a route to render individual playlist pages
+app.get('/playlist/:playlistName', async (req, res) => {
+  try {
+    const playlistName = req.params.playlistName;
+    res.render('playlist', { playlistData: { input: playlistName } });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
 //Define a route to render the 'index' or the main page view display data
 app.get('/', async function(req, res){
   try{

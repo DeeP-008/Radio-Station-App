@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta locationName="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Producer's page</title>  <!--Title of the website as showcased on the tab-->
+    <title>AudioAlchemy Radio - Producer</title>  <!--Title of the website as showcased on the tab-->
     <link rel="stylesheet" href="../website-project/css/producer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
@@ -71,12 +71,12 @@
                         <div class ="myPlaylist">   <!--User's Playlists-->
                             <form class="search" method="post" action="/Playlists">    <!--Search bar.-->
                                 <input type="text" name="query" placeholder="Enter playlist name to add.." required>
-                                <button type="submit">Search</button>
-                            <h3> My added playlists</h3>
+                                <button type="submit">Add</button>
+                            <h3> My Added Playlists</h3>
                             <ol>
                                 <!--Looping through the user's array from app.js and accessing the playlists array defined in it and displaying them-->
                                 <% playlists.forEach(function(playlist){ %>
-                                    <button id="playlistButton"> <%= playlist %></button>
+                                    <button id="playlistButton" onclick="producer.redirectToPlaylist('<%= playlist %>')"><%= playlist %></button>
                                     <% }); %>
                                 </ol><hr class = "Solid">
                             </div>
