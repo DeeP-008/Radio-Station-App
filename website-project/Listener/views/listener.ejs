@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../css/listener.css">
+  </head>
+  <title> <%= "AudioAlchemy Radio" %></title>
+
+
+  <body>
+    <section class="frontBackandPPButtons" style="color:#732A10">
+
+      <button onclick="return dropdownBox()" class="dropbtn">ProfilePicture</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#home">Home</a>
+        <a href="#login">Login</a>
+        <a href="#about">About</a>
+        <a href="#Logout">Logout</a>
+      </div>
+
+      
+    </section>
+    <!--<p><a href="http://localhost:8080" class="fixed-link">Back To Homepage</a></p> -->
+    <div style="margin-top: 10px; position: fixed;">
+      <h1>AudioAlchemy Radio</h1>
+      <br><br><br><br>
+      <ul>
+        <% searchHistoryArray.forEach(entry => { %>
+          <li><%= entry %></li>
+        <% }); %>
+      </ul>
+    </div>
+
+    <form name="searchBarForm" method="post" action="/search-history" >
+      <div class="searchBar" onsubmit="myFunction()">
+        <input type="text" name="query" placeholder="Enter music to search">
+        <button type="submit" style="margin-top: 80px; margin-left:250px; position:fixed;">Search and Save</button>
+      </div>
+    </form>
+    <form id="logoutForm" method="post" action="/clear-history">
+      <button type="submit" style="margin-top: -65px; margin-left:0px; position:fixed;">Clear</button>
+    </form>
+
+    
+    <div class="userPreferedGenre" style="color:#732A10;">User Preferred Genre</div>
+    <section class="search-container" >
+      <input type="text" id="search-input" placeholder="Type a playlist or artist" oninput="showButtons()">
+      <button id="addRemoveButton" onclick="addOrRemoveItem()">+/-</button>
+    </section>
+    
+    <div class="playlistAndArtist" id="playlistAndArtist">
+      <% const options = ["Pop", "Rap", "Lofi", "Rock", "Electronic", "Country", "Classical", "Indie", "Taylor Swift", "Eminem", "Drake", "Ed Sheeran", "Justin Bieber", "Adele", "Billie Eilish", "Kanye West"]; %>
+      <% options.forEach((item) => { %>
+        <button class="playlistAndArtistButton <%= item %>" onclick="alert('Going to <%= item %>')" style="display: none;"><%= item %></button>
+      <% }); %>
+    </div>
+
+    
+    <div class="DJs" style="color:#732A10">
+      <% const artistName = ["TaylorSwift", "Eminem", "Drake", "EdSheeran", "JustinBieber", "Adele", "BillieEilish", "KanyeWest"]; %>
+      <% artistName.forEach((item, index) => { %>
+        <button class="DJButton <%= item %>" onclick="alert('Going to <%= item %>')"><%= item %></button>
+      <% }); %>
+    </div>
+    
+    <section class="playlist" style="color:#732A10;">
+      <% const playlistName = ["Pop", "Rap", "Lofi", "Rock", "Electronic", "Country", "Classical", "Indie"]; %>
+      <% playlistName.forEach((item, index) => { %>
+        <button class="playlistButton <%= item %>" onclick="alert('Going to <%= item %>')"><%= item %></button>
+      <% }); %>
+    </section>
+
+
+
+    <div class="recommendedPlaylist" style="color:#732A10">Recommended Playlist</div>
+    <div class="recommendedDJs" style="color:#732A10">Recommended DJs</div>
+
+
+    <div class="playlistAudio">
+      <audio controls id="playlistAudio1">
+        <source src="../Audio/The Duck Song.mp3" type="audio/mpeg"">
+      </audio>
+    </div>
+
+    
+    <script>
+      var options = ["Pop", "Rap", "Lofi", "Rock", "Electronic", "Country", "Classical", "Indie", "Taylor Swift", "Eminem", "Drake", "Ed Sheeran", "Justin Bieber", "Adele", "Billie Eilish", "Kanye West"];
+      var enteredValues = [];
+    
+      function showButtons() {
+        var userInput = document.getElementById('search-input').value.toLowerCase();
+    
+        // Check if the input is one of the options
+        if (options.includes(userInput)) {
+          // Display the input as a button
+          var optionButton = document.querySelector('.playlistAndArtistButton.' + userInput);
+          if (optionButton) {
+            optionButton.style.display = 'inline-block';
+          } else {
+            // Create a button for the input
+            var button = document.createElement('button');
+            button.textContent = userInput;
+            button.className = 'playlistAndArtistButton ' + userInput;
+            button.onclick = function () {
+              alert('Going to ' + userInput);
+            };
+            document.getElementById('playlistAndArtist').appendChild(button);
+          }
+        } else {
+          // Hide the input button if it's not an option
+          var inputButton = document.querySelector('.playlistAndArtistButton.' + userInput);
+          if (inputButton) {
+            inputButton.style.display = 'none';
+          }
+        }
+      }
+    
+      function addOrRemoveItem() {
+        var userInput = document.getElementById('search-input').value.toLowerCase();
+        var index = enteredValues.indexOf(userInput);
+        var addRemoveButton = document.getElementById('addRemoveButton');
+        if(addRemoveButton.onclick){
+          if (index === -1) {
+            // Add the item to the array and display it as a button
+            enteredValues.push(userInput);
+
+            var button = document.createElement('button');
+            button.textContent = userInput;
+            button.className = 'playlistAndArtistButton ' + userInput;
+
+            // Check if the button already has a click handler
+            if (!button.onclick) {
+              button.onclick = function () {
+                alert('Going to ' + userInput);
+                performSearch();
+              };
+              document.getElementById('playlistAndArtist').appendChild(button);
+            }
+          } else {
+            // Remove the item from the array and hide the corresponding button
+            enteredValues.splice(index, 1);
+            var buttonToRemove = document.querySelector('.playlistAndArtistButton.' + userInput);
+            if (buttonToRemove) {
+              buttonToRemove.style.display = 'none';
+            }
+          }
+        };
+      }
+
+      function performSearch() {
+        var userInput = document.getElementById('search-input').value.toLowerCase();
+
+        var playlistButtons = document.querySelectorAll('.playlistButton');
+        var djButtons = document.querySelectorAll('.DJButton');
+
+        // Check if the user input matches any playlist
+        for (var i = 0; i < playlistButtons.length; i++) {
+          var playlistNumber = playlistButtons[i].classList[1].replace('playlist', '');
+          if (userInput === playlistNumber.toLowerCase()) {
+            var playlistURL = playlistNumber + '.html';
+            window.location.href = '../html/listenerFiles/' + playlistURL;
+            return; // Exit the function if a match is found
+          }
+        }
+
+        // Check if the user input matches any DJ
+        for (var j = 0; j < djButtons.length; j++) {
+          var djNumber = djButtons[j].classList[1].replace('DJ', '');
+          if (userInput === djNumber.toLowerCase()) {
+            var djURL = djNumber + '.html';
+            window.location.href = '../html/djFiles/' + djURL;
+            return; // Exit the function if a match is found
+          }
+        }
+
+        // Display an alert if no match is found
+        alert('Search result not found for ' + userInput);
+      }
+      //A page for each playlist
+      var playlistButton = document.querySelectorAll(".playlistButton");
+      playlistButton.forEach(function(button){
+        button.addEventListener("click",function(){
+          var playlistNumber = button.classList[1].replace("playlist", "");
+          var playlistURL = playlistNumber + ".html";
+          window.location.href = "../html/listenerFiles/" + playlistURL;
+        });
+      });
+
+
+      //A page for each DJs
+      var DJButton = document.querySelectorAll(".DJButton");
+      DJButton.forEach(function(button){
+        button.addEventListener("click",function(){
+          var djNumber = button.classList[1].replace("DJ", "");
+          var djURL = djNumber + ".html";
+          window.location.href = "../html/djFiles/" + djURL;
+        });
+      });
+
+      // the functions below control the behaviour of the dropdown menu when the cursor moves towards it. 
+    //The menu will only be visible when the cursor hovers over the dropdown button post which it will showcase the options. 
+    //As soon as the cursor leaves the vicinity of the dropdown button button or the menu options, the dropdown would close.
+    
+    let dropdownBoxOpen = false;    //boolean to check whether or not dropdown box is open
+    let isMouseInDropdown = false;  //boolean value to check whether the mouse is in vicinity of the dropdown button or the menu options
+    let dropdownTimeout;  //sets a timeout variable to keep the function running for a certain time
+    const dropdownStuff = document.getElementById("myDropdown");
+
+    //function to make the dropdown menu visible
+    function openDropdown(){
+      clearTimeout(dropdownTimeout);    //clears the timeout so that the function can be executed immediately
+      dropdownBoxOpen = true;
+      dropdownStuff.style.display = "block";    //maipulate CSS attribute to display the box in a block format
+    }
+
+    function closeDropdown(){
+      dropdownTimeout = setTimeout(() => {    //set a timeout of 200 ms to allow the cursor to hover over the options.
+        dropdownBoxOpen = false;
+        dropdownStuff.style.display = "none";
+      },200);
+          }
+
+    //function to decide whther or not to toggle dropdown box
+    function dropdownBox(){
+      dropdownBoxOpen = ! dropdownBoxOpen;
+      if(dropdownBoxOpen){
+        openDropdown();
+      } else{
+        closeDropdown();
+      }
+    }
+    const dropdownButton = document.querySelector('.dropbtn');
+
+    dropdownButton.addEventListener('mouseenter', openDropdown);
+    dropdownButton.addEventListener('click',(event) => {
+      event.preventDefault();
+      dropdownBox();
+    });
+    dropdownButton.addEventListener('mouseleave',() => {
+      if(!isMouseInDropdown){
+        closeDropdown();
+      }
+    });
+
+    //event listeners handle events for the contents of the dropdown box to allow for the dropdown to be visible when the mouse is over the contents
+    dropdownStuff.addEventListener('mouseenter',() =>{    //mouseenter event fired when cursor is within the vicinity of the element dropdownStuff
+      clearTimeout(dropdownTimeout);  //clear timeout to keep dropdown open when mouse enters the vicinity of the dropdown content
+      isMouseInDropdown = true;
+    });
+
+    dropdownStuff.addEventListener('mouseleave', () => {  //mouseleave event fired when cursor leaves vicinity of element dropdownStuff
+      isMouseInDropdown = false;  //close the dropdown when mosue leaves the vicinity of the dropdown content
+      closeDropdown();
+    });
+
+    const dropdownBoxOptions = document.querySelectorAll('.dropdown-content a');
+    dropdownBoxOptions.forEach((option) => {
+      option.addEventListener('mouseenter', () => {
+        clearTimeout(dropdownTimeout);
+      });
+    });
+
+
+
+    async function logout() {
+      console.log('Logout function called');
+
+      try {
+        // Clear the search history array on the client side
+        searchHistoryArray.length = 0;
+
+        // Make an AJAX request to clear history on the server side
+        const response = await fetch('/clear-history', { method: 'POST' });
+
+        if (!response.ok) {
+          throw new Error('Failed to clear history on the server');
+        }
+
+        const data = await response.json();
+        console.log(data);
+
+        // Optionally redirect the user to the login page or perform other actions
+        window.location.href = '/login';  // Redirect to the login page
+      } catch (error) {
+        console.error('Error clearing history:', error);
+      }
+    }
+    </script>
+
+    <style>
+      .fixed-link {
+          position: fixed;
+          top: 10px; /* Adjust the top position as needed */
+          left: 10px; /* Adjust the left position as needed */
+          font-size: 14px;
+          text-decoration: none;
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!--Author: Dhyeya Padhya.
+This is a HTML layout for the producer's side of the website. They are able to click on any of the buttons to access different screens.
+They can also search for music and add playlists.
+Features TBD:
+1. Connect API for active search feature
+2. Allow for login and signup
+3. Build login and signup pages
+and more...-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producer's page</title>  <!--Title of the website as showcased on the tab-->
+    <link rel="stylesheet" href="../css/producer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+</head>
+
+<body>
+    
+    
+    <!--Each part of the webpage is divvided into different sections. The first section makes the Musician Metrics box and its contents -->
+    <section class="musicianMetrics">
+        <div class="partitionBoxes">    <!--These are the main title boxes-->
+            <h2>Musician Metrics</h2>
+        </div>
+
+        <div class="musician-container">    <!--This is the area between the boxes that will hold all the cards showcasing different musicians-->
+            <div class="card-wrapper">  <!--This div creates those cards as buttons. Users will be able to scroll through various musicians-->
+                <button onclick="alert('Going to Musician 1s metrics.')" target = "musician1.html" directory = "musician-metrics">Musician 1</button>
+                <button onclick="alert('Going to Musician 2s metrics.')" target = "musician2.html" directory = "musician-metrics">Musician 2</button>
+                <button onclick="alert('Going to Musician 3s metrics.')" target = "musician3.html" directory = "musician-metrics">Musician 3</button>
+                <button onclick="alert('Going to Musician 4s metrics.')" target = "musician4.html" directory = "musician-metrics">Musician 4</button>
+                <button onclick="alert('Going to Musician 5s metrics.')" target = "musician5.html" directory = "musician-metrics">Musician 5</button>
+                <button onclick="alert('Going to Musician 6s metrics.')" target = "musician6.html" directory = "musician-metrics">Musician 6</button>
+                <button onclick="alert('Going to Musician 7s metrics.')" target = "musician7.html" directory = "musician-metrics">Musician 7</button>
+                <button onclick="alert('Going to Musician 8s metrics.')" target = "musician8.html" directory = "musician-metrics">Musician 8</button>
+                <button onclick="alert('Going to Musician 9s metrics.')" target = "musician9.html" directory = "musician-metrics">Musician 9</button>
+                <button onclick="alert('Going to Musician 10s metrics.')" target = "musician10.html" directory = "musician-metrics">Musician 10</button>
+            </div>
+        </div>
+    </section>  <!--End musician metrics section-->
+
+    <section class="DJControlCenter">   <!--This section will make the DJ control Center for each producer-->
+        <div class="partitionBoxes">
+            <h2>DJ Control Center</h2>
+        </div>
+        <div class="dj-control-container">
+            <div class="card-wrapper">  <!--Resuing card-wrapper class and its CSS properties-->
+                <button onclick="alert('Going to DJ 1s Control Center')" target = "dj1.html" directory = "dj-control-center">DJ1</button>
+                <button onclick="alert('Going to DJ 2s Control Center')" target = "dj2.html" directory = "dj-control-center">DJ2</button>
+                <button onclick="alert('Going to DJ 3s Control Center')" target = "dj3.html" directory = "dj-control-center">DJ3</button>
+                <button onclick="alert('Going to DJ 4s Control Center')" target = "dj4.html" directory = "dj-control-center">DJ4</button>
+                <button onclick="alert('Going to DJ 5s Control Center')" target = "dj5.html" directory = "dj-control-center">DJ5</button>
+                <button onclick="alert('Going to DJ 6s Control Center')" target = "dj6.html" directory = "dj-control-center">DJ6</button>
+                
+            </div>
+        </div>
+    </section>
+    
+    <section class="UpcomingShows">
+        <div class="partitionBoxes">
+            <h2>Upcoming shows</h2>
+        </div>  
+        <div class="upcoming-shows-container"> <!--This will hold all the layout for the cards holding information for upcoming shows-->
+            <div class="card-wrapper">
+                <button onclick="alert('Going to Location 1s show info screen')" target = "upcomingShow1.html" directory = "upcoming-shows-info">Location 1</button>
+                <button onclick="alert('Going to Location 2s show info screen')" target = "upcomingShow2.html" directory = "upcoming-shows-info">Location 2</button>
+                <button onclick="alert('Going to Location 3s show info screen')" target = "upcomingShow3.html" directory = "upcoming-shows-info">Location 3</button>
+                <button onclick="alert('Going to Location 4s show info screen')" target = "upcomingShow4.html" directory = "upcoming-shows-info">Location 4</button>
+                <button onclick="alert('Going to Location 5s show info screen')" target = "upcomingShow5.html" directory = "upcoming-shows-info">Location 5</button>
+                <button onclick="alert('Going to Location 6s show info screen')" target = "upcomingShow6.html" directory = "upcoming-shows-info">Location 6</button>
+            </div>
+    </section>
+
+   
+    <section class="sidebar"> <!--This section creates a sidebar on the left side of the screen-->
+        <section class="prevNextButtons">   <!--The buttons to the next and previous page-->
+            <a href="#" class="previous-button">&#8249</a>
+            <a href="#" class="next-button">&#8250</a>
+        </section>
+
+        <form class="search" onsubmit="return validateSearchBar()">    <!--Search bar.-->
+            <input type="text" name="search-music" placeholder="Enter music to search.." required>
+            <ul>    <!--Hardcoded results. Need to connect API and allow for actual results-->
+                <li>Movement - Hozier</li>
+                <li>Moves Like Jagger - Maroon 5, Christina Aguilera</li>
+                <li>Movies - Conan Grey</li>
+                <li>I Like to Move It - will.i.am</li> 
+            </ul><hr class="Solid"> <!--Solid Line Break-->
+        </form>
+        <div class ="myPlaylist">   <!--User's Playlists-->
+           <h3> My added playlists</h3>
+            <ol>
+                <li>Workout Jam</li>
+                <li>Lo-Fi</li>
+                <li>Gangsta-Rap</li>
+                <li>Today's Hits</li>
+                <li>Coding and Crying</li>
+            </ol> <hr class = "Solid">
+        </div>
+    </section>
+
+    <!--code for the dropdown button and box-->
+    <div class="dropdown">
+        <button onclick="return dropdownBox()" class="dropbtn">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#home">Home</a>
+          <a href="#login">Login</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+    </div>    
+
+    <!--Create audio player to play music-->
+    <div class="media-player">
+        <audio id="audio-player" controls>
+            <source src="../audio/50 Cent - In Da Club.mp3" type="audio/mp3">
+        </audio>
+        
+        <!--Control buttons for previous song, play/pause/next song-->
+        <div class="media-player-controls">
+            <button id="prevSong" class="music-control-button">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button id="play-Pause" class="music-control-button">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="nextSong" class="music-control-button">
+                <i class="fas fa-forward"></i>
+            </button>
+        </div>  
+    </div>
+
+    <!--Link to the javascript file-->
+    <script type="text/JavaScript" src = "../javascript/producer.js"></script>
+</body>
+</html>

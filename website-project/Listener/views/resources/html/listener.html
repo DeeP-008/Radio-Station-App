@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../css/listener.css">
+  </head>
+
+  <body>
+    <section class="frontBackandPPButtons" style="color:#732A10">
+      <button class="button buttonBack">&#8249;</button>
+      <button class="button buttonForward" style="margin-left: 55px;">&#8250;</button>
+
+
+      <button onclick="return dropdownBox()" class="dropbtn">ProfilePicture</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#home">Home</a>
+          <a href="#login">Login</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      
+      <button class="plusButton">
+        <div class="plusHorizontal"></div>
+        <div class="plusVertical"></div>
+      </button>
+      <button class="minusButton">
+          <div class="minusHorizontal"></div>
+      </button>
+    </section>
+
+    <section class="playlist" style="color:#732A10">
+      <button class="playlistButton playlist1" onclick="alert('Going to playlist1')">playlist 1</button>
+      <button class="playlistButton playlist2">playlist 2</button>
+      <button class="playlistButton playlist3">playlist 3</button>
+      <button class="playlistButton playlist4">playlist 4</button>
+      <button class="playlistButton playlist5">playlist 5</button>
+      <button class="playlistButton playlist6">playlist 6</button>
+      <button class="playlistButton playlist7">playlist 7</button>
+      <button class="playlistButton playlist8">playlist 8</button>
+    </section>
+
+ 
+
+    <div class="DJs" style="color:#732A10">
+      <button class="DJButton DJ1">DJ 1</button>
+      <button class="DJButton DJ2">DJ 2</button>
+      <button class="DJButton DJ3">DJ 3</button>
+      <button class="DJButton DJ4">DJ 4</button>
+      <button class="DJButton DJ5">DJ 5</button>
+      <button class="DJButton DJ6">DJ 6</button>
+      <button class="DJButton DJ7">DJ 7</button>
+      <button class="DJButton DJ8">DJ 8</button>
+    </div>
+    <form name="searchBarForm" onsubmit="return validateSearch()" method="post">
+      <div class="searchBar" onsubmit="myFunction()">
+        <input type="text" name="search" placeholder="Enter music to search">
+        <button type="submit">Search and Save</button>
+      </div>
+    </form>
+    
+    <div class="userPreferedGenre" style="color:#732A10">User Prefered Genre</div>
+    <div class="userPreferedGenreBox" style="color:#732A10"></div>
+    <div class="recommendedPlaylist" style="color:#732A10">Recommended Playlist</div>
+    <div class="recommendedDJs" style="color:#732A10">Recommended DJs</div>
+
+    <ul class="songsList" id="searchResult" style="color:#732A10">
+      <li>Song 1</li> <br>
+      <li>Song 2</li> <br>
+      <li>Song 3</li> <br>
+      <li>Song 4</li> <br>
+      <li>Song 5</li> <br>
+      <li>Song 6</li> <br>
+      <li>Song 7</li> <br>
+      <li>Song 8</li> <br>
+    </ul>
+
+    <div class="playlistAudio"">
+      <audio controls id="playlistAudio1">
+        <source src="../Audio/The Duck Song.mp3" type="audio/mpeg"">
+      </audio>
+    </div>
+    <script src="../js/listener.js"></script>
+    <script src="../../../database.js"></script>
+    <script src="../../../app.js"></script>
+  </body>
+</html>

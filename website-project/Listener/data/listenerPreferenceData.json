@@ -1,0 +1,5 @@
+[
+  {"name": "User1", "preference": ["Pop", "Country"]},
+  {"name": "User2", "preference": ["Rock", "Country"]},
+  {"name": "User3", "preference": ["Country", "Pop"]}
+]
