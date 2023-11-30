@@ -23,13 +23,13 @@ document.addEventListener("DOMContentLoaded",function(){
   }
   //array of few sample songs with their paths
   const songs = [
-    "/SWE432/Producer/public/audio/50 Cent - In Da Club.mp3",
-    "/SWE432/Producer/public/audio/AC-DC - Back In Black.mp3",
-    "/SWE432/Producer/public/audio/Anatol Ugorski - Beethoven Bagatelle in A Minor, WoO 59 -Für Elise-.mp3",
-    "/SWE432/Producer/public/audio/Hozier - All Things End.mp3",
-    "/SWE432/Producer/public/audio/Hozier - Eat Your Young.mp3",
-    "/SWE432/Producer/public/audio/Hozier - Movement.mp3",
-    "/SWE432/Producer/public/audio/Selena Gomez - Come & Get It.mp3"];
+    "/audio/50 Cent - In Da Club.mp3",
+    "../audio/AC-DC - Back In Black.mp3",
+    "../audio/Anatol Ugorski - Beethoven Bagatelle in A Minor, WoO 59 -Für Elise-.mp3",
+    "../audio/Hozier - All Things End.mp3",
+    "../audio/Hozier - Eat Your Young.mp3",
+    "../audio/Hozier - Movement.mp3",
+    "../audio/Selena Gomez - Come & Get It.mp3"];
     
     let currentSong = 0;
     

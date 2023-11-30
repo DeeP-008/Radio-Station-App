@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Playlist - <%= playlistData.input %></title>
-    <link rel="stylesheet" href="../website-project/css/producer.css">
+    <link rel="stylesheet" href="/css/producer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body class="playlistEJS">
     <h1 id="playlistPageHeader"><%= playlistData.input %></h1>
     <div class="addSongs">
-        <input type="text" id="searchText" placeholder="Enter text...">
+        <input type="text" id="searchText" placeholder="Enter song to add...">
         <button onclick="search()">Search</button>
         <p style="font-size:x-large; text-align: center;">Songs in Playlist: <span id="displayText"></span></p>
         <ul id="songList"></ul>
