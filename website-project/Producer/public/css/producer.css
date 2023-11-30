@@ -1,0 +1,322 @@
+/*Author: Dhyeya Padhya
+This CSS File contains the formatting code for producer.html code.*/
+
+body{
+    background-color: #A8C7BB ; /*Hex code for this color*/
+    color: #272D2D;
+}
+
+header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/*.prevNextButtons a {    /*formats the previous and next buttons*/
+  /*  text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 50%;
+    background-color: #EAEAEA;
+    color: black;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.prevNextButtons a:hover{   /*formats the behaviour when cursor hovers over the buttons*/
+    /*background-color: #ddd;
+    color: black;
+    box-shadow: 1px 1px 10px rgba(239, 226, 232, 0.8);  /*creates a shadow on hover*/
+/*}
+.prevNextButtons a.previous{
+    margin-left: 10px;
+}
+.prevNextButtons a.next{
+    margin-right: 0;
+}*/
+
+.partitionBoxes{    /*formats each title box that partitions each section */
+    text-align: center;
+    color: #272D2D;
+    box-shadow: 0 0 6px #F6F8FF;   /*creates a minute, barely vsible shadow*/
+    border: 100px;
+    border-color: #A6450D;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 5px;
+    position: relative;
+    width: 750px;
+    left: 250px;
+    overflow: hidden;
+    margin-left: 180px;
+}
+
+.musican-container{ /*formats the area that contains all the musician cards*/
+    width: 100%;
+    max-width: 750px;
+    position: relative;
+    width: 750px;
+    top: -30px;
+}
+
+.card-wrapper{  /*creates a flexbox and fixes the positioning*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    max-width: 100%;
+    position: relative;
+    width: 750px;
+    left: 250px;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-left: 180px;
+    
+}
+
+.card-wrapper > button {    /*formats each and every button in this div class*/
+    width: 100%;
+    height: 100px;
+    padding: 46px;
+    margin: 25px 10px 25px 0px;
+    border: 3px solid;
+    color: #272D2D;
+    background-color: #e9e0d3;
+    border-color: #A6450D;
+    border-radius: 5px;
+    border-width: medium;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-wrapper > button:hover{   /*formats behaviour of buttons in card-wrapper when cursor hovers*/
+    background-color: #FFEECF;
+    color: black;
+    box-shadow: 1px 1px 10px rgba(239, 226, 232, 0.8);
+}
+
+
+.dj-control-container{  /*formats the are for the DJ Control Center cards*/
+    width: 100%;
+    max-width: 750px;
+    position: relative;
+    width: 750px;
+    top: -30px;
+    margin:25px 10px -31px 0px;
+}
+
+.dj-control-container > .card-wrapper > button{ /*Uses the card-wrapper class, but formats the buttons such that they are distinct 
+    across both containers, allowing for variety of shapes across the webpage*/
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    margin: 25px 10px 25px 0px;
+    border: 3px solid;
+    color: #272D2D;
+    border-color: #A6450D;
+    border-radius: 50%;
+    border-width: medium;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.upcoming-shows-container > .card-wrapper > button{
+    width: 100px;
+    height: 95px;
+    padding: 10px;
+    margin: 35px 15px 25px 25px;
+    border: 3px solid;
+    border-color: #A6450D;
+    color: #272D2D;
+    border-radius: 0%;
+    transform: rotate(45deg);
+    transform-origin: center;
+    border-width: medium;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.sidebar{   /*format the sidebar*/
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    left: 10px;
+    overflow-x: hidden;
+    padding-top: 20px;
+    background-color:#A8C7BB ;
+}
+
+.sidebar > .search {    /*format the search bar placed in the sidebar*/
+    float: left;
+    border-color: #A6450D;
+    font-size: 17px;
+    
+}
+.sidebar > .search input{   /*format the input being given to the search bar*/
+    height: 20px;
+}
+
+.sidebar li{    /*add spacing between each bullet point */
+    margin-bottom: 7px;
+}
+
+.sidebar > .myPlaylist{ /*set position of user playlists display*/
+    margin-top: 230px;
+}
+
+hr.Solid{   /*create a solid line break*/
+    border-top: solid #A6450D;
+}
+
+.dropbtn {
+    background-color: #e9e0d3;
+    color: #272D2D;
+    width: 250px;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left:1350px;
+    right: 350px;
+    top:-660px
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    box-shadow: 1px 1px 10px rgba(239, 226, 232, 0.8);
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    background-color: #e9e0d3;
+    min-width: 160px;
+    width: 300px;
+    height: 250px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    position: relative;
+    left: 1325px;
+    right: 350px;
+    top: -655px;
+  }
+  
+  .dropdown-content a {
+    color: #272D2D;
+    height: 62.5px;
+    text-align: center;
+    font-size: large;
+    /* display: flex;
+    align-items: center; */
+    line-height: 62.5px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {
+    background-color: #FFEECF;
+    color: black;
+    box-shadow: 1px 1px 10px rgba(239, 226, 232, 0.8);
+}
+  
+  .show {display: block;}
+
+  .media-player{
+    position: relative;
+    left: 1305px;
+    right: 350px;
+    top: -350px;
+    border: 5px;
+    width: 300px;
+    padding: 200px 0 0 0;
+    background-color: #e9e0d3;
+    display: flex;
+    align-items: center;
+  }
+
+  .media-player-controls{
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: 190px;
+    top: 35px;
+  }
+
+  .music-control-button{
+    background: #e9e0d3;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+.sidebar > h2{
+    text-align: center;
+    color: #272D2D;
+    margin-top: 5px;
+}
+
+#playlistButton {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    margin-left: -10px;
+    text-align: left;
+    color: #272D2D;
+    cursor: pointer;
+    border: 3px solid;
+    background-color: #e9e0d3;
+    border-color: #A6450D;
+    text-align: center;
+}
+
+#playlistButton:hover {
+    background-color: #FFEECF;
+    color: black;
+    box-shadow: 1px 1px 10px rgba(239, 226, 232, 0.8);
+}
+
+.playlistEJS > #playlistPageHeader{
+    text-align: center;
+}
+
+.playlistEJS > #playlistPageHome{
+    color: #272D2D;
+}
+
+
+
+.playlistEJS > .addSongs > #searchText{
+    margin-left:210px;
+    text-align: center;
+    font-size: larger;
+    width: 75%;
+    height: 45px;
+    box-sizing: border-box;
+    border: 3px solid #555;
+    resize: none;
+}
+
+.playlistEJS > .addSongs > #songList{
+   
+    color: #272D2D;
+    font-size: larger;
+    text-align: center;
+
+}
+
+.delete-button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist - <%= playlistData.input %></title>
+    <link rel="stylesheet" href="../website-project/css/producer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="playlistEJS">
+    <h1 id="playlistPageHeader"><%= playlistData.input %></h1>
+    <div class="addSongs">
+        <input type="text" id="searchText" placeholder="Enter text...">
+        <button onclick="search()">Search</button>
+        <p style="font-size:x-large; text-align: center;">Songs in Playlist: <span id="displayText"></span></p>
+        <ul id="songList"></ul>
+        <button onclick="deleteText()" id="deleteSongInPlaylist">Delete Latest</button>
+    </div>
+    
+    <script>
+        const songs = []; // Array to store songs
+        
+        function search() {
+            const searchText = document.getElementById('searchText').value;
+            document.getElementById('displayText').textContent = searchText;
+            songs.push(searchText); // Add the searched song to the list
+            updateSongList();
+        }
+        
+        function deleteText() {
+            const searchText = document.getElementById('searchText').value;
+            // Remove the searched song from the list
+            const index = songs.indexOf(searchText);    
+            if (index !== -1) {
+                songs.splice(index, 1);
+            }
+            updateSongList();
+        }
+        
+        function updateSongList() {
+            const songListElement = document.getElementById('songList');
+            songListElement.innerHTML = ''; // Clear the current list
+            
+            // Add each song to the list
+            songs.forEach(song => {
+                const listItem = document.createElement('li');
+                
+                // Create and style the delete button
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete Song';
+                deleteButton.classList.add('delete-button'); 
+                deleteButton.onclick = function() {
+                    const index = songs.indexOf(song);
+                    if (index !== -1) {
+                        songs.splice(index, 1);
+                        updateSongList();
+                    }
+                };
+                
+                const textContainer = document.createElement('div');
+                textContainer.textContent = song;
+                listItem.appendChild(textContainer);
+                listItem.appendChild(deleteButton);
+                songListElement.appendChild(listItem);
+            });
+            
+        }
+    </script>
+    
+    <a href="/" id="playlistPageHome">Back to Home</a>
+</body>
+</html>

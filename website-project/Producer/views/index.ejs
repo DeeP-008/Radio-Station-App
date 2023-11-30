@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta locationName="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioAlchemy Radio - Producer</title>  <!--Title of the website as showcased on the tab-->
+    <link rel="stylesheet" href="../website-project/css/producer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+</head>
+
+<body>
+    <section class="musicianMetrics">
+        <div class="partitionBoxes">
+            <h2>Musician Metrics</h2>
+        </div>
+        
+        <div class="musician-container">
+            <!--Looping through the musician's array defined in app.js and setting a button for each musician-->
+            <div class="card-wrapper">
+                <% musicians.forEach(function(musician) { %>
+                    <button onclick="alert('Going to <%= musician.musicianName %>s metrics.')" target="<%= musician.url %>" directory="musician-metrics"><%= musician.musicianName %></button>
+                    <% }); %>
+                </div>
+                
+            </div>
+        </section>
+        
+        <section class="DJControlCenter">
+            <div class="partitionBoxes">
+                <h2>DJ Control Center</h2>
+            </div>
+            <div class="dj-control-container">
+                <!--Looping through the DJ's array defined in app.js and setting a button for each DJ-->
+                <div class="card-wrapper">
+                    <% DJs.forEach(function(dj){ %>
+                        <button onclick="alert('Going to <%= dj.djName %>s Control Center.')" target="<%=dj.url%>" directory="dj-control-center"><%=dj.djName%></button>
+                        <% }); %>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="UpcomingShows">
+                <div class="partitionBoxes">
+                    <h2>Upcoming Shows</h2>
+                </div>
+                <div class="upcoming-shows-container">
+                    <!--Looping through the upcomingShows array defined in app.js and setting a button for each upcoming show-->
+                    <div class="card-wrapper">
+                        <% upcomingShows.forEach(function(show) { %>
+                            <button onclick="alert('Going to <%= show.locationName %> show info screen.')" target="<%= show.url %>" directory="upcoming-shows-info"><%= show.locationName %></button>
+                            <% }); %>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="sidebar"> <!--This section creates a sidebar on the left side of the screen-->
+                    <h2>AudioAlchemy Radio</h2>
+                    
+                    <form class="search" method="post" action="/Recently-Searched">    <!--Search bar.-->
+                        <input type="text" name="query" placeholder="Enter music to search.." required>
+                        <button type="submit">Search</button>
+                        <h3>Your Search History</h3>
+                        <ul id="search-history">
+                            <!--Looping through the Search results array defined in app.js and displaying them-->
+                            <% searchResults.forEach(function(searchHistory){ %>
+                                <li><%= searchHistory%></li>
+                                <% }); %>
+                            </ul><hr class="Solid"> <!--Solid Line Break-->
+                        </form>
+                        <div class ="myPlaylist">   <!--User's Playlists-->
+                            <form class="search" method="post" action="/Playlists">    <!--Search bar.-->
+                                <input type="text" name="query" placeholder="Enter playlist name to add.." required>
+                                <button type="submit">Add</button>
+                            <h3> My Added Playlists</h3>
+                            <ol>
+                                <!--Looping through the user's array from app.js and accessing the playlists array defined in it and displaying them-->
+                                <% playlists.forEach(function(playlist){ %>
+                                    <button id="playlistButton" onclick="producer.redirectToPlaylist('<%= playlist %>')"><%= playlist %></button>
+                                    <% }); %>
+                                </ol><hr class = "Solid">
+                            </div>
+                        </section>
+                        
+                        <!--code for the dropdown button and box-->
+                        <div class="dropdown">
+                            <button onclick="return dropdownBox()" class="dropbtn">Dropdown</button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="#home">Home</a>
+                                <a href="#login">Login</a>
+                                <a href="#about">About</a>
+                                <a href="#contact">Contact</a>
+                            </div>
+                        </div>    
+                        
+                        <div class="media-player">
+                            <audio id="audio-player" controls>
+                                <source src="/website-project/audio/50 Cent - In Da Club.mp3" type="audio/mp3">
+                            </audio>
+                            
+                            <!--Control buttons for previous song, play/pause/next song-->
+                            <div class="media-player-controls">
+                                <button id="prevSong" class="music-control-button">
+                                    <i class="fas fa-backward"></i>
+                                </button>
+                                <button id="play-Pause" class="music-control-button">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button id="nextSong" class="music-control-button">
+                                    <i class="fas fa-forward"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        
+                        <script src="../website-project/javascript/producer.js"></script>
+                    </body>
+                    </html>
+                    
