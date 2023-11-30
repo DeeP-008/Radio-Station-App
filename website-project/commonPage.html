@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button Page</title>
+    <title>AudioAlchemy Radio</title>
     <style>
+        #siteTitle{
+            margin-left: 50px;
+        }
         body {
-            background-color: #A8C7BB;
+            background-image: url('listening_to_music_headphones-wallpaper-5120x3200.jpg');
+            color: #DB222A;
+            background-size: 100% 100%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -15,7 +20,7 @@
             margin: 0; 
         }
         p {
-            font-size: 24px; 
+            font-size:50px; 
             margin-bottom: 20px; 
         }
 
@@ -28,7 +33,7 @@
     </style>
 </head>
 <body>
-    <p>AudioAlchemy Radio</p>
+    <p id="siteTitle">AudioAlchemy Radio</p>
     <button onclick="navigateToEJS(1)">DJ</button>
     <button onclick="navigateToEJS(2)">Producer</button>
     <button onclick="navigateToEJS(3)">Listener</button>
