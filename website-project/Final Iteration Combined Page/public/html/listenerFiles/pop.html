@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playlist 1</title>
+  <link rel="stylesheet" href="/website-project/css/listener.css">
+</head>
+
+<body style="background-color:#A8C7BB;">
+  <p><strong>POP PLAYLIST</strong> <br><br></p>
+
+  <div class="playlistAudio" style="margin: 0 auto; text-align: center;">
+    <div>
+    <img src="../../albumCover/pop/My_Way_Calvin_Harris.jpg" alt="Album Art" style="width: 100px; height: 100px; margin-top: 10px;">
+      <audio controls id="playlistAudio1">
+        <source src="../../Audio/popPlaylist/Calvin Harris - My Way.mp3" type="audio/mpeg">
+      </audio><br><br>
+    </div>
+
+    <div>
+    <img src="../../albumCover/pop/safe_and_sound.jpg" alt="Album Art" style="width: 100px; height: 100px; margin-top: 10px;">
+      <audio controls id="playlistAudio2">
+        <source src="../../Audio/popPlaylist/Capital Cities - Safe And Sound.mp3" type="audio/mpeg">
+      </audio><br><br>
+    </div>
+
+    <div>
+    <img src="../../albumCover/pop/Owl-city-ocean-eyes-2009.jpg" alt="Album Art" style="width: 100px; height: 100px; margin-top: 0px;">
+      <audio controls id="playlistAudio3">
+        <source src="../../Audio/popPlaylist/Owl City - Fireflies (Official Music Video).mp3" type="audio/mpeg">
+      </audio><br><br>
+      
+    </div>
+  </div>
+  <p><a href="http://localhost:8080" style="font-size: 14px;">Back To Listener Page</a></p>
+
+  <style>
+    p {
+      text-align: center;
+      font-size: xx-large;
+    }
+      /* Style the container */
+    .audio-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Style the image */
+    .album-cover {
+        width: 100px;
+        height: 100px;
+        margin-top: 0px;
+    }
+
+    /* Style the audio controls */
+    audio {
+        margin-left: 10px; /* Add some space between the image and the audio controls */
+    }
+
+    /* Style the seek bar (progress bar) */
+    audio::-webkit-media-controls-panel {
+        width: 200px; /* Adjust the width as needed */
+    }
+  </style>
+</body>
+
+</html>

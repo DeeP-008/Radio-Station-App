@@ -1,0 +1,1 @@
+This folder contains JSON files containing data about various items on the website. These JSON files are used to populate tthe database from the backend
